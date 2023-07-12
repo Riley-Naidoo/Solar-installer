@@ -1,0 +1,123 @@
+header{
+    height: 100px;
+    width: 100vw;
+    background-size: cover;
+    margin-top: 0;
+    position: relative;
+}
+
+.navbar{
+    position: fixed;
+    z-index: 9999;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: rgb(47, 2, 47);
+    padding-top: 30px;
+    height: 100px;
+    overflow: hidden;
+
+}
+.nav-contact{
+    background-color: rgb(238, 115, 0);
+    border-radius: 5px;
+    height: 30px;
+    width: 80px;
+    text-align: center;
+}
+
+.navbar a{
+    color:white;
+}
+
+.navbar a:hover{
+    text-decoration: underline;
+}
+
+
+.logo{
+    
+    height: 100px;
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.navbar .nav-links ul{
+    display: flex;
+}
+
+.navbar .nav-links ul li{
+    margin: 0 25px;
+}
+
+.navbar .nav-links ul li.active a{
+    color: orange;
+    font-weight: 600;
+}
+
+.navbar .menu-hamburger{
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 35px;
+    z-index: 10000;
+}
+
+@media screen and (max-width: 900px){
+    .navbar{
+        padding: 0;
+    }
+
+    .navbar .logo{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 100px;
+        width: 100px;
+        overflow: hidden;
+        
+    }
+
+    .navbar .menu-hamburger{
+        display: block;
+        z-index: 10001;
+    }
+
+    .nav-links{
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 10001;
+        background-color: grey;
+        backdrop-filter: blur(8px);
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(-100%);
+        transition: all 0.5s ease;
+    }
+
+    .nav-links.mobile-menu{
+        transform: translateX(0);
+    }
+
+    .nav-links ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar .nav-links ul li{
+        margin: 25px 0;
+        font-size: 2em;
+    }
+
+}

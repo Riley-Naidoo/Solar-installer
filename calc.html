@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="calc.css">
+        <link rel="stylesheet" href="nav.css">
+        <link rel="stylesheet" href="footer.css">
+        <script src="calc.js"></script>
+        <title>Solar-Installers | Solar Calculator</title>
+    </head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="#" class="logo"><img src="logo.png" alt="" style="height: 90px; width: 100px; overflow: hidden;"></a>
+      <div class="nav-links">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="calc.html">Solar Calculator</a></li>
+          <li class="active"><a href="inverter.html">Inverters</a></li>
+          <li><a href="battery.html">Batteries</a></li>
+          <li><a href="panels.html">Panels</a></li>
+          <li class="nav-contact"><a href="contact.html">Contact</a></li>
+      </ul>  
+      </div>
+      <img src="menu-btn.png" alt="menu hamburger" class="menu-hamburger">
+  </nav>
+</header>
+
+<section class="calculator-section1"></section>
+
+<div class="calculator-container">
+  <div class="output calculator-input">
+    <form action="" id="calc-form">
+      <label for="bill">Monthly Electricity Bill</label>
+      <input type="number" name="bill" id="bill" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
+      <br><br>
+
+      <label for="month">Month:</label>
+      <select id="month" name="month">
+        <option value="31">January</option>
+        <option value="28">February</option>
+        <option value="31">March</option>
+        <option value="30">April</option>
+        <option value="31">May</option>
+        <option value="30">June</option>
+        <option value="31">July</option>
+        <option value="31">August</option>
+        <option value="30">September</option>
+        <option value="31">October</option>
+        <option value="30">November</option>
+        <option value="31">December</option>
+      </select><br><br>
+
+      <label for="offgrid">Customer Desired (%) to go off grid:</label>
+      <select id="offgrid" name="offgrid">
+        <option value="0.1">10%</option>
+        <option value="0.2">20%</option>
+        <option value="0.3">30%</option>
+        <option value="0.4">40%</option>
+        <option value="0.5">50%</option>
+        <option value="0.6">60%</option>
+        <option value="0.7">70%</option>
+        <option value="0.8">80%</option>
+        <option value="0.9">90%</option>
+        <option value="1.0">100%</option>
+        <!--add the rest of the options-->
+      </select><br><br>
+
+
+      <label for="back-battery">Hours required on back-battery (night):</label>
+      <select id="back-battery" name="back-battery">
+        <option value="2">2</option>
+        <option value="4">4</option>
+        <option value="6">6</option>
+        <option value="8">8</option>
+        <option value="10">10</option>
+        <option value="12">12</option>
+        <!--add the rest of the options-->
+      </select><br><br>
+
+      <label for="essential">Percentage of essential to power</label>
+      <select id="essential" name="essential">
+        <option value="0.1">10%</option>
+        <option value="0.2">20%</option>
+        <option value="0.3">30%</option>
+        <option value="0.4">40%</option>
+        <option value="0.5">50%</option>
+        <option value="0.6">60%</option>
+        <option value="0.7">70%</option>
+        <option value="0.8">80%</option>
+        <option value="0.9">90%</option>
+        <option value="1.0">100%</option>
+      </select><br><br>
+
+      <center><input id="button" type="button" value="Calculate" onclick="calculate()"></center>
+      <input type="submit" id="submit-button" style="display: none;">
+
+    </form>  
+  </div>
+
+
+  <div class="output calculator config">
+    <p id="config-heading">System Configuration</p>
+    <table class="table-output config">
+      <tr>
+        <td class="data-output"><p class="p-output">Monthly KWH Usage:</p></td>
+        <td class="config-output"><p id="config-1"></p></td>
+      </tr>
+
+      <tr>
+        <td><p>Daily Average KWH Usage:</p></td>
+        <td class="config-output"><p id="config-2"></p></td>
+      </tr>
+
+      <tr>
+        <td><p>Monthly KWH Usage (variance)</p></td>
+        <td class="config-output"><p id="config-3"></p></td>
+      </tr>
+
+      <tr>
+        <td><p>Daily KWH Usage</p></td>
+        <td class="config-output"><p id="config-4"></p></td>
+      </tr>
+
+      <tr>
+        <td><P>Average Hourly KWH Usage</P></td>
+        <td class="config-output"><p id="config-5"></p></td>
+      </tr>
+
+      <tr>
+        <td><p>Solar Panel Requirements 100%</p></td>
+        <td class="config-output"><p id="config-6"></p></td>
+      </tr>
+
+      <tr>
+        <td>PV Array Design: Panel Quantity</td>
+        <td class="config-output"><p id="config-7"></p></td>
+      </tr>
+
+      <tr>
+        <td><p>Daily estimated PV Generation</p></td>
+        <td class="config-output"><p id="config-8"></p></td>
+      </tr>
+      
+      <tr>
+        <td><p>Inverter Suggested spec</p></td>
+        <td class="config-output"><p id="config-9"></p></td>
+      </tr>
+
+      <tr>
+        <td><p>Suggested battery modules</p></td>
+        <td class="config-output"><p id="config-10"></p></td>
+      </tr>
+
+      <tr>
+        <td>Suggested battery storage capacity</td>
+        <td class="config-output"><p id="config-11"></p></td>
+      </tr>
+
+      <tr>
+        <td>Generation to total kw usage ratio</td>
+        <td class="config-output"><p id="config-12"></p></td>
+      </tr>
+    </table>
+  </div>
+  <div class="output total-container">
+    <div class="total-breakdown">
+      <p id="config-heading">Price</p>
+
+      <table class="table-output">
+
+        <tr>
+          <td class="data-output"><p>Solar Panels</p></td>
+          <td class="config-output"><p id="price-1"></p></td>
+        </tr>
+  
+        <tr>
+          <td><p>Inverter</p></td>
+          <td class="config-output"><p id="price-2"></p></td>
+        </tr>
+  
+        <tr>
+          <td><p>Battery</p></td>
+          <td class="config-output"><p id="price-3"></p></td>
+        </tr>
+  
+        <tr>
+          <td><p>Distribution Board</p></td>
+          <td class="config-output"><p id="price-4"></p></td>
+        </tr>
+  
+        <tr>
+          <td><P>Inverter Costs</P></td>
+          <td class="config-output"><p id="price-5"></p></td>
+        </tr>
+  
+        <tr>
+          <td><p>Battery Costs</p></td>
+          <td class="config-output"><p id="price-6"></p></td>
+        </tr>
+  
+        <tr>
+          <td>Mounting Structure</td>
+          <td class="config-output"><p id="price-7"></p></td>
+        </tr>
+  
+        <tr>
+          <td><p>Cables and conduit</p></td>
+          <td class="config-output"><p id="price-8"></p></td>
+        </tr>
+        
+        <tr>
+          <td><p>Inverter installation</p></td>
+          <td class="config-output"><p id="price-9"></p></td>
+        </tr>
+  
+        <tr>
+          <td><p>Battery Installation</p></td>
+          <td class="config-output"><p id="price-10"></p></td>
+        </tr>
+  
+        <tr>
+          <td>DB Seperation Installation</td>
+          <td class="config-output"><p id="price-11"></p></td>
+        </tr>
+  
+        <tr>
+          <td>Generation to total kw usage ratio</td>
+          <td class="config-output"><p id="price-12"></p></td>
+        </tr>
+
+        <tr>
+          <td>Total</td>
+          <td class="config-output"><p id="price-13"></p></td>
+        </tr>
+
+      </table>
+
+    </div>
+
+
+    <div class="total-cost"></div>
+  </div>
+</div>
+<br>
+<h1>Your Solar System</h1>
+
+<div class="product-container">
+  <div class="product item-2">
+    <label class="product-label">Inverter</label><br>
+    <img src="inverter.jpg" alt="inverter" id="product-image">
+    <p>Your Inverter: </p>
+    <p id="selected-inverter">Inverter Name</p>
+    <button id="change-btn" type="button">Change inverter</button>
+  </div>
+  
+  <div id="inverter-panel" class="panel">
+    <p style="color: white; text-align: center; font-size: 24px;">Our Inverters</p>
+
+      <div class="inverter-container">
+        <div class="change inverter1">
+          <!--Copy Start-->
+          <div class="change1"><img src="images/Inverters/inv1.jpg" alt=""></div>
+          <div class="change1">
+            <p>3.5 Kw Growatt 48V Hybrid Inverter</p>
+            <p>R 8,964.00</p>
+          </div>
+          <div class="change1">
+            <button id="inv1-button" onclick="handleinv1()">Change</button>
+          </div>
+          <!--Copy End-->
+        </div>
+        <div class="change inverter2">
+          <div class="change1"><img src="images/Inverters/inv2.jpg" alt=""></div>
+          <div class="change1">
+            <p>5 Kw Growatt 48V Hybrid Inverter</p>
+            <p>R 12,399.00</p>
+          </div>
+          <div class="change1">
+            <button id="inv2-button" onclick="handleinv2()">Change</button>
+          </div>
+
+
+        </div>
+        <div class="change inverter3">
+          <div class="change1"><img src="images/Inverters/inv3.jpg" alt=""></div>
+          <div class="change1">
+            <p>5.5 Kw Luxpower Hybrid Inverter</p>
+            <p>R 13,999.00</p>
+          </div>
+          <div class="change1">
+            <button id="inv3-button" onclick="handleinv3()">Change</button>
+          </div>
+        </div>
+        <div class="change inverter4">
+          <div class="change1"><img src="images/Inverters/inv4.png" alt=""></div>
+          <div class="change1">
+            <p>5 Kw Deye Hybrid Inverter</p>
+            <p>R 25,999.00</p>
+          </div>
+          <div class="change1">
+            <button id="inv4-button" onclick="handleinv4()">Change</button>
+          </div>
+        </div>
+
+        <div class="change inverter5">
+          <div class="change1"><img src="images/Inverters/inv5.jpg" alt=""></div>
+          <div class="change1">
+            <p>5 Kw Sunsynk Hybrid Inverter</p>
+            <p>R 27,899.00</p>
+          </div>
+          <div class="change1">
+            <button id="inv5-button" onclick="handleinv5()">Change</button>
+          </div>
+        </div>
+
+        <div class="change inverter6">
+          <div class="change1"><img src="images/Inverters/inv6.png" alt=""></div>
+          <div class="change1">
+            <p>8 Kw Deye Hybrid Inverter</p>
+            <p>R 39,999.00</p>
+          </div>
+          <div class="change1">
+            <button id="inv6-button" onclick="handleinv6()">Change</button>
+          </div>
+        </div>
+
+        <div class="change inverter7">
+          <div class="change1"><img src="images/Inverters/inv7.jpg" alt=""></div>
+          <div class="change1">
+            <p>8 Kw Sunsynk Hybrid Inverter</p>
+            <p>R 43,499.00</p>
+          </div>
+          <div class="change1">
+            <button id="inv7-button" onclick="handleinv7()">Change</button>
+          </div>
+        </div>
+
+        <div class="change inverter8">
+          <div class="change1"><img src="images/Inverters/inv8.png" alt=""></div>
+          <div class="change1">
+            <p>12 Kw Luxpower Hybrid Inverter</p>
+            <p>R 46,900.00</p>
+          </div>
+          <div class="change1">
+            <button id="inv8-button" onclick="handleinv8()">Change</button>
+          </div>
+        </div>
+
+        <div class="change inverter9">
+          <div class="change1"><img src="images/Inverters/inv9.png" alt=""></div>
+          <div class="change1">
+            <p>12 Kw 3 Phase Deye Hybrid Inverter</p>
+            <p>R 55,999.00</p>
+          </div>
+          <div class="change1">
+            <button id="inv9-button" onclick="handleinv9()">Change</button>
+          </div>
+        </div>
+
+        <div class="change inverter10">
+          <div class="change1"><img src="images/Inverters/inv10.jpg" alt=""></div>
+          <div class="change1">
+            <p>12 Kw 3 Phase Sunsynk Hybrid Inverter</p>
+            <p>R 63,999.00</p>
+          </div>
+          <div class="change1">
+            <button id="inv10-button" onclick="handleinv10()">Change</button>
+          </div>
+        </div>
+
+        <div class="change inverter11">
+          <div class="change1"><img src="images/Inverters/inv11.png" alt=""></div>
+          <div class="change1">
+            <p>16 Kw Deye Hybrid Inverter</p>
+            <p>R 69,999.00</p>
+          </div>
+          <div class="change1">
+            <button id="inv11-button" onclick="handleinv11()">Change</button>
+          </div>
+        </div>
+
+        <div class="change inverter12">
+          <div class="change1"><img src="images/Inverters/inv12.jpg" alt=""></div>
+          <div class="change1">
+            <p>16 Kw Sunsynk Hybrid Inverter</p>
+            <p>R 76,999.00</p>
+          </div>
+          <div class="change1">
+            <button id="inv12-button" onclick="handleinv12()">Change</button>
+          </div>
+        </div>
+      </div>
+      <!-- Add more inverters -->  
+  </div>
+  
+
+  <div class="product item-1">
+    <label class="product-label">Panels</label><br>
+    <img src="panel.jpg" alt="solar panel">
+    <p>Your Panel: </p>
+    <div class="counter">
+      <button class="btn-decrease" onclick="decreaseValue()">-</button>
+      <input type="text" class="input-value" value="0" id="btn-value">
+      <button class="btn-increase" onclick="increaseValue()">+</button>
+    </div>    
+  </div>
+
+
+  <div class="product item-3">
+    <label class="product-label">Battery</label><br>
+    <img src="battery.jpg" alt="" id="product-image-battery">
+    <p>Your Battery: </p>
+    <p>Battery Name</p>
+    <button type="submit" id="changeBat-btn">Change battery</button>
+  </div>
+  <div id="battery-panel" class="panel-battery">
+    <p style="color: white; text-align: center; font-size: 24px;">Our Batteries</p>
+
+      <div class="inverter-container">
+        <div class="change battery1">
+          <!--Copy Start-->
+          <div class="change1"><img src="battery1.jpg" alt=""></div>
+          <div class="change1">
+            <p>3.6 Kwh Dyness Li-Ion</p>
+            <p>R 19,999.00</p>
+          </div>
+          <div class="change1">
+            <button id="bat1-button" onclick="handlebat1()">Change</button>
+          </div>
+          <!--Copy End-->
+        </div>
+        <div class="change battery2">
+          <div class="change1"><img src="battery2.jpg" alt=""></div>
+          <div class="change1">
+            <p>5 Kwh Felicity Li-Ion</p>
+            <p>R 22,999.00</p>
+          </div>
+          <div class="change1">
+            <button id="bat2-button" onclick="handlebat2()">Change</button>
+          </div>
+
+
+        </div>
+        <div class="change battery3">
+          <div class="change1"><img src="battery3.jpg" alt=""></div>
+          <div class="change1">
+            <p>5.12 Kwh Dyness Li-Ion</p>
+            <p>R 25,799.00</p>
+          </div>
+          <div class="change1">
+            <button id="bat3-button" onclick="handlebat3()">Change</button>
+          </div>
+        </div>
+        <div class="change battery4">
+          <div class="change1"><img src="battery4.png" alt=""></div>
+          <div class="change1">
+            <p>4.96 Kwh Greenrich Li-Ion</p>
+            <p>R 29,999.00</p>
+          </div>
+          <div class="change1">
+            <button id="bat4-button" onclick="handlebat4()">Change</button>
+          </div>
+        </div>
+
+        <div class="change battery5">
+          <div class="change1"><img src="battery5.jpg" alt=""></div>
+          <div class="change1">
+            <p>5.12 Kwh Hubble AM-5 Li-Ion</p>
+            <p>R 31,299.00</p>
+          </div>
+          <div class="change1">
+            <button id="bat5-button" onclick="handlebat5()">Change</button>
+          </div>
+        </div>
+
+        <div class="change battery6">
+          <div class="change1"><img src="battery6.png" alt=""></div>
+          <div class="change1">
+            <p>5/4 Kwh Freedom One</p>
+            <p>R 34,999.00</p>
+          </div>
+          <div class="change1">
+            <button id="bat6-button" onclick="handlebat6()">Change</button>
+          </div>
+        </div>
+
+        <div class="change battery7">
+          <div class="change1"><img src="battery7.png" alt=""></div>
+          <div class="change1">
+            <p>8.7 Kwh Felicity Li-Ion</p>
+            <p>R 40,999.00</p>
+          </div>
+          <div class="change1">
+            <button id="bat7-button" onclick="handlebat7()">Change</button>
+          </div>
+        </div>
+
+        <div class="change battery8">
+          <div class="change1"><img src="battery8.jpg" alt=""></div>
+          <div class="change1">
+            <p>12.5 Kwh Felicity Li-Ion</p>
+            <p>R 48,999.00</p>
+          </div>
+          <div class="change1">
+            <button id="bat8-button" onclick="handlebat8()">Change</button>
+          </div>
+        </div>
+
+        <div class="change battery9">
+          <div class="change1"><img src="battery9.jpg" alt=""></div>
+          <div class="change1">
+            <p>10.24 Kwh Dyness Li-Ion</p>
+            <p>R 55,000.00</p>
+          </div>
+          <div class="change1">
+            <button id="bat9-button" onclick="handlebat9()">Change</button>
+          </div>
+        </div>
+
+        <div class="change battery10">
+          <div class="change1"><img src="battery10.jpeg" alt=""></div>
+          <div class="change1">
+            <p>10 Kwh Hubble AM-5 Li-Ion</p>
+            <p>R 73,999.00</p>
+          </div>
+          <div class="change1">
+            <button id="bat10-button" onclick="handlebat10()">Change</button>
+          </div>
+        </div>
+
+        <div class="change battery11">
+          <div class="change1"><img src="battery11.jpg" alt=""></div>
+          <div class="change1">
+            <p>10/8 Kwh Freedom One</p>
+            <p>R 79,999.00</p>
+          </div>
+          <div class="change1">
+            <button id="bat11-button" onclick="handlebat11()">Change</button>
+          </div>
+        </div>
+
+        <div class="change battery12">
+          <div class="change1"><img src="battery12.jpg" alt=""></div>
+          <div class="change1">
+            <p>15/12 Kwh Freedom One</p>
+            <p>R 107,000.00</p>
+          </div>
+          <div class="change1">
+            <button id="bat12-button" onclick="handlebat12()">Change</button>
+          </div>
+        </div>
+
+        <div class="change battery13">
+          <div class="change1"><img src="battery13.jpg" alt=""></div>
+          <div class="change1">
+            <p>20/16 Kwh Freedom One</p>
+            <p>R 142,999.00</p>
+          </div>
+          <div class="change1">
+            <button id="bat13-button" onclick="handlebat12()">Change</button>
+          </div>
+        </div>
+      </div>
+      <!-- Add more inverters -->  
+  </div>
+
+
+<br>
+
+<section class="overview">
+ <br><br><br><br> <p id="solution-name">Solar Solution</p>
+  <div class="overview-background">
+    <div class="overview-item overview-image1">
+
+    </div>
+
+    <div class="overview-item" id="overview-image2"></div>
+
+    <div class="overview-item overview-image3"></div>
+    
+  </div>
+
+
+   
+</section>
+
+<footer class="footer">
+
+  <div class="footer-container1">
+    <div class="footer-location">
+      <i class="fa-sharp fa-light fa-location-dot"></i>
+      <p style="color: orange;">Find us</p>
+      <p>Location</p>
+    </div>
+    <div class="footer-phone">
+      <p style="color: orange;">Call Us</p>
+      <p>1231231234</p>
+    </div>
+    <div class="footer-mail">
+      <p style="color: orange;">Mail us</p>
+      <p>mail@gmail.com</p>
+    </div>
+
+  </div>
+  <br>
+  <center><hr></center>
+  <br><br><br>
+
+  <div class="footer-section1-container">
+    <div class="footer-container2">
+      <img src="logo.png" alt="Solar-Installer Logo">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing </p>
+    </div><br>
+
+
+
+    <div class="footer-container3">
+      <p style="color: orange;">Useful Links</p><br>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="calc.html">Solar Calculator</a></li>
+      <li><a href="#inverters">Inverters</a></li>
+      <li><a href="#batteries">Batteries</a></li>
+      <li><a href="#panels">Panels</a></li>
+
+    </div><br>
+
+    <div class="footer-container4">
+      <p style="color: orange;">Subscribe</p>
+      <p>Don't miss to subscribe to our new feeds, kindly fill the form below</p>
+      <div class="footer-container-email">
+        <input type="email" name="" id="email" placeholder="Email Address">
+      <button class="email-button">Enter</button>
+      </div> 
+    </div>
+
+  </div>
+  <br><br><br><br>
+
+  <div class="footer-footer">
+    <p>Copyright @2023, All Rights Reserved</p>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#calculator">Solar Calculator</a></li>
+      <li><a href="#inverters">Inverters</a></li>
+      <li><a href="#batteries">Batteries</a></li>
+      <li><a href="#panels">Panels</a></li>  
+    </ul>
+  </div>
+
+
+
+
+
+  
+
+</footer>
+
+</body>
+<script>
+  const menuHamburger = document.querySelector(".menu-hamburger")
+  const navLinks = document.querySelector(".nav-links")
+
+  menuHamburger.addEventListener('click',()=>{
+  navLinks.classList.toggle('mobile-menu')
+  })
+</script>
+
+<script src="calc.js"></script>
+</html>

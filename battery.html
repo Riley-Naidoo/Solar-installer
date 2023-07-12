@@ -1,0 +1,275 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Installers | Inverters</title>
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="inverter.css">
+    <link rel="stylesheet" href="nav.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="#" class="logo"><img src="logo.png" alt="" style="height: 100px; width: 100px;"></a>
+      <div class="nav-links">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="calc.html">Solar Calculator</a></li>
+          <li><a href="inverter.html">Inverters</a></li>
+          <li class="active"><a href="battery.html">Batteries</a></li>
+          <li><a href="panels.html">Panels</a></li>
+          <li class="nav-contact"><a href="contact.html">Contact</a></li>
+      </ul>  
+      </div>
+      <img src="menu-btn.png" alt="menu hamburger" class="menu-hamburger">
+  </nav>
+  </header>
+
+    <main>
+        <br><br>
+        <h2>Filter Inverters</h2>
+
+        <div id="myBtnContainer">
+          <button class="btn active" onclick="filterSelection('all')" data-filter-value="all"> Show all</button>
+          <button class="btn" onclick="filterSelection('3kw')" data-filter-value="3kw"> 3kw</button>
+          <button class="btn" onclick="filterSelection('5kw')" data-filter-value="5kw"> 5kw</button>
+          <button class="btn" onclick="filterSelection('8kw')" data-filter-value="8kw"> 8kw</button>
+          <button class="btn" onclick="filterSelection('10kw')" data-filter-value="10kw"> 10kw</button>
+          <button class="btn" onclick="filterSelection('12kw')" data-filter-value="12kw"> 12kw</button>
+          <button class="btn" onclick="filterSelection('15kw')" data-filter-value="15kw"> 15kw</button>
+          <button class="btn" onclick="filterSelection('20kw')" data-filter-value="20kw"> 20kw</button>
+        </div>
+        
+        
+
+<div class="container">
+  <div class="filterDiv 3kw show">
+    <img src="battery1.jpg" alt="" class="img-inverter">
+    <p>3.6 Kwh Dyness Li-Ion</p>
+    <a href="#">Dyness</a>
+    <p class="price">R 19,999.00</p>
+    <button id="product-button1" class="product-button" onclick="battery1()">View</button>
+  </div>
+
+  <div class="filterDiv 5kw show">
+    <img src="battery2.jpg" alt="" class="img-inverter">
+    <p>5 Kwh Felicity Li-Ion</p>
+    <a href="#">Felicity</a>
+    <p class="price">R 22,999.00</p>
+    <button id="product-button2" class="product-button" onclick="battery2()">View</button>
+  </div>
+
+  <div class="filterDiv 5kw show">
+    <img src="battery3.jpg" alt="" class="img-inverter">
+    <p>5.12 Kwh Dyness Li-Ion</p>
+    <a href="#">Dyness</a>
+    <p class="price">R 25,799.00</p>
+    <button id="product-button3" class="product-button" onclick="battery3()">View</button>
+  </div>
+
+  <div class="filterDiv 5kw show">
+    <img src="battery4.png" alt="" class="img-inverter">
+    <p>4.96 Kwh Greenrich Li-Ion</p>
+    <a href="#">Greenrich</a>
+    <p class="price">R 29,999.00</p>
+    <button id="product-button4" class="product-button" onclick="battery4()">View</button>
+  </div>
+
+  <div class="filterDiv 5kw show">
+    <img src="battery5.jpg" alt="" class="img-inverter">
+    <p>5.12 Kwh Hubble AM-5 Li-Ion</p>
+    <a href="#">Hubble</a>
+    <p class="price">R 31,299.00</p>
+    <button id="product-button5" class="product-button" onclick="battery5()">View</button>
+  </div>
+
+  <div class="filterDiv 5kw show">
+    <img src="battery6.png" alt="" class="img-inverter">
+    <p>5/4 Kwh Freedom One</p>
+    <a href="#">Freedom</a>
+    <p class="price">R 34,999.00</p>
+    <button id="product-button6" class="product-button" onclick="battery6()">View</button>
+  </div>
+
+  <div class="filterDiv 8kw show">
+    <img src="battery7.png" alt="" class="img-inverter">
+    <p>8.7 Kwh Felicity Li-Ion</p>
+    <a href="#">Felicity</a>
+    <p class="price">R 40,499.00</p>
+    <button id="product-button7" class="product-button" onclick="battery7()">View</button>
+  </div>
+
+  <div class="filterDiv 12kw show">
+    <img src="battery8.jpg" alt="" class="img-inverter">
+    <p>12.5 Kwh Felicity Li-Ion</p>
+    <a href="#">Felicity</a>
+    <p class="price">R 48,499.00</p>
+    <button id="product-button8" class="product-button" onclick="battery8()">View</button>
+  </div>
+
+  <div class="filterDiv 10kw show">
+    <img src="battery9.jpg" alt="" class="img-inverter">
+    <p>10.24 Kwh Dyness Li-Ion</p>
+    <a href="#">Dyness</a>
+    <p class="price">R 55,000.00</p>
+    <button id="product-button9" class="product-button" onclick="battery9()">View</button>
+  </div>
+
+  <div class="filterDiv 10kw show">
+    <img src="battery10.jpeg" alt="" class="img-inverter">
+    <p>10 Kwh Hubble AM-5 Li-Ion</p>
+    <a href="#">Hubble</a>
+    <p class="price">R 73,999.00</p>
+    <button id="product-button10" class="product-button" onclick="battery10()">View</button>
+  </div>
+
+  <div class="filterDiv 10kw show">
+    <img src="battery11.jpg" alt="" class="img-inverter">
+    <p>10/8 Kwh Freedom One</p>
+    <a href="#">Freedom</a>
+    <p class="price">R 79,999.00</p>
+    <button id="product-button11" class="product-button" onclick="battery11()">View</button>
+  </div>
+
+  <div class="filterDiv 15kw show">
+    <img src="battery12.jpg" alt="" class="img-inverter">
+    <p>15/12 Kwh Freedom One</p>
+    <a href="#">Freedom</a>
+    <p class="price">R 107,000.00</p>
+    <button id="product-button12" class="product-button" onclick="battery12()">View</button>
+  </div>
+
+  <div class="filterDiv 20kw show">
+    <img src="battery13.jpg" alt="" class="img-inverter">
+    <p>20/16 Kwh Freedom One</p>
+    <a href="#">Freedom</a>
+    <p class="price">R 142,999.00</p>
+    <button id="product-button13" class="product-button" onclick="battery13()">View</button>
+  </div>
+
+</div>
+
+
+    </main>
+
+    <footer class="footer">
+
+        <div class="footer-container1">
+          <div class="footer-location">
+            <i class="fa-sharp fa-light fa-location-dot"></i>
+            <p>Find us</p>
+            <p>Location</p>
+          </div>
+          <div class="footer-phone">
+            <p>Call Us</p>
+            <p>1231231234</p>
+          </div>
+          <div class="footer-mail">
+            <p>Mail us</p>
+            <p>mail@gmail.com</p>
+          </div>
+      
+        </div>
+        <br>
+        <center><hr></center>
+        <br><br><br>
+      
+        <div class="footer-section1-container">
+          <div class="footer-container2">
+            <img src="logo.png" alt="Solar-Installer Logo" style="height: 100px; width: 100px;">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Follow Us</p>
+          </div>
+      
+      
+      
+          <div class="footer-container3">
+            <p>Useful Links</p>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#calculator">Solar Calculator</a></li>
+            <li><a href="#inverters">Inverters</a></li>
+            <li><a href="#batteries">Batteries</a></li>
+            <li><a href="#panels">Panels</a></li>
+      
+          </div>
+      
+          <div class="footer-container4">
+            <p>Subscribe</p>
+            <p>Don't miss to subscribe to our new feeds, kindly fill the form below</p>
+            <div class="footer-container-email">
+              <input type="email" name="" id="email" placeholder="Email Address">
+            <button>Enter</button>
+      
+            </div>
+            
+          </div>
+      
+        </div>
+        <br><br><br><br>
+      
+        <div class="footer-footer">
+          <p>Copyright @2023, All Rights Reserved</p>
+      
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#calculator">Solar Calculator</a></li>
+            <li><a href="#inverters">Inverters</a></li>
+            <li><a href="#batteries">Batteries</a></li>
+            <li><a href="#panels">Panels</a></li>  
+          </ul>
+        </div>      
+      </footer>
+    
+</body>
+<script>
+ filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+// Show filtered elements
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current control button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+<script src="battery.js"></script>
+
+</html>

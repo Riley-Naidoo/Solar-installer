@@ -1,0 +1,446 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    overflow-x: hidden;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.calculator-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+.output{
+    background-color: #f1f1f1 ;
+    width: 30%;
+    height: 650px;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    transition: transform 1s ease;
+    transform: scale(1);
+}
+
+/*.calculator-container:hover{
+    transition: transform 1s ease;
+    transform: scale(1.05);
+
+}*/
+
+.calculator-input, input, select{
+    font-size: 20px;
+}
+
+
+select{
+    width: 90%;
+}
+
+input{
+    width: 92.5%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: none;
+}
+
+#button{
+    background-color: rgb(238, 115, 0);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    transition: transform 0.5s ease;
+    transform: scale(1);
+    text-align: center;
+    width: 200px;
+    height: 50px;
+}
+
+#button:hover{
+    transform: scale(1.05);
+    transition: transform 0.5s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+label, select {
+    display: block; /* It's better to use block for select to respect width */
+    width: 90%;
+    padding: 5px; /* Add padding as needed */
+}
+
+label {
+    background-color: rgb(47, 2, 47);
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-bottom: 0;
+}
+
+select {
+    color: black; /* As per your requirement */
+    border: none; /* Remove default border */
+    border-radius: 0; /* No border radius */
+    appearance: none; /* Remove default select styling. Be aware, this disables the dropdown arrow */
+    background-color: white;
+    width: 92.5%;
+}
+
+#config-heading{
+    background-color: rgb(47, 2, 47);
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-top: 10px;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+table {
+    border-collapse: collapse; /* This combines the borders of adjacent cells */
+    width: 100%;
+    font-weight: bold;
+}
+
+td{
+    width: 50%;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 10px; /* Add some padding so content isn't right up against the border */
+}
+
+.config-output{
+    background-color: rgb(238, 115, 0);
+    color: white;
+    text-align: center;
+}
+
+.product{
+    background-color: #f1f1f1;
+    height: 500px;
+    width: 30%;
+    color: black;
+    margin-top: 20px;
+    transition: transform 1s ease;
+    transform: scale(1);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 10px;
+
+}
+
+/*.product:hover{
+    transform: scale(1.05);
+    transition: transform 1s ease;
+}*/
+
+.product-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+h1{
+    text-align: center;
+}
+
+.product-label{
+    background-color: rgb(47, 2, 47);
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.calculator-section1{
+    height: 500px;
+    width: auto;
+    background-image: url(hero.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.data-output{
+    width:70%;
+}
+
+.table-output{
+    height: 550px;
+}
+
+table p{
+    text-align: left;
+}
+
+/*.config p{
+    text-align: center;
+}`*/
+
+.p-output{
+    text-align: left;
+}
+
+.counter {
+    display: flex;
+    align-items: center;
+  }
+  
+  .btn-decrease,
+  .btn-increase {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    background-color: #e0e0e0;
+    cursor: pointer;
+  }
+  
+  .input-value {
+    width: 50px;
+    text-align: center;
+  }
+
+  .panel {
+    padding-top: 100px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 600px;
+    background-color: rgb(47, 2, 47);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 999; /* Increase the z-index value */
+  }
+  
+  .panel.show {
+    transform: translateX(0);
+}
+  
+  .inverters-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .inverters-list li {
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  #change-btn, #changeBat-btn{
+        background-color: rgb(238, 115, 0);
+        color: white;
+        border: none;
+        border-radius: 3px;
+        transition: transform 0.5s ease;
+        transform: scale(1);
+        text-align: center;
+        width: 200px;
+        height: 40px;
+    }
+    
+    #change-btn:hover{
+        transform: scale(1.05);
+        transition: transform 0.5s ease;
+        cursor: pointer;
+    }
+
+.overview{
+    width: 100%;
+    height: 1000px;
+    background-color: white;
+    overflow: hidden;
+
+}
+
+#solution-name{
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+
+} 
+
+.overview-background{
+    background-image: url(overview-background.png);
+    background-size: cover;
+    width: 95%;
+    height: 90%;
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.overview-item{
+    background-color: black;
+    width:300px;
+    height: 300px;
+}
+
+.overview-image1{
+    margin-bottom: 100px;
+    margin-right: 400px;
+    background-image: url(panel.jpg);
+}
+
+#overview-image2{
+    background-image: url(inverter.jpg);
+}
+
+.overview-image3{
+    margin-right: 250px;
+    background-image: url(battery.jpg);
+}
+
+.inverter-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.change{
+    background-color: white;
+    height: 200px;
+    width: 95%;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    margin: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    align-items: center;
+    justify-content: space-around;
+}
+.change img{
+    height: 100px;
+    width: 100px;
+}
+
+.change p{
+    font-size: 20px;
+}
+
+.panel-button{
+    background-color: rgb(238, 115, 0);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    transition: transform 0.5s ease;
+    transform: scale(1);
+    text-align: center;
+    width: 100px;
+    height: 50px;
+    overflow: hidden;
+    margin-right: 10pxs;
+}
+
+.panel-button:hover{
+    transform: scale(1.05);
+    transition: transform 0.5s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.panel-battery{
+    padding-top: 100px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 600px;
+    background-color: rgb(47, 2, 47);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 999; /* Increase the z-index value */
+    margin: 0;
+}
+
+.panel-battery.show {
+    transform: translateX(0);
+}
+
+@media screen and (max-width:900px) {
+    .calculator-container{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .output{
+        width: 90%;
+        height: auto;
+    }
+    .product-container{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+    .product{
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .overview{
+        visibility: hidden;
+        height: 0;
+    }
+    .panel {
+        padding-top: 100px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: auto;
+        background-color: rgb(47, 2, 47);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 999; /* Increase the z-index value */
+      }
+      .panel-battery{
+        padding-top: 100px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: auto;
+        background-color: rgb(47, 2, 47);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 999; /* Increase the z-index value */
+        margin: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+

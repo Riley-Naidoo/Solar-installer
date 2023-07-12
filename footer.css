@@ -1,0 +1,172 @@
+.footer{
+  background-color: rgb(36, 34, 34);
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+}
+.footer-container1{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.footer-container3{
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.footer-container3 a{
+  color: white;
+}
+
+.footer-location, .footer-phone, .footer-mail{
+  margin-top: 10px;
+  height: 50px;
+  width: 30%;
+  color: white;
+}
+
+.footer hr{
+  color: white;
+  width: 80%;
+  text-align: center;
+}
+
+.footer-section1-container{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.footer-container2, .footer-container3, .footer-container4{
+  width: 30%;
+  height: 200px;
+  color: white;
+}
+
+.footer-container-email{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#email{
+  background-color: grey;
+  color: white;
+  font-size: 20px;
+  height: 30px;
+  margin-top: 10px;
+}
+
+.footer-container-email button{
+  height: 30px;
+  margin-top: 10px;
+  background-color: orange;
+  color: white;
+  border: none;
+}
+
+.footer-footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center; /* If you want the text vertically centered */
+  background-color: grey;
+  height: 60px;
+  padding: 10px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.footer-links li {
+  margin-right: 20px; /* Space between the links */
+}
+
+.footer-links a{
+  color: white;
+}
+
+.footer-links li:last-child {
+  margin-right: 0; /* No space for the last link to avoid extra space on the right */
+}
+
+.footer-logo{
+  height: 100px;
+  width: 100px;
+}
+
+@media screen and (max-width:900px) {
+
+  .footer{
+    overflow: visible;
+    height: auto;
+    width: 100%;
+  }
+  .footer-section1-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: auto;
+    width: 100%;
+
+  }
+
+  .footer-container2 img{
+    height: 100px;
+    width: 100px;
+  }
+
+  .footer-container2{
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    width: 100%;
+    flex-direction: row;
+  }
+  .footer-container2, .footer-container3, .footer-container4{
+    width: 30%;
+    height: auto;
+    color: white;
+  }
+
+  .footer-container-email{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+  }
+
+  .email-button{
+    width: 100%;
+    color: white;
+  }
+  .footer-footer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: auto;
+    justify-content: space-evenly;
+  }
+  .footer-links{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    justify-content: space-evenly;
+  }
+  
+  
+}
+
+
+

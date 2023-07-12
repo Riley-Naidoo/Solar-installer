@@ -1,0 +1,331 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    overflow-x: hidden;
+
+
+
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header-container{
+    height: 500px;
+    width: 100%;
+    color: white;
+    background-image: url(hero.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position:static;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header-text{
+    margin-bottom: 10px;
+    font-size: 5em;
+    color: white;
+}
+
+.header-button{
+    height: 50px;
+    width: 300px;
+    background-color: rgb(238, 115, 0);
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    transition: width 0.5s ease;
+    padding-top: 15px ;
+}
+
+.header-button:hover{
+    width: 320px;
+    cursor: pointer;
+    
+}
+
+.product-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    height: auto;
+}
+
+.product-heading{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.item {
+    background-color: #f1f1f1;
+    width: 30%;
+    height: 470px;
+    color: black;
+    border-radius: 10px;
+    box-shadow: 1px 1px white;
+    display: flex;
+    flex-wrap: wrap;
+    display: block;
+
+    color: black;
+  }
+  
+
+  
+.item, .item p, img, button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item img{
+    height: 300px;
+    width: 300px;  
+}
+
+.button{
+    width: 200px;
+    background-color: rgb(238, 115, 0);
+    color: white;
+    border: none;
+    height: 30px;
+    padding-top: 5px;
+    font-size: 15px;
+    border-radius: 3px;
+    transform: scale(1);
+    transition: transform 0.5s ease;
+}
+
+.button:hover{
+    transform: scale(1.05);
+    transition: transform 0.5s ease;
+    cursor: pointer;
+}
+
+#trusted-by{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.testimonial-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.testimonial{
+    height: 200px;
+    width: 200px;
+    background-color: #f1f1f1;
+    transition: width 0.5s ease;
+}
+
+.testimonial:hover{
+    width: 230px;
+}
+
+.featured-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 10px;
+    height: 700px;
+
+}
+.featured{
+    width: 30%;
+    height: 300px;
+    background-color: #f1f1f1;
+    padding: 10px;
+    display: flex;
+    transition: transform 0.5s ease;
+    transform: scale(1);
+
+
+}
+
+.featured:hover{
+    transition: transform 0.5s ease;
+    transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+
+}
+
+.featured-heading{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.cta-container{
+    background-color: darkmagenta;
+    width: 100%;
+    height: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    overflow: hidden;
+    
+}
+
+.cta-container:hover .cta-image{
+    transition: transform 0.5s ease;
+    transform: scale(1.5) ;
+    overflow: visible;
+
+    
+}
+
+.cta-container:hover button{
+    transition: width 0.5s ease;
+    width: 170px;
+    cursor: pointer;
+}
+
+.cta-container button:hover{
+    transition: width 0.5s ease;
+    width: 190px;
+}
+
+.cta-text{
+    width: 45%;
+    height: 330px;
+    padding-right: 300px;
+    color: white;
+}
+
+.cta-image{
+    margin-top: 20px;
+    width: 48%;
+    height: 350px;
+    align-content: center;
+    display: flex;
+    transition: transform 0.5s ease;
+    transform: scale(1);
+}
+
+
+.cta-image img{
+    height: 300px;
+    width: 300px;
+
+}
+
+.cta-container #cta-heading{
+    font-size: 30px;
+    color: wheat;
+}
+
+.cta-container button{
+    width: 150px;
+    height: 30px;
+    background-color: rgb(238, 115, 0);
+    color: white;
+    border: none;
+    text-align: center;
+    font-size: 15px;
+    padding-top: 5px;
+    transition: width 0.5s ease;
+}
+
+@media screen and (max-width:900px){
+    .header-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .header-text{
+        font-size: 2em;
+    }
+    .product-container{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        height: auto;
+        width: auto;
+        transform: none;
+        transition: none;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .item{
+        height: auto;
+        width: 50%;
+        margin-bottom: 10px;
+        transition: none;
+        transform: none;
+    }
+    .item:hover{
+        transform: none;
+        transition: none;
+    }
+
+
+    .item img{
+        width: 90%;
+        height: auto;
+    }
+
+    .button{
+        margin-bottom: 10px;
+        transform: none;
+        transition: none;
+    }
+    .button:hover{
+        transform: none;
+        transition: none;
+    }
+
+    .testimonial{
+        margin-bottom: 10px;
+    }
+
+    .featured-container{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        width: auto;
+    }
+    .featured{
+        margin-bottom: 10px;
+    }
+    .cta-container{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        height: auto;
+    }
+    .cta-text{
+        width: 90%;
+        height: auto;
+    }
+    .cta-image{
+        height: auto;
+        width: auto;
+        display: flex;
+        align-items: flex-start;
+        margin-right: 70%;
+    }
+
+
+}
+
+
+
