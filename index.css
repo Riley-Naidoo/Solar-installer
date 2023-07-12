@@ -4,13 +4,11 @@
     text-decoration: none;
     list-style: none;
     overflow-x: hidden;
-
-
-
 }
 
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f1f1f1;
 }
 
 .header-container{
@@ -31,8 +29,9 @@ body{
 
 .header-text{
     margin-bottom: 10px;
-    font-size: 5em;
+    font-size: 4em;
     color: white;
+    text-align: center;
 }
 
 .header-button{
@@ -68,7 +67,7 @@ body{
 }
 
 .item {
-    background-color: #f1f1f1;
+    background-color: white;
     width: 30%;
     height: 470px;
     color: black;
@@ -127,7 +126,7 @@ body{
 .testimonial{
     height: 200px;
     width: 200px;
-    background-color: #f1f1f1;
+    background-color: white;
     transition: width 0.5s ease;
 }
 
@@ -139,15 +138,15 @@ body{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-evenly;
-    padding-top: 10px;
+    justify-content: space-between;
+    padding-top: 0;
     height: 700px;
 
 }
 .featured{
     width: 30%;
-    height: 300px;
-    background-color: #f1f1f1;
+    height: 60%;
+    background-color: white;
     padding: 10px;
     display: flex;
     transition: transform 0.5s ease;
@@ -250,6 +249,7 @@ body{
     }
     .header-text{
         font-size: 2em;
+        text-align: center;
     }
     .product-container{
         display: flex;
