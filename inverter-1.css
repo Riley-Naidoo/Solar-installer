@@ -1,3 +1,6 @@
+@import "https://unpkg.com/open-props";
+@import "https://unpkg.com/open-props/normalize.min.css";
+
 *{
     margin: 0;
     padding: 0;
@@ -9,6 +12,7 @@
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f1f1f1;
+    color: black;
 }
 
 .product-container{
@@ -152,20 +156,30 @@ ul{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    color: white;
 }
 
 .display-2-product{
-    width: 19%;
-    height: 80%;
+    width: 23%;
+    height: auto;
+    padding: 10px 10px 10px;
+    margin: 10px 0 10px;
     background-color: white;
     transform: scale(1);
     transition: transform 0.5s ease;
+    color: black;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 1.5em;
 }
 
 .display-2-product:hover{
-    transform: scale(1.05);
+    transform: scale(1.02);
     transition: transform 0.5s ease;
-    overflow: visible;
+    overflow: hidden;
     cursor: pointer;
 }
 
@@ -305,21 +319,53 @@ ul.breadcrumb {
     }
 
     .display-2{
-        display: flex;
+        /*display: flex;
         flex-direction: column;
         flex-wrap: wrap;
         height: auto;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: space-evenly;*/
+
+        display: grid;
+        gap: var(--size-3);
+        grid-auto-flow: column;
+        grid-auto-columns: 63%;
+        overflow-x: auto;
+        overscroll-behavior-inline: contain; 
+        height: auto;
+        width: auto;
+        padding: 0 var(--size-3) var(--size-3);
+        color: black;
     }
 
     .display-2-product{
-        width: 50%;
-        margin-bottom: 10px;
+        width: auto;
+        padding: var(--size-3);
+        background-color: white;
+        border-radius: var(--radius-2);
+        height: auto;
+        display: grid;
+        grid-template-rows: min-content;
+        gap: var(--size-2);
     }
 
     .display-2-img{
         margin-left: 0;
+        inline-size: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+    }
+    .display-2-button{
+        color: white;
+    }
+
+    .snaps-inline{
+        scroll-snap-type: inline mandatory;
+        scroll-padding-inline: var(--size-4);
+    }
+
+    .snaps-inline > *{
+        scroll-snap-align: start;
     }
 
     .display-2-product:hover{

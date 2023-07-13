@@ -30,8 +30,8 @@
   </nav>
 </header>
     <div class="header-container">
-      <h1 class="header-text"> Design your own solar system</h1>
-      <button class="header-button">Show Me</button>
+      <h1 class="header-text">Use our Solar Price Estimator to design and price your solar solution</h1>
+      <button class="header-button" id="button" onclick="gotoCalc()">Calculate Now</button>
   </div>
 
     <main>
@@ -42,7 +42,7 @@
                 <br><p class="product-heading">Inverters</p><br>
                 <img src="inverter.jpg" alt=""><br>
                 <p>Some text about the inverter</p><br>
-                <button class="button">View More</button>
+                <button class="button" id="button" onclick="gotoInverter()">View More</button>
             </div>
 
 
@@ -51,14 +51,14 @@
                 <br><p class="product-heading">Batteries</p><br>
                 <img src="battery.jpg" alt=""><br>
                 <p>some text about the battery</p><br>
-                <button class="button">view more</button>
+                <button class="button" id="button" onclick="gotoBattery()">view more</button>
             </div>
 
             <div class="item item-3">
                 <br><p class="product-heading">Panels</p><br>
                 <img src="panel.jpg" alt=""><br>
                 <p>some text about the panel</p><br>
-                <button class="button">view more</button>
+                <button class="button" id="button" onclick="gotoPanel()">view more</button>
             </div>
         </div>
         <br><br><hr>
@@ -80,9 +80,6 @@
             <div class="featured featured1"></div>
             <div class="featured featured2"></div>
             <div class="featured featured3"></div>
-            <div class="featured featured4"></div>
-            <div class="featured featured5"></div>
-            <div class="featured featured6"></div>
           </div>
         </section>
 
@@ -193,5 +190,6 @@
   navLinks.classList.toggle('mobile-menu')
   })
 </script>
+<script src="index.js"></script>
 
 </html>
