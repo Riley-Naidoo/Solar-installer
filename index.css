@@ -118,21 +118,32 @@ body{
 }
 
 .testimonial-container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    --spacer : 2rem;
+    display: grid;
+    grid-template-rows: min-content;
+    gap: var(--spacer) ;
+    grid-auto-flow: column;
+    grid-auto-columns: 68%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain ;
+    width: auto;
+    padding: 20px;
 }
 
 .testimonial{
-    height: 200px;
-    width: 200px;
+    padding: var(--spacer);
+    width: auto;
     background-color: white;
-    transition: width 0.5s ease;
+    border-radius: 30px;
+    color: white;
+    background-color: rgb(47, 2, 47);
+    font-size: 24px;
 }
 
-.testimonial:hover{
-    width: 230px;
+.snaps-inline{
+    scroll-snap-type: inline mandatory;
 }
+
 
 .featured-container{
     display: flex;
@@ -218,7 +229,26 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
 }
+
+.cta-container {
+    position: relative;
+    background-image: url(cta-image.png); /* Background image */
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .cta-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(74, 11, 96, 0.73); /* Overlay color with opacity */
+    mix-blend-mode: multiply; /* Apply blending mode */
+  }
 
 .cta-container:hover .cta-image{
     transition: transform 0.5s ease;
@@ -243,6 +273,9 @@ body{
     width: auto;
     color: white;
     text-align: center;
+    position: relative;
+    z-index: 1; /* Ensure the text is above the overlay */
+    color: #ffffff; /* Set the text color */
 
 }
 
@@ -335,33 +368,42 @@ body{
         transition: none;
     }
 
-    .testimonial-container{
-        --spacer : 2rem;
-        display: grid;
-        grid-template-rows: min-content;
-        gap: var(--spacer) ;
-        grid-auto-flow: column;
-        grid-auto-columns: 68%;
+    .testimonial-container {
+        --spacer: 2rem;
+        display: flex;
+        flex-wrap: nowrap;
         overflow-x: auto;
-        overscroll-behavior-inline: contain ;
+        overscroll-behavior-inline: contain;
         width: auto;
-    }
-
-    .testimonial{
+        padding: 0 var(--spacer); /* Add padding to container for space at ends */
+      }
+      
+      .testimonial {
+        flex: 0 0 auto;
         padding: var(--spacer);
-        width: auto;
-    }
-
-    .snaps-inline{
+        margin-right: var(--spacer); /* Add spacing between testimonials */
+        width: 89%; /* Adjust width calculation for accurate spacing */
+        height: auto;
+      }
+      
+      .testimonial:first-child {
+        margin-left: 0; /* Remove left margin from first testimonial */
+      }
+      
+      .testimonial:last-child {
+        margin-right: 0; /* Remove margin-right from last testimonial */
+      }
+      .snaps-inline {
         scroll-snap-type: inline mandatory;
-    }
-
-    .snaps-inline > *{
+      }
+      
+      .snaps-inline > * {
         scroll-snap-align: start;
         scroll-padding-inline: var(--spacer);
-
-    }
-
+      }    
+      
+      
+      
 
 
     .featured-container{
@@ -387,6 +429,7 @@ body{
         flex-wrap: wrap;
         align-items: center;
         height: auto;
+        background-image: url(cta-image.png);
     }
     .cta-text{
         width: 90%;
@@ -398,6 +441,8 @@ body{
         display: flex;
         align-items: flex-start;
         margin-right: 70%;
+
+
     }
 
     .cta-list{
