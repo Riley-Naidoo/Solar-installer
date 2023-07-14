@@ -164,6 +164,13 @@
     margin-bottom: 10px;
     justify-content: space-evenly;
   }
+
+  .footer-location, .footer-phone, .footer-mail{
+    margin-top: 10px;
+    height: auto;
+    width: 30%;
+    color: white;
+  }
   
   
 }

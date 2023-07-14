@@ -203,16 +203,21 @@ body{
 }
 
 .cta-container{
-    background-color: darkmagenta;
+    background-image: url(cta-image.png);
     width: 100%;
-    height: 350px;
+    height: 300px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     padding: 20px;
     overflow: hidden;
-    
+    justify-content: space-between;
+    position:static;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .cta-container:hover .cta-image{
@@ -235,32 +240,21 @@ body{
 }
 
 .cta-text{
-    width: 45%;
-    height: 330px;
-    padding-right: 300px;
+    width: auto;
     color: white;
+    text-align: center;
+
 }
 
-.cta-image{
-    margin-top: 20px;
-    width: 48%;
-    height: 350px;
-    align-content: center;
-    display: flex;
-    transition: transform 0.5s ease;
-    transform: scale(1);
+#cta-heading{
+    font-size: 5em;
 }
 
 
-.cta-image img{
-    height: 300px;
-    width: 300px;
-
-}
 
 .cta-container #cta-heading{
-    font-size: 30px;
-    color: wheat;
+    font-size: 3em;
+    color: white;
 }
 
 .cta-container button{
@@ -275,6 +269,18 @@ body{
     transition: width 0.5s ease;
 }
 
+.cta-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.cta-image{
+    filter:saturate(199%) ;
+}
 @media screen and (max-width:900px){
 
 
@@ -329,9 +335,34 @@ body{
         transition: none;
     }
 
-    .testimonial{
-        margin-bottom: 10px;
+    .testimonial-container{
+        --spacer : 2rem;
+        display: grid;
+        grid-template-rows: min-content;
+        gap: var(--spacer) ;
+        grid-auto-flow: column;
+        grid-auto-columns: 68%;
+        overflow-x: auto;
+        overscroll-behavior-inline: contain ;
+        width: auto;
     }
+
+    .testimonial{
+        padding: var(--spacer);
+        width: auto;
+    }
+
+    .snaps-inline{
+        scroll-snap-type: inline mandatory;
+    }
+
+    .snaps-inline > *{
+        scroll-snap-align: start;
+        scroll-padding-inline: var(--spacer);
+
+    }
+
+
 
     .featured-container{
         display: flex;
@@ -343,6 +374,12 @@ body{
     }
     .featured{
         margin-bottom: 10px;
+        width: 80%;
+    }
+
+    .featured > img{
+        height: 200px;
+        width: 200px;
     }
     .cta-container{
         display: flex;
@@ -361,6 +398,11 @@ body{
         display: flex;
         align-items: flex-start;
         margin-right: 70%;
+    }
+
+    .cta-list{
+        display: flex;
+        flex-direction: column;
     }
 
 
