@@ -5,57 +5,38 @@
     <title>Solar Installers | Inverters</title>
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="nav.css">
 </head>
 <body>
+  <header>
     <nav class="navbar">
-        <a href="#" class="logo">SOLAR-INSTALLERS</a>
-        <div class="nav-links">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="">Solar Calculator</a></li>
-            <li><a href="inverter.html">Inverters</a></li>
-            <li><a href="battery.html">Batteries</a></li>
-            <li><a href="panels.html">Panels</a></li>
-            <li class="active"><a href="contact.html">Contact</a></li>
-        </ul>  
-        </div>
-        <img src="menu-btn.png" alt="menu hamburger" class="menu-hamburger">
-        
-
-    </nav>
-    <header>
-        <div class="header-container">
-            <h1 class="header-text"> Contact Us Now</h1>
-            <button class="header-button">Contact</button>
-        </div>
-    </header>
+      <a href="index.html" class="logo"><img src="logo.png" alt="" style="height: 90px; width: 100px; overflow: hidden;"></a>
+      <div class="nav-links">
+        <ul>
+          <li  class="active"><a href="index.html">Home</a></li>
+          <li><a href="calc.html">Solar Calculator</a></li>
+          <li><a href="inverter.html">Inverters</a></li>
+          <li><a href="battery.html">Batteries</a></li>
+          <li><a href="panels.html">Panels</a></li>
+          <li class="nav-contact"><a href="contact.html">Contact</a></li>
+      </ul>  
+      </div>
+      <img src="menu-btn.png" alt="menu hamburger" class="menu-hamburger">
+  </nav>
+</header>
 
     <main>
-        <br><br>
-        <h3>Contact Form</h3>
 
-        <div class="container">
-          <form action="/action_page.php">
-            <label for="fname">First Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+      <script SameSite="None; Secure" src="https://cdn.landbot.io/landbot-3/landbot-3.0.0.js"></script>
+      <div id="myLandbot" style="width: 100%; height: 900px"></div>
+      <script>
+        var myLandbot = new Landbot.Container({
+          container: '#myLandbot',
+          configUrl: 'https://storage.googleapis.com/landbot.pro/v3/H-1664755-5T7PSJEDA4ZKTSJ2/index.json',
+        });
         
-            <label for="lname">Last Name</label>
-            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-        
-            <label for="country">Country</label>
-            <select id="country" name="country">
-              <option value="australia">Australia</option>
-              <option value="canada">Canada</option>
-              <option value="usa">USA</option>
-            </select>
-        
-            <label for="subject">Subject</label>
-            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-        
-            <input type="submit" value="Submit">
-          </form>
-        </div>
-        <br>
+      </script>
+
     </main>
 
     <footer class="footer">
