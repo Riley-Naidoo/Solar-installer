@@ -9,6 +9,17 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.hero{
+  width: auto;
+  height: 400px;
+  background-image: url(cta-img.jpg);
+  position:static;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .filterDiv {
     display: flex;
     flex-direction: column;
@@ -43,27 +54,211 @@ body{
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
+    width: 70%;
   }
   .container > * {
     flex: 0 0 300px;
     margin: 10px;
   }
   
-  /* Style the buttons */
+  .container-2{
+    width: 25%;
+    height: 900px;
+    background-color: #f1f1f1;
+    margin-top: 20px;
+    
+  }
 
-  .myBtnContainer{
+  .product-container{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
-
   }
+
+  .accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+  }
+  
+  .acc.active, .accordion:hover {
+    background-color: #ccc; 
+  }
+
+  .check-size{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-top: 0px;
+  }
+  
+  .panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+  }
+  /* Style the buttons */
+
+  #myBtnContainer{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    width: auto;
+  }
+
   .btn {
     border: none;
     outline: none;
     padding: 12px 16px;
     background-color: #f1f1f1;
     cursor: pointer;
-    border-radius: 10px;
+    height: 250px;
+    width: 200px;
+    border-radius: 30px;
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-top: 20px;
+  }
+
+  .btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(74, 11, 96, 0.73);
+    mix-blend-mode: multiply; 
+    border-radius: 30px;
+  } 
+  
+  .btn-text{
+    width: auto;
+    color: white;
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Ensure the text is above the overlay */
+    color: #ffffff; /* Set the text color */
+    font-size: 2em;
+    font-weight: bold;
+  }
+  .btn-all{
+    background-image: url(inverter.jpg);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    position: relative;
+  }
+
+  .btn-3kw{
+    background-image: url(inverter1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    position: relative;
+  }
+
+  .btn-5kw{
+    background-image: url(inverter3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    position: relative;
+  }
+
+  .btn-8kw{
+    background-image: url(inverter6.png);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    position: relative;
+  }
+
+  .btn-12kw{
+    background-image: url(inverter8.png);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    position: relative;
+  }
+
+  .btn-16kw{
+    background-image: url(inverter12.jpg);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    position: relative;
+
+  }
+
+  .btn-allBat{
+    background-image: url(inverter.jpg);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    position: relative;
+  }
+
+  .btn-3kwBat{
+    background-image: url(inverter1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    position: relative;
+  }
+
+  .btn-5kwBat{
+    background-image: url(inverter3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    position: relative;
+  }
+
+  .btn-8kwBat{
+    background-image: url(inverter6.png);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    position: relative;
+  }
+
+  .btn-10kwBat{
+    background-image: url(inverter6.png);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    position: relative;
+  }
+
+  .btn-12kwBat{
+    background-image: url(inverter8.png);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    position: relative;
+  }
+
+  .btn-15kwBat{
+    background-image: url(inverter6.png);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    position: relative;
+  }
+
+  .btn-16kwBat{
+    background-image: url(inverter12.jpg);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    position: relative;
+
+  }
+
+  .btn-20kwBat{
+    background-image: url(inverter12.jpg);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    position: relative;
+
   }
   
   .btn:hover {
@@ -101,71 +296,6 @@ body{
 
   .price{
     font-weight: bold;
-  }
-
-  .product-container {
-    width: auto;
-    height: 1400px;
-    background-color: #f1f1f1;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
-  }
-  
-  .slider {
-    width: auto;
-    height: 400px;
-    background-color: wheat;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
-  
-  .inverter-category {
-    width: 25%;
-    height: 300px;
-    background-color: blue;
-    border-radius: 20px;
-  }
-  
-  .inverter-products {
-    width: 70%;
-    height: 400px;
-    background-color: transparent;
-    transform: translateX(-100%);
-    animation: moveRightAnimation 0.5s linear forwards;
-    border: 2px solid black;
-    border-radius: 5px;
-  }
-
-  .inverter-container{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-evenly;
-    height: 100%;
-  }
-
-  .filter-inverter{
-    width: auto;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    background-color: white;
-    justify-content: space-between;
-  }
-  
-  @keyframes moveRightAnimation {
-    from {
-      transform: translateX(-100%);
-    }
-    to {
-      transform: translateX(0);
-    }
   }
   
   @media screen and (max-width:900px){

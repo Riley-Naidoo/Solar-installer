@@ -3,8 +3,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solar Installers | Inverters</title>
-    <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="inverter.css">
+    <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="nav.css">
 </head>
 <body>
@@ -25,172 +25,167 @@
   </nav>
   </header>
 
+  <section>
+    <div class="hero"></div>
+  </section>
+
     <main>
         <br><br>
         <h2>Filter Inverters</h2>
 
         <div id="myBtnContainer">
-          <button class="btn active" onclick="filterSelection('all')" data-filter-value="all"> Show all</button>
-          <button class="btn" onclick="filterSelection('3kw')" data-filter-value="3kw"> 3kw</button>
-          <button class="btn" onclick="filterSelection('5kw')" data-filter-value="5kw"> 5kw</button>
-          <button class="btn" onclick="filterSelection('8kw')" data-filter-value="8kw"> 8kw</button>
-          <button class="btn" onclick="filterSelection('12kw')" data-filter-value="12kw"> 12kw</button>
-          <button class="btn" onclick="filterSelection('16kw')" data-filter-value="16kw"> 16kw</button>
+          <button class="btn btn-all active" onclick="filterSelection('all')" data-filter-value="all"><p class="btn-text">Show all</p></button>
+          <button class="btn btn-3kw" onclick="filterSelection('3kw')" data-filter-value="3kw"><p class="btn-text">3kw</p></button>
+          <button class="btn btn-5kw" onclick="filterSelection('5kw')" data-filter-value="5kw"><p class="btn-text">5kw</p></button>
+          <button class="btn btn-8kw" onclick="filterSelection('8kw')" data-filter-value="8kw"><p class="btn-text">8kw</p></button>
+          <button class="btn btn-12kw" onclick="filterSelection('12kw')" data-filter-value="12kw"><p class="btn-text">12kw</p></button>
+          <button class="btn btn-16kw" onclick="filterSelection('16kw')" data-filter-value="16kw"><p class="btn-text">16kw</p></button>
         </div>
         
         
-
-<div class="container">
-  <div class="filterDiv 3kw show" onclick="inverter1()">
-    <img src="inverter1.jpg" alt="" class="img-inverter">
-    <p>3.5 Kw Growatt 48V Hybrid Inverter</p>
-    <a href="#">Growatt</a>
-    <p class="price">R 8,694.00</p>
-    <button id="product-button1" class="product-button" onclick="inverter1()">View</button>
+<p>Showing results for</p>
+<div class="product-container">
+  <div class="container-2">
+    <button class="accordion">Section 1</button>
+<div class="panel">
+  <div class="check-size">
+    <input type="checkbox" name="check-all" id="check-all">
+    <label for="check-all">All</label>
+  
+    <input type="checkbox" name="check-3" id="check-3">
+    <label for="check-3">3Kw</label>
+  
+    <input type="checkbox" name="check-5" id="check-5">
+    <label for="check-5">5KW</label>
+  
+    <input type="checkbox" name="check-8" id="check-8">
+    <label for="check-8">8KW</label>
+  
+    <input type="checkbox" name="check-12" id="check-12">
+    <label for="check-12">12KW</label>
+  
+    <input type="checkbox" name="check-16" id="check-16">
+    <label for="check-16">16KW</label>
+  
+    
+  
+  
   </div>
+</div>
 
-  <div class="filterDiv 5kw show">
-    <img src="inverter2.jpg" alt="" class="img-inverter">
-    <p>5 Kw Growatt 48V Hybrid Inverter</p>
-    <a href="#">Growatt</a>
-    <p class="price">R 12,399.00</p>
-    <button id="product-button2" class="product-button" onclick="inverter2()">View</button>
+<button class="accordion">Section 2</button>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<button class="accordion">Section 3</button>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
   </div>
-
-  <div class="filterDiv 5kw show">
-    <img src="inverter3.jpg" alt="" class="img-inverter">
-    <p>5.5 Kw Luxpower Hybrid Inverter</p>
-    <a href="#">Luxpower</a>
-    <p class="price">R 13,399.00</p>
-    <button id="product-button3" class="product-button" onclick="inverter3()">View</button>
-  </div>
-
-  <div class="filterDiv 5kw show">
-    <img src="inverter4.png" alt="" class="img-inverter">
-    <p>5 Kw Deye Hybrid Inverter</p>
-    <a href="#">Deye</a>
-    <p class="price">R 25,399.00</p>
-    <button id="product-button4" class="product-button" onclick="inverter4()">View</button>
-  </div>
-
-  <div class="filterDiv 5kw show">
-    <img src="inverter5.jpg" alt="" class="img-inverter">
-    <p>5 Kw Sunsynk Hybrid Inverter</p>
-    <a href="#">Sunsynk</a>
-    <p class="price">R 27,899.00</p>
-    <button id="product-button5" class="product-button" onclick="inverter5()">View</button>
-  </div>
-
-  <div class="filterDiv 8kw show">
-    <img src="inverter6.png" alt="" class="img-inverter">
-    <p>8 Kw Deye Hybrid Inverter</p>
-    <a href="#">Deye</a>
-    <p class="price">R 39,999.00</p>
-    <button id="product-button6" class="product-button" onclick="inverter6()">View</button>
-  </div>
-
-  <div class="filterDiv 8kw show">
-    <img src="inverter7.jpg" alt="" class="img-inverter">
-    <p>8 Kw Sunsynk Hybrid Inverter</p>
-    <a href="#">Sunsynk</a>
-    <p class="price">R 43,499.00</p>
-    <button id="product-button7" class="product-button" onclick="inverter7()">View</button>
-  </div>
-
-  <div class="filterDiv 12kw show">
-    <img src="inverter8.png" alt="" class="img-inverter">
-    <p>12 Kw Luxpower Hybrid Inverter</p>
-    <a href="#">Luxpower</a>
-    <p class="price">R 43,499.00</p>
-    <button id="product-button8" class="product-button" onclick="inverter8()">View</button>
-  </div>
-
-  <div class="filterDiv 12kw show">
-    <img src="inverter9.png" alt="" class="img-inverter">
-    <p>12 Kw 3 Phase Deye Hybrid Inverter</p>
-    <a href="#">Deye</a>
-    <p class="price">R 55,999.00</p>
-    <button id="product-button9" class="product-button" onclick="inverter9()">View</button>
-  </div>
-
-  <div class="filterDiv 12kw show">
-    <img src="inverter10.jpg" alt="" class="img-inverter">
-    <p>12 Kw 3 Phase Sunsynk Hybrid Inverter</p>
-    <a href="#">Sunsynk</a>
-    <p class="price">R 63,999.00</p>
-    <button id="product-button10" class="product-button" onclick="inverter10()">View</button>
-  </div>
-
-  <div class="filterDiv 16kw show">
-    <img src="inverter11.png" alt="" class="img-inverter">
-    <p>16 Kw Deye Hybrid Inverter</p>
-    <a href="#">Deye</a>
-    <p class="price">R 69,999.00</p>
-    <button id="product-button11" class="product-button" onclick="inverter11()">View</button>
-  </div>
-
-  <div class="filterDiv 16kw show">
-    <img src="inverter12.jpg" alt="" class="img-inverter">
-    <p>16 Kw Sunsynk Hybrid Inverter</p>
-    <a href="#">Sunsynk</a>
-    <p class="price">R 76,999.00</p>
-    <button id="product-button12" class="product-button" onclick="inverter12()">View</button>
-  </div>
-
-</div><br><br>
-<section>
-  <div class="product-container">
-    <div class="slider product-container-1">
-      <div class="inverter-category"></div>
-      <div class="inverter-products move-rights">
-        <div class="inverter-container">
-          <div class="filter-inverter 3kw show" onclick="inverter1()">
-            <img src="inverter1.jpg" alt="" class="img-inverter">
-            <p>3.5 Kw Growatt 48V Hybrid Inverter</p>
-            <a href="#">Growatt</a>
-            <p class="price">R 8,694.00</p>
-            <button id="product-button1" class="product-button" onclick="inverter1()">View</button>
-          </div>
-        
-          <div class="filter-inverter 5kw show">
-            <img src="inverter2.jpg" alt="" class="img-inverter">
-            <p>5 Kw Growatt 48V Hybrid Inverter</p>
-            <a href="#">Growatt</a>
-            <p class="price">R 12,399.00</p>
-            <button id="product-button2" class="product-button" onclick="inverter2()">View</button>
-          </div>
-        
-          <div class="filter-inverter 5kw show">
-            <img src="inverter3.jpg" alt="" class="img-inverter">
-            <p>5.5 Kw Luxpower Hybrid Inverter</p>
-            <a href="#">Luxpower</a>
-            <p class="price">R 13,399.00</p>
-            <button id="product-button3" class="product-button" onclick="inverter3()">View</button>
-          </div>
-        
-          <div class="filter-inverter 5kw show">
-            <img src="inverter4.png" alt="" class="img-inverter">
-            <p>5 Kw Deye Hybrid Inverter</p>
-            <a href="#">Deye</a>
-            <p class="price">R 25,399.00</p>
-            <button id="product-button4" class="product-button" onclick="inverter4()">View</button>
-          </div>
-        
-        </div>
-      </div>
+  <div class="container">
+    <div class="filterDiv 3kw show" onclick="inverter1()">
+      <img src="inverter1.jpg" alt="" class="img-inverter">
+      <p>3.5 Kw Growatt 48V Hybrid Inverter</p>
+      <a href="#">Growatt</a>
+      <p class="price">R 8,694.00</p>
+      <button id="product-button1" class="product-button" onclick="inverter1()">View</button>
     </div>
-
-
-    <div class="slider product-container-2">
-      <div class="inverter-category"></div>
-      <div class="inverter-products move-rights"></div>
+  
+    <div class="filterDiv 5kw show">
+      <img src="inverter2.jpg" alt="" class="img-inverter">
+      <p>5 Kw Growatt 48V Hybrid Inverter</p>
+      <a href="#">Growatt</a>
+      <p class="price">R 12,399.00</p>
+      <button id="product-button2" class="product-button" onclick="inverter2()">View</button>
     </div>
-    <div class="slider product-container-3">
-      <div class="inverter-category"></div>
-      <div class="inverter-products move-rights"></div>
+  
+    <div class="filterDiv 5kw show">
+      <img src="inverter3.jpg" alt="" class="img-inverter">
+      <p>5.5 Kw Luxpower Hybrid Inverter</p>
+      <a href="#">Luxpower</a>
+      <p class="price">R 13,399.00</p>
+      <button id="product-button3" class="product-button" onclick="inverter3()">View</button>
     </div>
+  
+    <div class="filterDiv 5kw show">
+      <img src="inverter4.png" alt="" class="img-inverter">
+      <p>5 Kw Deye Hybrid Inverter</p>
+      <a href="#">Deye</a>
+      <p class="price">R 25,399.00</p>
+      <button id="product-button4" class="product-button" onclick="inverter4()">View</button>
+    </div>
+  
+    <div class="filterDiv 5kw show">
+      <img src="inverter5.jpg" alt="" class="img-inverter">
+      <p>5 Kw Sunsynk Hybrid Inverter</p>
+      <a href="#">Sunsynk</a>
+      <p class="price">R 27,899.00</p>
+      <button id="product-button5" class="product-button" onclick="inverter5()">View</button>
+    </div>
+  
+    <div class="filterDiv 8kw show">
+      <img src="inverter6.png" alt="" class="img-inverter">
+      <p>8 Kw Deye Hybrid Inverter</p>
+      <a href="#">Deye</a>
+      <p class="price">R 39,999.00</p>
+      <button id="product-button6" class="product-button" onclick="inverter6()">View</button>
+    </div>
+  
+    <div class="filterDiv 8kw show">
+      <img src="inverter7.jpg" alt="" class="img-inverter">
+      <p>8 Kw Sunsynk Hybrid Inverter</p>
+      <a href="#">Sunsynk</a>
+      <p class="price">R 43,499.00</p>
+      <button id="product-button7" class="product-button" onclick="inverter7()">View</button>
+    </div>
+  
+    <div class="filterDiv 12kw show">
+      <img src="inverter8.png" alt="" class="img-inverter">
+      <p>12 Kw Luxpower Hybrid Inverter</p>
+      <a href="#">Luxpower</a>
+      <p class="price">R 43,499.00</p>
+      <button id="product-button8" class="product-button" onclick="inverter8()">View</button>
+    </div>
+  
+    <div class="filterDiv 12kw show">
+      <img src="inverter9.png" alt="" class="img-inverter">
+      <p>12 Kw 3 Phase Deye Hybrid Inverter</p>
+      <a href="#">Deye</a>
+      <p class="price">R 55,999.00</p>
+      <button id="product-button9" class="product-button" onclick="inverter9()">View</button>
+    </div>
+  
+    <div class="filterDiv 12kw show">
+      <img src="inverter10.jpg" alt="" class="img-inverter">
+      <p>12 Kw 3 Phase Sunsynk Hybrid Inverter</p>
+      <a href="#">Sunsynk</a>
+      <p class="price">R 63,999.00</p>
+      <button id="product-button10" class="product-button" onclick="inverter10()">View</button>
+    </div>
+  
+    <div class="filterDiv 16kw show">
+      <img src="inverter11.png" alt="" class="img-inverter">
+      <p>16 Kw Deye Hybrid Inverter</p>
+      <a href="#">Deye</a>
+      <p class="price">R 69,999.00</p>
+      <button id="product-button11" class="product-button" onclick="inverter11()">View</button>
+    </div>
+  
+    <div class="filterDiv 16kw show">
+      <img src="inverter12.jpg" alt="" class="img-inverter">
+      <p>16 Kw Sunsynk Hybrid Inverter</p>
+      <a href="#">Sunsynk</a>
+      <p class="price">R 76,999.00</p>
+      <button id="product-button12" class="product-button" onclick="inverter12()">View</button>
+    </div>
+  
   </div>
-</section><br><br>
+  
+
+
+</div>
+
 
 
     </main>
@@ -313,6 +308,23 @@ for (var i = 0; i < btns.length; i++) {
   });
 }
 </script>
+
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+  
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("acc.active");
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
+  </script>
 <script src="inverter.js"></script>
 
 

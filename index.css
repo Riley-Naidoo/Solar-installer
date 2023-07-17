@@ -314,6 +314,30 @@ body{
 .cta-image{
     filter:saturate(199%) ;
 }
+
+.testimonial-container::-webkit-scrollbar{
+    width: 1em;
+    height: 10px;
+  }
+
+  .testimonial-container::-webkit-scrollbar-track{
+    background: #f1f1f1;
+    border-radius: 100vw;
+    margin-block: .5em;
+
+  }
+
+  .testimonial-container::-webkit-scrollbar-thumb{
+    background: rgb(47, 2, 47);
+    border-radius: 100vw;
+    height: 10px;
+    border: 0.15em solid #f1f1f1;
+  }
+
+  .testimonial-container::-webkit-scrollbar-thumb:hover{
+    background: hsl(120, 100%, 10% /1);
+  }
+  
 @media screen and (max-width:900px){
 
 
@@ -400,8 +424,7 @@ body{
       .snaps-inline > * {
         scroll-snap-align: start;
         scroll-padding-inline: var(--spacer);
-      }    
-      
+      }   
       
       
 
