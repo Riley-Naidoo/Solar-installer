@@ -22,11 +22,11 @@ header{
 
 }
 .nav-contact{
-    background-color: rgb(238, 115, 0);
     border-radius: 5px;
-    height: 30px;
+    height: 25px;
     width: 80px;
     text-align: center;
+    background-color: orange;
 }
 
 .navbar a{
