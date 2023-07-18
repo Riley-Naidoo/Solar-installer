@@ -3,6 +3,7 @@
     padding: 0;
     text-decoration: none;
     list-style: none;
+    overflow-x: hidden;
 }
 
 body{
@@ -12,12 +13,13 @@ body{
 .hero{
   width: auto;
   height: 400px;
-  background-image: url(cta-img.jpg);
+  background-image: url(cta-image.png);
   position:static;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  overflow: hidden;
 }
 
 .filterDiv {
@@ -27,7 +29,7 @@ body{
     justify-content: center;
     background-color: #f1f1f1;
     color: black;
-    width: 300px;
+    width: 25%;
     height: 400px;
     text-align: center;
     margin: 2px;
@@ -54,7 +56,7 @@ body{
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
-    width: 70%;
+    width: 100%;
   }
   .container > * {
     flex: 0 0 300px;
@@ -76,60 +78,12 @@ body{
     justify-content: space-between;
   }
 
-  .accordion {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-    transition: 0.4s;
-  }
-  
-  .acc.active, .accordion:hover {
-    background-color: #ccc; 
-  }
 
-  .check-size{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding-top: 0px;
-  }
-
-  .btn-check{
-    width: 100%;
-    height: 40px;
-    margin-bottom: 10px;
-    background-color: rgba(73, 11, 96, 0.58);
-    border: none;
-    margin-top: 10px;
-    border-radius: 10px;
-    color: white;
-    font-size: 24px;
-  }
-
-  .btn-check:hover{
-    cursor: pointer;
-    
-
-  }
-  
-  .panel {
-    padding: 0 18px;
-    display: none;
-    background-color: white;
-    overflow: hidden;
-  }
-  /* Style the buttons */
+ 
 
   #myBtnContainer{
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
     align-items: center;
     height: auto;
     width: auto;
@@ -141,142 +95,21 @@ body{
     padding: 12px 16px;
     background-color: #f1f1f1;
     cursor: pointer;
-    height: 250px;
-    width: 200px;
+    height: 50px;
+    width: 100px;
     border-radius: 30px;
-    margin-right: 50px;
-    margin-left: 50px;
     margin-top: 20px;
+    color: white;
+    background-color: rgb(47, 2, 27);
   }
 
-  .btn::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(74, 11, 96, 0.73);
-    mix-blend-mode: multiply; 
-    border-radius: 30px;
-  } 
   
   .btn-text{
     width: auto;
     color: white;
     text-align: center;
-    position: relative;
-    z-index: 1; /* Ensure the text is above the overlay */
-    color: #ffffff; /* Set the text color */
-    font-size: 2em;
+    font-size: 1em;
     font-weight: bold;
-  }
-  .btn-all{
-    background-image: url(inverter.jpg);
-    background-size: cover;
-    background-repeat: no-repeat; 
-    position: relative;
-  }
-
-  .btn-3kw{
-    background-image: url(inverter1.jpg);
-    background-size: cover;
-    background-repeat: no-repeat; 
-    position: relative;
-  }
-
-  .btn-5kw{
-    background-image: url(inverter3.jpg);
-    background-size: cover;
-    background-repeat: no-repeat; 
-    position: relative;
-  }
-
-  .btn-8kw{
-    background-image: url(inverter6.png);
-    background-size: cover;
-    background-repeat: no-repeat; 
-    position: relative;
-  }
-
-  .btn-12kw{
-    background-image: url(inverter8.png);
-    background-size: cover;
-    background-repeat: no-repeat; 
-    position: relative;
-  }
-
-  .btn-16kw{
-    background-image: url(inverter12.jpg);
-    background-size: cover;
-    background-repeat: no-repeat; 
-    position: relative;
-
-  }
-
-  .btn-allBat{
-    background-image: url(inverter.jpg);
-    background-size: cover;
-    background-repeat: no-repeat; 
-    position: relative;
-  }
-
-  .btn-3kwBat{
-    background-image: url(inverter1.jpg);
-    background-size: cover;
-    background-repeat: no-repeat; 
-    position: relative;
-  }
-
-  .btn-5kwBat{
-    background-image: url(inverter3.jpg);
-    background-size: cover;
-    background-repeat: no-repeat; 
-    position: relative;
-  }
-
-  .btn-8kwBat{
-    background-image: url(inverter6.png);
-    background-size: cover;
-    background-repeat: no-repeat; 
-    position: relative;
-  }
-
-  .btn-10kwBat{
-    background-image: url(inverter6.png);
-    background-size: cover;
-    background-repeat: no-repeat; 
-    position: relative;
-  }
-
-  .btn-12kwBat{
-    background-image: url(inverter8.png);
-    background-size: cover;
-    background-repeat: no-repeat; 
-    position: relative;
-  }
-
-  .btn-15kwBat{
-    background-image: url(inverter6.png);
-    background-size: cover;
-    background-repeat: no-repeat; 
-    position: relative;
-  }
-
-  .btn-16kwBat{
-    background-image: url(inverter12.jpg);
-    background-size: cover;
-    background-repeat: no-repeat; 
-    position: relative;
-
-  }
-
-  .btn-20kwBat{
-    background-image: url(inverter12.jpg);
-    background-size: cover;
-    background-repeat: no-repeat; 
-    position: relative;
-
   }
   
   .btn:hover {
@@ -284,7 +117,7 @@ body{
   }
   
   .btn.active {
-    background-color: #666;
+    background-color: orange;
     color: white;
   }
 
@@ -317,14 +150,20 @@ body{
   }
   
   @media screen and (max-width:900px){
+
     .container{
+      width: 100%;
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
+      justify-content: center;
     }
 
     .filterDiv{
       transition: none;
       transform: none;
+      width: 100px;
+
     }
 
     .filterDiv:hover{
@@ -340,6 +179,11 @@ body{
     .product-button:hover{
       transition: none;
       transform: none;
+    }
+
+    .btn{
+      margin-right: 10px;
+      margin-left: 10px;
     }
 
   }

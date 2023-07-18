@@ -477,6 +477,8 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('price-13').innerHTML = formatPrice(handleBattery13Total);
     }
 
+
+
 function calculate() {
     var bill = parseFloat(document.getElementById('bill').value);
     if (!bill || isNaN(bill)) {
@@ -730,6 +732,50 @@ function calculate() {
     document.getElementById('solution-name').innerHTML ="Your " +inverter + " Solar Solution";
     // Add the rest of your quote updates
   }
+
+  function generatePDF() {
+    document.getElementById("downloadPdfBtn").addEventListener("click", () => {
+      // Get the panel area and total cost from the existing calculations
+      const panelArea = document.getElementById("panelArea").innerText;
+      const totalCost = document.getElementById("totalCost").innerText;
+
+      // Create a new jsPDF instance
+      const doc = new jsPDF();
+
+      // Add your branding to the PDF
+      const logo = new Image();
+      logo.src = "path_to_your_logo.png"; // Replace with the path to your logo image
+      const companyName = "Your Company Name"; // Replace with your company name
+
+      // Position and size of the logo and company name
+      const logoX = 20;
+      const logoY = 20;
+      const logoWidth = 40; // Adjust as needed
+      const logoHeight = 40; // Adjust as needed
+
+      const companyNameX = 80;
+      const companyNameY = 40;
+
+      doc.addImage(logo, "PNG", logoX, logoY, logoWidth, logoHeight);
+      doc.text(companyName, companyNameX, companyNameY);
+
+      // Add content to the PDF (quote format)
+      const quoteText = `Quote for Solar Panel Installation
+
+Thank you for considering our solar panel installation service. Based on our calculations, your property requires solar panels covering an area of ${panelArea} square meters. The total cost for the installation is $${totalCost}.`;
+
+      // Position of the quote text
+      const quoteX = 20;
+      const quoteY = 80;
+
+      doc.text(quoteText, quoteX, quoteY);
+
+      // Save the PDF with a specific name (e.g., "solar_panel_quote.pdf")
+      doc.save("solar_panel_quote.pdf");
+    });
+  }
+
+
   document.getElementById('inv1-button').addEventListener('click',handleinv1);
   document.getElementById('inv2-button').addEventListener('click',handleinv2);
   document.getElementById('inv3-button').addEventListener('click',handleinv3);
@@ -756,6 +802,7 @@ function calculate() {
   document.getElementById('bat11-button').addEventListener('click',handlebat11);
   document.getElementById('bat12-button').addEventListener('click',handlebat12);
   document.getElementById('bat13-button').addEventListener('click',handlebat13);
+
 
 
 

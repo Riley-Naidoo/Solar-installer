@@ -84,7 +84,7 @@ header{
 
     .navbar .menu-hamburger{
         display: block;
-        z-index: 10001;
+        z-index: 100001;    
     }
 
     .nav-links{
@@ -119,5 +119,13 @@ header{
         margin: 25px 0;
         font-size: 2em;
     }
+
+    .nav-contact{
+        width: 150px;
+        height: auto;
+
+    }
+
+
 
 }

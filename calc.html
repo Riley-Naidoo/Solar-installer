@@ -585,6 +585,26 @@
    
 </section>
 
+<div id="quoteContainer">
+  <!-- Your existing HTML content here -->
+  <h1>Quote for Solar Panel Installation</h1>
+  <p>
+    Thank you for considering our solar panel installation service. Based on our calculations,
+    your property requires solar panels covering an area of <span id="panelArea">[Panel Area]</span> square meters.
+    The total cost for the installation is $<span id="totalCost">[Total Cost]</span>.
+  </p>
+
+  <!-- Add your branding placeholders -->
+  <div id="branding">
+    <img src="logo.png" alt="Your Logo" id="logo">
+    <p id="companyName">X-Corp Solar Installers</p>
+  </div>
+
+  <!-- Add a button to trigger PDF generation -->
+  <button id="downloadPdfBtn">Download Quote PDF</button>
+</div>
+
+
 <footer class="footer">
 
   <div class="footer-container1">
@@ -667,4 +687,5 @@
 </script>
 
 <script src="calc.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 </html>
