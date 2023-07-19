@@ -81,39 +81,52 @@ let handle13Battery = 0; //Price of the battery
 
 let inv1 = "3.5 Kw Growatt 48V Hybrid Inverter"
 let inv1Price = 8694.00;
+let inv1Max = 10;
 
 let inv2 = "5 Kw Growatt 48V Hybrid Inverter";
 let inv2Price = 12399.00;
+let inv2Max = 10;
 
 let inv3 = "5.5 Kw Luxpower Hybrid Inverter";
 let inv3Price = 13999.00;
+let inv3Max = 18;
 
 let inv4 = "5 Kw Deye Hybrid Inverter";
 let inv4Price = 25999;
+let inv4Max = 14;
+
 
 let inv5 = "5 Kw Sunsynk Hybrid Inverter";
 let inv5Price = 27899;
+let inv5Max = 14;
 
 let inv6 = "8 Kw Deye Hybrid Inverter";
 let inv6Price = 39999;
+let inv6Max = 14;
 
 let inv7 = "8 Kw Sunsynk Hybrid Inverter";
 let inv7Price = 43499;
+let inv7Max = 18;
 
 let inv8 = "12 Kw Luxpower Hybrid Inverter";
 let inv8Price = 46900;
+let inv8Max = 21;
 
 let inv9 = "12 Kw 3 Phase Deye Hybrid Inverter";
 let inv9Price = 55999;
+let inv9Max = 28;
 
 let inv10 = "12 Kw 3 Phase Sunsynk Hybrid Inverter";
 let inv10Price = 63999;
+let inv10Max = 27;
 
 let inv11 = "16 Kw Deye Hybrid Inverter";
 let inv11Price = 69999;
+let inv11Max = 37;
 
 let inv12 = "16 Kw Sunsynk Hybrid Inverter"
 let inv12Price = 76999;
+let inv12Max = 32;
 
 let inverterPrice = 0;
 
@@ -157,23 +170,64 @@ let bat12Price = 107000;
 let bat13 = "20/16 Kwh Freedom One";
 let bat13Price = 142999;
 
+
+
+
 //function start
 
 //function end
 
 
 function increaseValue() {
+  let maxPanels = parseInt(document.getElementById('num-panels').innerHTML); // Ensure maxPanels is an integer
   var input = document.getElementById('btn-value');
   var currentValue = parseInt(input.value);
   input.value = currentValue + 1;
+  if (currentValue + 1 > maxPanels){
+    input.style.backgroundColor = 'red';
+    window.alert("You have exceeded the maximum number of panels for this inverter");
+  } else{
+    input.style.backgroundColor = 'white';
+  }
+
+  document.getElementById('config-7').innerHTML = currentValue + 1; // Update config-7 with the new value
+
+  let panelPrice = 3695;
+  let panelNum = document.getElementById('config-7').innerHTML;
+  let panelChangePrice = panelPrice * panelNum;
+  document.getElementById('price-1').innerHTML = formatPrice(panelChangePrice);
+  document.getElementById('price-13').innerHTML = formatPrice(Total - panelTotal + panelChangePrice);
+  document.getElementById('panel-cost').innerHTML = formatPrice(panelChangePrice)
+
+
 }
 
+
 function decreaseValue() {
+  let maxPanels = document.getElementById('num-panels').innerHTML
+
   var input = document.getElementById('btn-value');
   var currentValue = parseInt(input.value);
   if (currentValue > 0) {
     input.value = currentValue - 1;
+    if (currentValue-1 > maxPanels){
+      input.style.backgroundColor = 'red';
+      alert("You have exceeded the maximum number of panels for this inverter");
+    } else{
+      input.style.backgroundColor = 'white';
+
+    }
   }
+  document.getElementById('config-7').innerHTML = currentValue - 1; // Update config-7 with the new value
+
+  let panelPrice = 3695;
+  let panelNum = document.getElementById('config-7').innerHTML;
+  let panelChangePrice = panelPrice * panelNum;
+  document.getElementById('price-1').innerHTML = formatPrice(panelChangePrice);
+  document.getElementById('price-13').innerHTML = formatPrice(Total - panelTotal + panelChangePrice);
+  document.getElementById('panel-cost').innerHTML = formatPrice(panelChangePrice)
+
+
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -221,20 +275,58 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('config-9').innerHTML = inv1;
       document.getElementById('price-2').innerHTML = formatPrice(inv1Price);
       let inv1img = document.getElementById('product-image');
-      inv1img.src = "inverter1.jpg";
+      inv1img.src = "inverter1.png";
       inv1img.style.height = '300px';
       handle1Total = handle1Total - handle1Inverter + inv1Price
       document.getElementById('price-13').innerHTML = formatPrice(handle1Total);
+      document.getElementById('selected-inverter').innerHTML = inv1;
+      document.getElementById('inverter-price').innerHTML = formatPrice(inv1Price);
+      document.getElementById('num-panels').innerHTML = inv1Max;
+      document.getElementById('num-panels').innerHTML = inv1Max;
+      var overviewImage2 = document.getElementById('overview-image2');
+      overviewImage2.style.backgroundImage = "url('inverter1.png')";
+      overviewImage2.style.width = '300px';
+      overviewImage2.style.height = '300px';
+      overviewImage2.style.backgroundSize = 'contain';
+      document.getElementById('solution-name').innerHTML = "Your 3.5KW Growatt Solar Solution"
+      let inverter1Pdf = document.getElementsByClassName('inverter-pdf');
+
+      for (let i = 0; i < inverter1Pdf.length; i++) {
+        inverter1Pdf[i].onclick = function() {
+          // You can replace 'path/to/your/pdf.pdf' with the actual path to your PDF file
+          let pdfUrl = 'inverter-1.pdf';
+          window.open(pdfUrl, '_blank');
+        };
+      }
+
+
     }
 
     function handlebat1(){
       document.getElementById('config-11').innerHTML = bat1;
       document.getElementById('price-3').innerHTML = formatPrice(bat1Price);
       let bat1img = document.getElementById('product-image-battery');
-      bat1img.src = "battery1.jpg";
+      bat1img.src = "battery1.png";
       bat1img.style.height = '300px';
       handleBattery1Total = handleBattery1Total - handle1Battery + bat1Price
       document.getElementById('price-13').innerHTML = formatPrice(handleBattery1Total);
+      document.getElementById('selected-battery').innerHTML = bat1;
+      document.getElementById('battery-price').innerHTML = formatPrice(bat1Price);
+      var overviewImage3 = document.getElementById('overview-image3');
+      overviewImage3.style.backgroundImage = "url('battery1.png')";
+      overviewImage3.style.width = '300px';
+      overviewImage3.style.height = '300px';
+      overviewImage3.style.backgroundSize = 'contain';
+      let battery1Pdf = document.getElementsByClassName('battery-pdf');
+
+      for (let i = 0; i < battery1Pdf.length; i++) {
+        battery1Pdf[i].onclick = function() {
+          // You can replace 'path/to/your/pdf.pdf' with the actual path to your PDF file
+          let pdfUrl = 'battery-1.pdf';
+          window.open(pdfUrl, '_blank');
+        };
+      }
+
     }
     
   
@@ -242,30 +334,83 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('config-9').innerHTML = inv2;
       document.getElementById('price-2').innerHTML = formatPrice(inv2Price);
       let inv2img = document.getElementById('product-image');
-      inv2img.src= "inverter2.jpg";
+      inv2img.src= "inverter2.png";
       inv2img.style.height = '300px';
       handle2Total = handle2Total - handle2Inverter + inv2Price
       document.getElementById('price-13').innerHTML = formatPrice(handle2Total);
+      document.getElementById('selected-inverter').innerHTML = inv2;
+      document.getElementById('inverter-price').innerHTML = formatPrice(inv2Price);
+      document.getElementById('num-panels').innerHTML = inv2Max;
+      var overviewImage2 = document.getElementById('overview-image2');
+      overviewImage2.style.backgroundImage = "url('inverter2.png')";
+      overviewImage2.style.width = '300px';
+      overviewImage2.style.height = '300px';
+      overviewImage2.style.backgroundSize = 'contain';
+      document.getElementById('solution-name').innerHTML = "Your 5KW Growatt Solar Solution";
+      let inverter2Pdf = document.getElementsByClassName('inverter-pdf');
+
+      for (let i = 0; i < inverter2Pdf.length; i++) {
+        inverter2Pdf[i].onclick = function() {
+          // You can replace 'path/to/your/pdf.pdf' with the actual path to your PDF file
+          let pdfUrl = 'inverter-2.pdf';
+          window.open(pdfUrl, '_blank');
+        };
+      }
+
     }
 
     function handlebat2(){
       document.getElementById('config-11').innerHTML = bat2;
       document.getElementById('price-3').innerHTML = formatPrice(bat2Price);
       let bat2img = document.getElementById('product-image-battery');
-      bat2img.src = "battery2.jpg";
+      bat2img.src = "battery2.png";
       bat2img.style.height = '300px';
       handleBattery2Total = handleBattery2Total - handle2Battery + bat2Price
       document.getElementById('price-13').innerHTML = formatPrice(handleBattery2Total);
+      document.getElementById('selected-battery').innerHTML = bat2;
+      document.getElementById('battery-price').innerHTML = formatPrice(bat2Price);
+      var overviewImage3 = document.getElementById('overview-image2');
+      overviewImage3.style.backgroundImage = "url('battery4.png')";
+      overviewImage3.style.width = '300px';
+      overviewImage3.style.height = '300px';
+      overviewImage3.style.backgroundSize = 'contain';
+      let battery2Pdf = document.getElementsByClassName('battery-pdf');
+
+      for (let i = 0; i < battery2Pdf.length; i++) {
+        battery2Pdf[i].onclick = function() {
+          // You can replace 'path/to/your/pdf.pdf' with the actual path to your PDF file
+          let pdfUrl = 'battery-2.pdf';
+          window.open(pdfUrl, '_blank');
+        };
+      }
     }
     
     function handleinv3(){
       document.getElementById('config-9').innerHTML = inv3;
       document.getElementById('price-2').innerHTML = formatPrice(inv3Price);
       let inv3img = document.getElementById('product-image');
-      inv3img.src= "inverter3.jpg";
+      inv3img.src= "inverter3.png";
       inv3img.style.height = '300px';
       handle3Total = handle3Total - handle3Inverter + inv3Price
       document.getElementById('price-13').innerHTML = formatPrice(handle3Total);
+      document.getElementById('selected-inverter').innerHTML = inv3;
+      document.getElementById('inverter-price').innerHTML = formatPrice(inv3Price);
+      document.getElementById('num-panels').innerHTML = inv3Max;
+      var overviewImage2 = document.getElementById('overview-image2');
+      overviewImage2.style.backgroundImage = "url('inverter3.png')";
+      overviewImage2.style.width = '300px';
+      overviewImage2.style.height = '300px';
+      overviewImage2.style.backgroundSize = 'contain';
+      document.getElementById('solution-name').innerHTML = "Your 5.5KW Luxpower Solar Solution";
+      let inverter3Pdf = document.getElementsByClassName('inverter-pdf');
+
+      for (let i = 0; i < inverter3Pdf.length; i++) {
+        inverter3Pdf[i].onclick = function() {
+          // You can replace 'path/to/your/pdf.pdf' with the actual path to your PDF file
+          let pdfUrl = 'inverter-3.pdf';
+          window.open(pdfUrl, '_blank');
+        };
+      }
     }
 
     
@@ -273,10 +418,26 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('config-11').innerHTML = bat3;
       document.getElementById('price-3').innerHTML = formatPrice(bat3Price);
       let bat3img = document.getElementById('product-image-battery');
-      bat3img.src = "battery3.jpg";
+      bat3img.src = "battery3.png";
       bat3img.style.height = '300px';
       handleBattery3Total = handleBattery3Total - handle3Battery + bat3Price
       document.getElementById('price-13').innerHTML = formatPrice(handleBattery3Total);
+      document.getElementById('selected-battery').innerHTML = bat3;
+      document.getElementById('battery-price').innerHTML = formatPrice(bat3Price);
+      var overviewImage3 = document.getElementById('overview-image3');
+      overviewImage3.style.backgroundImage = "url('battery3.png')";
+      overviewImage3.style.width = '300px';
+      overviewImage3.style.height = '300px';
+      overviewImage3.style.backgroundSize = 'contain';
+      let battery3Pdf = document.getElementsByClassName('battery-pdf');
+
+      for (let i = 0; i < battery3Pdf.length; i++) {
+        battery3Pdf[i].onclick = function() {
+          // You can replace 'path/to/your/pdf.pdf' with the actual path to your PDF file
+          let pdfUrl = 'battery-3.pdf';
+          window.open(pdfUrl, '_blank');
+        };
+      }
     }
     
     function handleinv4(){
@@ -287,6 +448,25 @@ document.addEventListener('DOMContentLoaded', function() {
       inv4img.style.height = '300px';
       handle4Total = handle4Total - handle4Inverter + inv4Price
       document.getElementById('price-13').innerHTML = formatPrice(handle4Total);
+      document.getElementById('selected-inverter').innerHTML = inv4;
+      document.getElementById('inverter-price').innerHTML = formatPrice(inv4Price);
+      document.getElementById('num-panels').innerHTML = inv4Max;
+      var overviewImage2 = document.getElementById('overview-image2');
+      overviewImage2.style.backgroundImage = "url('inverter4.png')";
+      overviewImage2.style.width = '300px';
+      overviewImage2.style.height = '300px';
+      overviewImage2.style.backgroundSize = 'contain';
+      document.getElementById('solution-name').innerHTML = "Your 5KW Deye Solar Solution";
+      let inverter4Pdf = document.getElementsByClassName('inverter-pdf');
+
+      for (let i = 0; i < inverter4Pdf.length; i++) {
+        inverter4Pdf[i].onclick = function() {
+          // You can replace 'path/to/your/pdf.pdf' with the actual path to your PDF file
+          let pdfUrl = 'inverter-4.pdf';
+          window.open(pdfUrl, '_blank');
+        };
+      }
+
     }
 
     
@@ -298,16 +478,51 @@ document.addEventListener('DOMContentLoaded', function() {
       bat4img.style.height = '300px';
       handleBattery4Total = handleBattery4Total - handle4Battery + bat4Price
       document.getElementById('price-13').innerHTML = formatPrice(handleBattery4Total);
+      document.getElementById('selected-battery').innerHTML = bat4;
+      document.getElementById('battery-price').innerHTML = formatPrice(bat4Price);
+      var overviewImage3 = document.getElementById('overview-image3');
+      overviewImage3.style.backgroundImage = "url('battery4.png')";
+      overviewImage3.style.width = '300px';
+      overviewImage3.style.height = '300px';
+      overviewImage3.style.backgroundSize = 'contain';
+      let battery4Pdf = document.getElementsByClassName('battery-pdf');
+
+      for (let i = 0; i < battery4Pdf.length; i++) {
+        battery4Pdf[i].onclick = function() {
+          // You can replace 'path/to/your/pdf.pdf' with the actual path to your PDF file
+          let pdfUrl = 'battery-4.pdf';
+          window.open(pdfUrl, '_blank');
+        };
+      }
     }
     
     function handleinv5(){
       document.getElementById('config-9').innerHTML = inv5;
       document.getElementById('price-2').innerHTML = formatPrice(inv5Price);
       let inv5img = document.getElementById('product-image');
-      inv5img.src= "inverter5.jpg";
+      inv5img.src= "inverter5.png";
       inv5img.style.height = '300px';
       handle5Total = handle5Total - handle5Inverter + inv5Price
       document.getElementById('price-13').innerHTML = formatPrice(handle5Total);
+      document.getElementById('selected-inverter').innerHTML = inv5;
+      document.getElementById('inverter-price').innerHTML = formatPrice(inv5Price);
+      document.getElementById('num-panels').innerHTML = inv5Max;
+      var overviewImage2 = document.getElementById('overview-image2');
+      overviewImage2.style.backgroundImage = "url('inverter5.png')";
+      overviewImage2.style.width = '300px';
+      overviewImage2.style.height = '300px';
+      overviewImage2.style.backgroundSize = 'contain';
+      document.getElementById('solution-name').innerHTML = "Your 5KW Sunsynk Solar Solution";
+      let inverter5Pdf = document.getElementsByClassName('inverter-pdf');
+
+      for (let i = 0; i < inverter5Pdf.length; i++) {
+        inverter5Pdf[i].onclick = function() {
+          // You can replace 'path/to/your/pdf.pdf' with the actual path to your PDF file
+          let pdfUrl = 'inverter-5.pdf';
+          window.open(pdfUrl, '_blank');
+        };
+      }
+
     }
 
     
@@ -315,10 +530,26 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('config-11').innerHTML = bat5;
       document.getElementById('price-3').innerHTML = formatPrice(bat5Price);
       let bat5img = document.getElementById('product-image-battery');
-      bat5img.src = "battery5.jpg";
+      bat5img.src = "battery5.png";
       bat5img.style.height = '300px';
       handleBattery5Total = handleBattery5Total - handle5Battery + bat5Price
       document.getElementById('price-13').innerHTML = formatPrice(handleBattery5Total);
+      document.getElementById('selected-battery').innerHTML = bat5;
+      document.getElementById('battery-price').innerHTML = formatPrice(bat5Price);
+      var overviewImage3 = document.getElementById('overview-image3');
+      overviewImage3.style.backgroundImage = "url('battery5.png')";
+      overviewImage3.style.width = '300px';
+      overviewImage3.style.height = '300px';
+      overviewImage3.style.backgroundSize = 'contain';
+      let battery5Pdf = document.getElementsByClassName('battery-pdf');
+
+      for (let i = 0; i < battery5Pdf.length; i++) {
+        battery5Pdf[i].onclick = function() {
+          // You can replace 'path/to/your/pdf.pdf' with the actual path to your PDF file
+          let pdfUrl = 'battery-5.pdf';
+          window.open(pdfUrl, '_blank');
+        };
+      }
     }
     
     function handleinv6(){
@@ -329,6 +560,26 @@ document.addEventListener('DOMContentLoaded', function() {
       inv6img.style.height = '300px';
       handle6Total = handle6Total - handle6Inverter + inv6Price
       document.getElementById('price-13').innerHTML = formatPrice(handle6Total);
+      document.getElementById('selected-inverter').innerHTML = inv6;
+      document.getElementById('inverter-price').innerHTML = formatPrice(inv6Price);
+      document.getElementById('num-panels').innerHTML = inv6Max;
+      var overviewImage2 = document.getElementById('overview-image2');
+      overviewImage2.style.backgroundImage = "url('inverter6.png')";
+      overviewImage2.style.width = '300px';
+      overviewImage2.style.height = '300px';
+      overviewImage2.style.backgroundSize = 'contain';
+      document.getElementById('solution-name').innerHTML = "Your 8KW Deye Solar Solution";
+      let inverter6Pdf = document.getElementsByClassName('inverter-pdf');
+
+      for (let i = 0; i < inverter6Pdf.length; i++) {
+        inverter6Pdf[i].onclick = function() {
+          // You can replace 'path/to/your/pdf.pdf' with the actual path to your PDF file
+          let pdfUrl = 'inverter-6.pdf';
+          window.open(pdfUrl, '_blank');
+        };
+      }
+
+
     }
     
     function handlebat6(){
@@ -339,16 +590,52 @@ document.addEventListener('DOMContentLoaded', function() {
       bat6img.style.height = '300px';
       handleBattery6Total = handleBattery6Total - handle6Battery + bat6Price
       document.getElementById('price-13').innerHTML = formatPrice(handleBattery6Total);
+      document.getElementById('selected-battery').innerHTML = bat6;
+      document.getElementById('battery-price').innerHTML = formatPrice(bat6Price);
+      var overviewImage3 = document.getElementById('overview-image3');
+      overviewImage3.style.backgroundImage = "url('battery6.png')";
+      overviewImage3.style.width = '300px';
+      overviewImage3.style.height = '300px';
+      overviewImage3.style.backgroundSize = 'contain';
+      let battery6Pdf = document.getElementsByClassName('battery-pdf');
+
+      for (let i = 0; i < battery6Pdf.length; i++) {
+        battery6Pdf[i].onclick = function() {
+          // You can replace 'path/to/your/pdf.pdf' with the actual path to your PDF file
+          let pdfUrl = 'battery-6.pdf';
+          window.open(pdfUrl, '_blank');
+        };
+      }
     }
     
     function handleinv7(){
       document.getElementById('config-9').innerHTML = inv7;
       document.getElementById('price-2').innerHTML = formatPrice(inv7Price);
       let inv7img = document.getElementById('product-image');
-      inv7img.src= "inverter7.jpg";
+      inv7img.src= "inverter7.png";
       inv7img.style.height = '300px';
       handle7Total = handle7Total - handle7Inverter + inv7Price
       document.getElementById('price-13').innerHTML = formatPrice(handle7Total);
+      document.getElementById('selected-inverter').innerHTML = inv7;
+      document.getElementById('inverter-price').innerHTML = formatPrice(inv7Price);
+      document.getElementById('num-panels').innerHTML = inv7Max;
+      var overviewImage2 = document.getElementById('overview-image2');
+      overviewImage2.style.backgroundImage = "url('inverter7.png')";
+      overviewImage2.style.width = '300px';
+      overviewImage2.style.height = '300px';
+      overviewImage2.style.backgroundSize = 'contain';
+      document.getElementById('solution-name').innerHTML = "Your 8KW Sunsynk Solar Solution";
+      let inverter7Pdf = document.getElementsByClassName('inverter-pdf');
+
+      for (let i = 0; i < inverter7Pdf.length; i++) {
+        inverter7Pdf[i].onclick = function() {
+          // You can replace 'path/to/your/pdf.pdf' with the actual path to your PDF file
+          let pdfUrl = 'inverter-7.pdf';
+          window.open(pdfUrl, '_blank');
+        };
+      }
+
+
     }
 
     
@@ -360,6 +647,22 @@ document.addEventListener('DOMContentLoaded', function() {
       bat7img.style.height = '300px';
       handleBattery7Total = handleBattery7Total - handle7Battery + bat7Price
       document.getElementById('price-13').innerHTML = formatPrice(handleBattery7Total);
+      document.getElementById('selected-battery').innerHTML = bat7;
+      document.getElementById('battery-price').innerHTML = formatPrice(bat7Price);
+      var overviewImage3 = document.getElementById('overview-image3');
+      overviewImage3.style.backgroundImage = "url('battery7.png')";
+      overviewImage3.style.width = '300px';
+      overviewImage3.style.height = '300px';
+      overviewImage3.style.backgroundSize = 'contain';
+      let battery7Pdf = document.getElementsByClassName('battery-pdf');
+
+      for (let i = 0; i < battery7Pdf.length; i++) {
+        battery7Pdf[i].onclick = function() {
+          // You can replace 'path/to/your/pdf.pdf' with the actual path to your PDF file
+          let pdfUrl = 'battery-7.pdf';
+          window.open(pdfUrl, '_blank');
+        };
+      }
     }
     
     function handleinv8(){
@@ -370,6 +673,26 @@ document.addEventListener('DOMContentLoaded', function() {
       inv8img.style.height = '300px';
       handle8Total = handle8Total - handle8Inverter + inv8Price
       document.getElementById('price-13').innerHTML = formatPrice(handle8Total);
+      document.getElementById('selected-inverter').innerHTML = inv8;
+      document.getElementById('inverter-price').innerHTML = formatPrice(inv8Price);
+      document.getElementById('num-panels').innerHTML = inv8Max;
+      var overviewImage2 = document.getElementById('overview-image2');
+      overviewImage2.style.backgroundImage = "url('inverter8.png')";
+      overviewImage2.style.width = '300px';
+      overviewImage2.style.height = '300px';
+      overviewImage2.style.backgroundSize = 'contain';
+      document.getElementById('solution-name').innerHTML = "Your 12KW Luxpower Solar Solution";
+      let inverter8Pdf = document.getElementsByClassName('inverter-pdf');
+
+      for (let i = 0; i < inverter8Pdf.length; i++) {
+        inverter8Pdf[i].onclick = function() {
+          // You can replace 'path/to/your/pdf.pdf' with the actual path to your PDF file
+          let pdfUrl = 'inverter-8.pdf';
+          window.open(pdfUrl, '_blank');
+        };
+      }
+
+
     }
 
     
@@ -377,10 +700,26 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('config-11').innerHTML = bat8;
       document.getElementById('price-3').innerHTML = formatPrice(bat8Price);
       let bat8img = document.getElementById('product-image-battery');
-      bat8img.src = "battery8.jpg";
+      bat8img.src = "battery8.png";
       bat8img.style.height = '300px';
       handleBattery8Total = handleBattery8Total - handle8Battery + bat8Price
       document.getElementById('price-13').innerHTML = formatPrice(handleBattery8Total);
+      document.getElementById('selected-battery').innerHTML = bat8;
+      document.getElementById('battery-price').innerHTML = formatPrice(bat8Price);
+      var overviewImage3 = document.getElementById('overview-image3');
+      overviewImage3.style.backgroundImage = "url('battery8.png')";
+      overviewImage3.style.width = '300px';
+      overviewImage3.style.height = '300px';
+      overviewImage3.style.backgroundSize = 'contain';
+      let battery8Pdf = document.getElementsByClassName('battery-pdf');
+
+      for (let i = 0; i < battery8Pdf.length; i++) {
+        battery8Pdf[i].onclick = function() {
+          // You can replace 'path/to/your/pdf.pdf' with the actual path to your PDF file
+          let pdfUrl = 'battery-8.pdf';
+          window.open(pdfUrl, '_blank');
+        };
+      }
     }
     
     function handleinv9(){
@@ -391,6 +730,26 @@ document.addEventListener('DOMContentLoaded', function() {
       inv9img.style.height = '300px';
       handle9Total = handle9Total - handle9Inverter + inv9Price
       document.getElementById('price-13').innerHTML = formatPrice(handle9Total);
+      document.getElementById('selected-inverter').innerHTML = inv9;
+      document.getElementById('inverter-price').innerHTML = formatPrice(inv9Price);
+      document.getElementById('num-panels').innerHTML = inv9Max;
+      var overviewImage2 = document.getElementById('overview-image2');
+      overviewImage2.style.backgroundImage = "url('inverter9.png')";
+      overviewImage2.style.width = '300px';
+      overviewImage2.style.height = '300px';
+      overviewImage2.style.backgroundSize = 'contain';
+      document.getElementById('solution-name').innerHTML = "Your 5KW Deye Solar Solution";
+      let inverter9Pdf = document.getElementsByClassName('inverter-pdf');
+
+      for (let i = 0; i < inverter9Pdf.length; i++) {
+        inverter9Pdf[i].onclick = function() {
+          // You can replace 'path/to/your/pdf.pdf' with the actual path to your PDF file
+          let pdfUrl = 'inverter-9.pdf';
+          window.open(pdfUrl, '_blank');
+        };
+      }
+
+
     }
 
     
@@ -398,20 +757,56 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('config-11').innerHTML = bat9;
       document.getElementById('price-3').innerHTML = formatPrice(bat9Price);
       let bat9img = document.getElementById('product-image-battery');
-      bat9img.src = "battery9.jpg";
+      bat9img.src = "battery9.png";
       bat9img.style.height = '300px';
       handleBattery9Total = handleBattery9Total - handle9Battery + bat9Price
       document.getElementById('price-13').innerHTML = formatPrice(handleBattery9Total);
+      document.getElementById('selected-battery').innerHTML = bat9;
+      document.getElementById('battery-price').innerHTML = formatPrice(bat9Price);
+      var overviewImage3 = document.getElementById('overview-image3');
+      overviewImage3.style.backgroundImage = "url('battery9.png')";
+      overviewImage3.style.width = '300px';
+      overviewImage3.style.height = '300px';
+      overviewImage3.style.backgroundSize = 'contain';
+      let battery9Pdf = document.getElementsByClassName('battery-pdf');
+
+      for (let i = 0; i < battery9Pdf.length; i++) {
+        battery9Pdf[i].onclick = function() {
+          // You can replace 'path/to/your/pdf.pdf' with the actual path to your PDF file
+          let pdfUrl = 'battery-9.pdf';
+          window.open(pdfUrl, '_blank');
+        };
+      }
     }
     
     function handleinv10(){
       document.getElementById('config-9').innerHTML = inv10;
       document.getElementById('price-2').innerHTML = formatPrice(inv10Price);
       let inv10img = document.getElementById('product-image');
-      inv10img.src= "inverter10.jpg";
+      inv10img.src= "inverter10.png";
       inv10img.style.height = '300px';
       handle10Total = handle10Total - handle10Inverter + inv10Price
       document.getElementById('price-13').innerHTML = formatPrice(handle10Total);
+      document.getElementById('selected-inverter').innerHTML = inv10;
+      document.getElementById('inverter-price').innerHTML = formatPrice(inv10Price);
+      document.getElementById('num-panels').innerHTML = inv10Max;
+      var overviewImage2 = document.getElementById('overview-image2');
+      overviewImage2.style.backgroundImage = "url('inverter10.png')";
+      overviewImage2.style.width = '300px';
+      overviewImage2.style.height = '300px';
+      overviewImage2.style.backgroundSize = 'contain';
+      document.getElementById('solution-name').innerHTML = "Your 12KW Sunsynk Solar Solution";
+      let inverter10Pdf = document.getElementsByClassName('inverter-pdf');
+
+      for (let i = 0; i < inverter10Pdf.length; i++) {
+        inverter10Pdf[i].onclick = function() {
+          // You can replace 'path/to/your/pdf.pdf' with the actual path to your PDF file
+          let pdfUrl = 'inverter-10.pdf';
+          window.open(pdfUrl, '_blank');
+        };
+      }
+
+
     }
 
     
@@ -419,10 +814,26 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('config-11').innerHTML = bat10;
       document.getElementById('price-3').innerHTML = formatPrice(bat10Price);
       let bat10img = document.getElementById('product-image-battery');
-      bat10img.src = "battery10.jpeg";
+      bat10img.src = "battery10.png";
       bat10img.style.height = '300px';
       handleBattery10Total = handleBattery10Total - handle10Battery + bat10Price
       document.getElementById('price-13').innerHTML = formatPrice(handleBattery10Total);
+      document.getElementById('selected-battery').innerHTML = bat10;
+      document.getElementById('battery-price').innerHTML = formatPrice(bat10Price);
+      var overviewImage3 = document.getElementById('overview-image3');
+      overviewImage3.style.backgroundImage = "url('battery10.png')";
+      overviewImage3.style.width = '300px';
+      overviewImage3.style.height = '300px';
+      overviewImage3.style.backgroundSize = 'contain';
+      let battery10Pdf = document.getElementsByClassName('battery-pdf');
+
+      for (let i = 0; i < battery10Pdf.length; i++) {
+        battery10Pdf[i].onclick = function() {
+          // You can replace 'path/to/your/pdf.pdf' with the actual path to your PDF file
+          let pdfUrl = 'battery-10.pdf';
+          window.open(pdfUrl, '_blank');
+        };
+      }
     }
     
     function handleinv11(){
@@ -433,6 +844,26 @@ document.addEventListener('DOMContentLoaded', function() {
       inv11img.style.height = '300px';
       handle11Total = handle11Total - handle11Inverter + inv11Price
       document.getElementById('price-13').innerHTML = formatPrice(handle11Total);
+      document.getElementById('selected-inverter').innerHTML = inv11;
+      document.getElementById('inverter-price').innerHTML = formatPrice(inv11Price);
+      document.getElementById('num-panels').innerHTML = inv11Max;
+      var overviewImage2 = document.getElementById('overview-image2');
+      overviewImage2.style.backgroundImage = "url('inverter11.png')";
+      overviewImage2.style.width = '300px';
+      overviewImage2.style.height = '300px';
+      overviewImage2.style.backgroundSize = 'contain';
+      document.getElementById('solution-name').innerHTML = "Your 16KW Deye Solar Solution";
+      let inverter11Pdf = document.getElementsByClassName('inverter-pdf');
+
+      for (let i = 0; i < inverter11Pdf.length; i++) {
+        inverter11Pdf[i].onclick = function() {
+          // You can replace 'path/to/your/pdf.pdf' with the actual path to your PDF file
+          let pdfUrl = 'inverter-11.pdf';
+          window.open(pdfUrl, '_blank');
+        };
+      }
+
+
     }
 
     
@@ -440,30 +871,81 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('config-11').innerHTML = bat11;
       document.getElementById('price-3').innerHTML = formatPrice(bat11Price);
       let bat11img = document.getElementById('product-image-battery');
-      bat11img.src = "battery11.jpg";
+      bat11img.src = "battery11.png";
       bat11img.style.height = '300px';
       handleBattery11Total = handleBattery11Total - handle11Battery + bat11Price
       document.getElementById('price-13').innerHTML = formatPrice(handleBattery11Total);
+      document.getElementById('selected-battery').innerHTML = bat11;
+      document.getElementById('battery-price').innerHTML = formatPrice(bat11Price);
+      var overviewImage3 = document.getElementById('overview-image3');
+      overviewImage3.style.backgroundImage = "url('battery11.png')";
+      overviewImage3.style.width = '300px';
+      overviewImage3.style.height = '300px';
+      overviewImage3.style.backgroundSize = 'contain';
+      let battery11Pdf = document.getElementsByClassName('battery-pdf');
+
+      for (let i = 0; i < battery11Pdf.length; i++) {
+        battery11Pdf[i].onclick = function() {
+          // You can replace 'path/to/your/pdf.pdf' with the actual path to your PDF file
+          let pdfUrl = 'battery-11.pdf';
+          window.open(pdfUrl, '_blank');
+        };
+      }
     }
     
     function handleinv12(){
       document.getElementById('config-9').innerHTML = inv12;
       document.getElementById('price-2').innerHTML = formatPrice(inv12Price);
       let inv12img = document.getElementById('product-image');
-      inv12img.src= "inverter12.jpg";
+      inv12img.src= "inverter12.png";
       inv12img.style.height = '300px';
       handle12Total = handle12Total - handle12Inverter + inv12Price
       document.getElementById('price-13').innerHTML = formatPrice(handle12Total);
+      document.getElementById('selected-inverter').innerHTML = inv12;
+      document.getElementById('inverter-price').innerHTML = formatPrice(inv12Price);
+      document.getElementById('num-panels').innerHTML = inv2Max;
+      var overviewImage2 = document.getElementById('overview-image2');
+      overviewImage2.style.backgroundImage = "url('inverter12.png')";
+      overviewImage2.style.width = '300px';
+      overviewImage2.style.height = '300px';
+      overviewImage2.style.backgroundSize = 'contain';
+      document.getElementById('solution-name').innerHTML = "Your 16KW Sunsynk Solar Solution";
+      let inverter12Pdf = document.getElementsByClassName('inverter-pdf');
+
+      for (let i = 0; i < inverter12Pdf.length; i++) {
+        inverter12Pdf[i].onclick = function() {
+          // You can replace 'path/to/your/pdf.pdf' with the actual path to your PDF file
+          let pdfUrl = 'inverter-12.pdf';
+          window.open(pdfUrl, '_blank');
+        };
+      }
+
     }
     
     function handlebat12(){
       document.getElementById('config-11').innerHTML = bat12;
       document.getElementById('price-3').innerHTML = formatPrice(bat12Price);
       let bat12img = document.getElementById('product-image-battery');
-      bat12img.src = "battery12.jpg";
+      bat12img.src = "battery12.png";
       bat12img.style.height = '300px';
       handleBattery2Total = handleBattery12Total - handle12Battery + bat12Price
       document.getElementById('price-13').innerHTML = formatPrice(handleBattery12Total);
+      document.getElementById('selected-battery').innerHTML = bat12;
+      document.getElementById('battery-price').innerHTML = formatPrice(bat12Price);
+      var overviewImage3 = document.getElementById('overview-image3');
+      overviewImage3.style.backgroundImage = "url('battery12.png')";
+      overviewImage3.style.width = '300px';
+      overviewImage3.style.height = '300px';
+      overviewImage3.style.backgroundSize = 'contain';
+      let battery12Pdf = document.getElementsByClassName('battery-pdf');
+
+      for (let i = 0; i < battery12Pdf.length; i++) {
+        battery12Pdf[i].onclick = function() {
+          // You can replace 'path/to/your/pdf.pdf' with the actual path to your PDF file
+          let pdfUrl = 'battery-12.pdf';
+          window.open(pdfUrl, '_blank');
+        };
+      }
     }
 
     
@@ -471,10 +953,29 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('config-11').innerHTML = bat13;
       document.getElementById('price-3').innerHTML = formatPrice(bat13Price);
       let bat13img = document.getElementById('product-image-battery');
-      bat13img.src = "battery13.jpg";
+      bat13img.src = "battery13.png";
       bat13img.style.height = '300px';
       handleBattery13Total = handleBattery13Total - handle13Battery + bat13Price
       document.getElementById('price-13').innerHTML = formatPrice(handleBattery13Total);
+      document.getElementById('selected-battery').innerHTML = bat13;
+      document.getElementById('battery-price').innerHTML = formatPrice(bat13Price);
+      var overviewImage3 = document.getElementById('overview-image3');
+      overviewImage3.style.backgroundImage = "url('battery13.png')";
+      overviewImage3.style.width = '300px';
+      overviewImage3.style.height = '300px';
+      overviewImage3.style.backgroundSize = 'contain';
+      let battery13Pdf = document.getElementsByClassName('battery-pdf');
+
+      for (let i = 0; i < battery13Pdf.length; i++) {
+        battery13Pdf[i].onclick = function() {
+          // You can replace 'path/to/your/pdf.pdf' with the actual path to your PDF file
+          let pdfUrl = 'battery-13.pdf';
+          window.open(pdfUrl, '_blank');
+        };
+      }
+      
+
+
     }
 
 
@@ -730,52 +1231,45 @@ function calculate() {
     document.getElementById('btn-value').value = panels;
 
     document.getElementById('solution-name').innerHTML ="Your " +inverter + " Solar Solution";
+    document.getElementById('selected-inverter').innerHTML = inv3;
+    document.getElementById('inverter-price').innerHTML = formatPrice(inv3Price);
+    document.getElementById('num-panels').innerHTML = inv3Max;
+    const productImageBattery = document.getElementById('product-image-battery');
+
+    productImageBattery.setAttribute('src', 'battery3.png');
+    productImageBattery.style.width = '300px';
+    productImageBattery.style.height = '300px';
+
+    var overviewImage3 = document.getElementById('overview-image3');
+    overviewImage3.style.backgroundImage = "url('battery3.png')";
+    overviewImage3.style.width = '300px';
+    overviewImage3.style.height = '300px';
+    overviewImage3.style.backgroundSize = 'contain';
+    
+    document.getElementById('selected-battery').innerHTML = bat3;
+    document.getElementById('battery-price').innerHTML = formatPrice(bat3Price);
+    let battery3Pdf = document.getElementsByClassName('battery-pdf');
+    for (let i = 0; i < battery3Pdf.length; i++) {
+      battery3Pdf[i].onclick = function() {
+        // You can replace 'path/to/your/pdf.pdf' with the actual path to your PDF file
+        let pdfUrl = 'battery-3.pdf';
+        window.open(pdfUrl, '_blank');
+      };
+    }
+
+    let inverter3Pdf = document.getElementsByClassName('inverter-pdf');
+    for (let i = 0; i < inverter3Pdf.length; i++) {
+      inverter3Pdf[i].onclick = function() {
+        // You can replace 'path/to/your/pdf.pdf' with the actual path to your PDF file
+        let pdfUrl = 'inverter-3.pdf';
+        window.open(pdfUrl, '_blank');
+      };
+    }
+
+    document.getElementById('panel-cost').innerHTML = formatPrice(panelTotal);
+
     // Add the rest of your quote updates
   }
-
-  function generatePDF() {
-    document.getElementById("downloadPdfBtn").addEventListener("click", () => {
-      // Get the panel area and total cost from the existing calculations
-      const panelArea = document.getElementById("panelArea").innerText;
-      const totalCost = document.getElementById("totalCost").innerText;
-
-      // Create a new jsPDF instance
-      const doc = new jsPDF();
-
-      // Add your branding to the PDF
-      const logo = new Image();
-      logo.src = "path_to_your_logo.png"; // Replace with the path to your logo image
-      const companyName = "Your Company Name"; // Replace with your company name
-
-      // Position and size of the logo and company name
-      const logoX = 20;
-      const logoY = 20;
-      const logoWidth = 40; // Adjust as needed
-      const logoHeight = 40; // Adjust as needed
-
-      const companyNameX = 80;
-      const companyNameY = 40;
-
-      doc.addImage(logo, "PNG", logoX, logoY, logoWidth, logoHeight);
-      doc.text(companyName, companyNameX, companyNameY);
-
-      // Add content to the PDF (quote format)
-      const quoteText = `Quote for Solar Panel Installation
-
-Thank you for considering our solar panel installation service. Based on our calculations, your property requires solar panels covering an area of ${panelArea} square meters. The total cost for the installation is $${totalCost}.`;
-
-      // Position of the quote text
-      const quoteX = 20;
-      const quoteY = 80;
-
-      doc.text(quoteText, quoteX, quoteY);
-
-      // Save the PDF with a specific name (e.g., "solar_panel_quote.pdf")
-      doc.save("solar_panel_quote.pdf");
-    });
-  }
-
-
   document.getElementById('inv1-button').addEventListener('click',handleinv1);
   document.getElementById('inv2-button').addEventListener('click',handleinv2);
   document.getElementById('inv3-button').addEventListener('click',handleinv3);

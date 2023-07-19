@@ -20,7 +20,7 @@
           <li><a href="inverter.html">Inverters</a></li>
           <li><a href="battery.html">Batteries</a></li>
           <li><a href="panels.html">Panels</a></li>
-          <li class="nav-contact"><a href="contact.html">Contact</a></li>
+          <li class="nav-contact"><a href="contact.html" class="contact-link">Contact</a></li>
       </ul>  
       </div>
       <img src="menu-btn.png" alt="menu hamburger" class="menu-hamburger">
@@ -248,10 +248,15 @@
 <div class="product-container">
   <div class="product item-2">
     <label class="product-label">Inverter</label><br>
-    <img src="inverter.jpg" alt="inverter" id="product-image">
-    <p>Your Inverter: </p>
-    <p id="selected-inverter">Inverter Name</p>
-    <button id="change-btn" type="button">Change inverter</button>
+    <img src="inverter.png" alt="inverter" id="product-image"><br>
+    <p id="selected-inverter">Inverter Name</p><br>
+    <p id="inverter-price">Inverter Price</p><br>
+    <p>Max Panels: <p id="num-panels">0</p></p><br>
+    <div class="product-button">
+      <button id="change-btn" type="button">Change inverter</button><br>
+      <button id="change-btn" class="inverter-pdf" type="button">View Data Sheet</button>
+
+    </div>
   </div>
   
   <div id="inverter-panel" class="panel">
@@ -260,7 +265,7 @@
       <div class="inverter-container">
         <div class="change inverter1">
           <!--Copy Start-->
-          <div class="change1"><img src="inverter1.jpg" alt=""></div>
+          <div class="change1"><img src="inverter1.png" alt=""></div>
           <div class="change1">
             <p>3.5 Kw Growatt 48V Hybrid Inverter</p>
             <p>R 8,964.00</p>
@@ -271,7 +276,7 @@
           <!--Copy End-->
         </div>
         <div class="change inverter2">
-          <div class="change1"><img src="inverter2.jpg" alt=""></div>
+          <div class="change1"><img src="inverter2.png" alt=""></div>
           <div class="change1">
             <p>5 Kw Growatt 48V Hybrid Inverter</p>
             <p>R 12,399.00</p>
@@ -283,7 +288,7 @@
 
         </div>
         <div class="change inverter3">
-          <div class="change1"><img src="inverter3.jpg" alt=""></div>
+          <div class="change1"><img src="inverter3.png" alt=""></div>
           <div class="change1">
             <p>5.5 Kw Luxpower Hybrid Inverter</p>
             <p>R 13,999.00</p>
@@ -304,7 +309,7 @@
         </div>
 
         <div class="change inverter5">
-          <div class="change1"><img src="inverter5.jpg" alt=""></div>
+          <div class="change1"><img src="inverter5.png" alt=""></div>
           <div class="change1">
             <p>5 Kw Sunsynk Hybrid Inverter</p>
             <p>R 27,899.00</p>
@@ -326,7 +331,7 @@
         </div>
 
         <div class="change inverter7">
-          <div class="change1"><img src="inverter7.jpg" alt=""></div>
+          <div class="change1"><img src="inverter7.png" alt=""></div>
           <div class="change1">
             <p>8 Kw Sunsynk Hybrid Inverter</p>
             <p>R 43,499.00</p>
@@ -359,7 +364,7 @@
         </div>
 
         <div class="change inverter10">
-          <div class="change1"><img src="inverter10.jpg" alt=""></div>
+          <div class="change1"><img src="inverter10.png" alt=""></div>
           <div class="change1">
             <p>12 Kw 3 Phase Sunsynk Hybrid Inverter</p>
             <p>R 63,999.00</p>
@@ -381,7 +386,7 @@
         </div>
 
         <div class="change inverter12">
-          <div class="change1"><img src="inverter12.jpg" alt=""></div>
+          <div class="change1"><img src="inverter12.png" alt=""></div>
           <div class="change1">
             <p>16 Kw Sunsynk Hybrid Inverter</p>
             <p>R 76,999.00</p>
@@ -397,22 +402,29 @@
 
   <div class="product item-1">
     <label class="product-label">Panels</label><br>
-    <img src="panel.jpg" alt="solar panel">
-    <p>Your Panel: </p>
+    <img src="panel.png" alt="solar panel"><br>
+    <p>Number of Panels: </p><br>
     <div class="counter">
       <button class="btn-decrease" onclick="decreaseValue()">-</button>
       <input type="text" class="input-value" value="0" id="btn-value">
       <button class="btn-increase" onclick="increaseValue()">+</button>
-    </div>    
+    </div> <br>
+    <p>Price Per Panel: R3,695.00</p> <br>
+    <p>Total Cost of Panels: <p id="panel-cost"></p></p>  
   </div>
 
 
   <div class="product item-3">
     <label class="product-label">Battery</label><br>
-    <img src="battery.jpg" alt="" id="product-image-battery">
-    <p>Your Battery: </p>
-    <p>Battery Name</p>
-    <button type="submit" id="changeBat-btn">Change battery</button>
+    <img src="battery.png" alt="" id="product-image-battery"><br>
+    <p id="selected-battery">Battery Name</p><br>
+    <p id="battery-price">Battery Price:</p><br>
+    <p>Battery Type: Lithium ion</p><br><br>
+    <div class="product-button">
+      <button type="submit" id="changeBat-btn">Change battery</button><br>
+      <button type="submit" id="changeBat-btn" class="battery-pdf">View Data Sheet</button>
+
+    </div>
   </div>
   <div id="battery-panel" class="panel-battery">
     <p style="color: white; text-align: center; font-size: 24px;">Our Batteries</p>
@@ -420,7 +432,7 @@
       <div class="inverter-container">
         <div class="change battery1">
           <!--Copy Start-->
-          <div class="change1"><img src="battery1.jpg" alt=""></div>
+          <div class="change1"><img src="battery1.png" alt=""></div>
           <div class="change1">
             <p>3.6 Kwh Dyness Li-Ion</p>
             <p>R 19,999.00</p>
@@ -431,7 +443,7 @@
           <!--Copy End-->
         </div>
         <div class="change battery2">
-          <div class="change1"><img src="battery2.jpg" alt=""></div>
+          <div class="change1"><img src="battery2.png" alt=""></div>
           <div class="change1">
             <p>5 Kwh Felicity Li-Ion</p>
             <p>R 22,999.00</p>
@@ -443,7 +455,7 @@
 
         </div>
         <div class="change battery3">
-          <div class="change1"><img src="battery3.jpg" alt=""></div>
+          <div class="change1"><img src="battery3.png" alt=""></div>
           <div class="change1">
             <p>5.12 Kwh Dyness Li-Ion</p>
             <p>R 25,799.00</p>
@@ -464,7 +476,7 @@
         </div>
 
         <div class="change battery5">
-          <div class="change1"><img src="battery5.jpg" alt=""></div>
+          <div class="change1"><img src="battery5.png" alt=""></div>
           <div class="change1">
             <p>5.12 Kwh Hubble AM-5 Li-Ion</p>
             <p>R 31,299.00</p>
@@ -497,7 +509,7 @@
         </div>
 
         <div class="change battery8">
-          <div class="change1"><img src="battery8.jpg" alt=""></div>
+          <div class="change1"><img src="battery8.png" alt=""></div>
           <div class="change1">
             <p>12.5 Kwh Felicity Li-Ion</p>
             <p>R 48,999.00</p>
@@ -508,7 +520,7 @@
         </div>
 
         <div class="change battery9">
-          <div class="change1"><img src="battery9.jpg" alt=""></div>
+          <div class="change1"><img src="battery9.png" alt=""></div>
           <div class="change1">
             <p>10.24 Kwh Dyness Li-Ion</p>
             <p>R 55,000.00</p>
@@ -519,7 +531,7 @@
         </div>
 
         <div class="change battery10">
-          <div class="change1"><img src="battery10.jpeg" alt=""></div>
+          <div class="change1"><img src="battery10.png" alt=""></div>
           <div class="change1">
             <p>10 Kwh Hubble AM-5 Li-Ion</p>
             <p>R 73,999.00</p>
@@ -530,7 +542,7 @@
         </div>
 
         <div class="change battery11">
-          <div class="change1"><img src="battery11.jpg" alt=""></div>
+          <div class="change1"><img src="battery11.png" alt=""></div>
           <div class="change1">
             <p>10/8 Kwh Freedom One</p>
             <p>R 79,999.00</p>
@@ -541,7 +553,7 @@
         </div>
 
         <div class="change battery12">
-          <div class="change1"><img src="battery12.jpg" alt=""></div>
+          <div class="change1"><img src="battery12.png" alt=""></div>
           <div class="change1">
             <p>15/12 Kwh Freedom One</p>
             <p>R 107,000.00</p>
@@ -552,7 +564,7 @@
         </div>
 
         <div class="change battery13">
-          <div class="change1"><img src="battery13.jpg" alt=""></div>
+          <div class="change1"><img src="battery13.png" alt=""></div>
           <div class="change1">
             <p>20/16 Kwh Freedom One</p>
             <p>R 142,999.00</p>
@@ -577,7 +589,8 @@
 
     <div class="overview-item" id="overview-image2"></div>
 
-    <div class="overview-item overview-image3"></div>
+    <div class="overview-item" id="overview-image3"></div>
+
     
   </div>
 
@@ -610,16 +623,16 @@
   <div class="footer-container1">
     <div class="footer-location">
       <i class="fa-sharp fa-light fa-location-dot"></i>
-      <p style="color: orange;">Find us</p>
-      <p>Location</p>
+      <p style="color: orange;">Location</p>
+      <p>Studio Office Park, Lonehill</p>
     </div>
     <div class="footer-phone">
-      <p style="color: orange;">Call Us</p>
-      <p>1231231234</p>
+      <p style="color: orange;">Contact</p>
+      <p>011 462 1270</p>
     </div>
     <div class="footer-mail">
-      <p style="color: orange;">Mail us</p>
-      <p>mail@gmail.com</p>
+      <p style="color: orange;">Email</p>
+      <p>sales@x-corp.co-za</p>
     </div>
 
   </div>
@@ -628,9 +641,11 @@
   <br><br><br>
 
   <div class="footer-section1-container">
-    <div class="footer-container2">
-      <img src="logo.png" alt="Solar-Installer Logo">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing </p>
+    <div class="footer-container3">
+      <p style="color: orange;">Legal</p><br>
+      <li><a href="index.html">Terms and Conditions</a></li>
+      <li><a href="calc.html">Disclaimers</a></li>
+      <li><a href="#inverters">Confidentiality</a></li>
     </div><br>
 
 
@@ -642,18 +657,7 @@
       <li><a href="#inverters">Inverters</a></li>
       <li><a href="#batteries">Batteries</a></li>
       <li><a href="#panels">Panels</a></li>
-
     </div><br>
-
-    <div class="footer-container4">
-      <p style="color: orange;">Subscribe</p>
-      <p>Don't miss to subscribe to our new feeds, kindly fill the form below</p>
-      <div class="footer-container-email">
-        <input type="email" name="" id="email" placeholder="Email Address">
-      <button class="email-button">Enter</button>
-      </div> 
-    </div>
-
   </div>
   <br><br><br><br>
 

@@ -63,6 +63,7 @@ body{
     justify-content: space-evenly;
     align-items: center;
     height: auto;
+    overflow: hidden;
 }
 
 .product-heading{
@@ -89,7 +90,16 @@ body{
     align-items: center;
     color: black;
     padding-top: 0px;
+    transition: box-shadow 0.5s ease;
   }
+
+  .item:hover{
+    cursor: pointer;
+    transition: box-shadow 1s ease;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  
 
 .item img{
     height: 300px;
@@ -144,9 +154,6 @@ body{
     font-size: 24px;
 }
 
-.snaps-inline{
-    scroll-snap-type: inline mandatory;
-}
 
 
 .featured-container{
@@ -166,7 +173,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.5s ease;
+    transition: transform 2s ease;
     transform: scale(1);
     border-radius: 5px;
 }
@@ -196,8 +203,10 @@ body{
 }
 
 .featured:hover{
-    transition: transform 0.5s ease;
+    transition: transform 2s ease;
     transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+
 
 }
 
@@ -241,6 +250,7 @@ body{
     background-image: url(cta-image.png); /* Background image */
     background-size: cover;
     background-repeat: no-repeat;
+    height: auto;
   }
   
   .cta-container::after {
@@ -284,15 +294,12 @@ body{
 }
 
 #cta-heading{
-    font-size: 5em;
-}
-
-
-
-.cta-container #cta-heading{
     font-size: 3em;
     color: white;
 }
+
+
+
 
 .cta-container button{
     width: 150px;
@@ -319,28 +326,6 @@ body{
     filter:saturate(199%) ;
 }
 
-.testimonial-container::-webkit-scrollbar{
-    width: 1em;
-    height: 10px;
-  }
-
-  .testimonial-container::-webkit-scrollbar-track{
-    background: #f1f1f1;
-    border-radius: 100vw;
-    margin-block: .5em;
-
-  }
-
-  .testimonial-container::-webkit-scrollbar-thumb{
-    background: rgb(47, 2, 47);
-    border-radius: 100vw;
-    height: 10px;
-    border: 0.15em solid #f1f1f1;
-  }
-
-  .testimonial-container::-webkit-scrollbar-thumb:hover{
-    background: hsl(120, 100%, 10% /1);
-  }
 
   .test-container{
     height: auto;
@@ -367,6 +352,15 @@ body{
   border-top: 5px solid rgb(47, 2, 47);
   overflow: visible;
   height: auto;
+  transition: transform 2s ease;
+  transform: scale(1);
+}
+
+.snip1533:hover{
+    cursor: pointer;
+    transition: transform 2s ease;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 }
 
 .snip1533 *,
@@ -545,14 +539,18 @@ body{
         width: auto;
         height: auto;
     }
+
+    #cta-heading{
+        font-size: 1em;
+        text-align: center;
+    }
+
     .cta-image{
         height: auto;
         width: auto;
         display: flex;
         align-items: flex-start;
         margin-right: 70%;
-
-
     }
 
     .cta-list{

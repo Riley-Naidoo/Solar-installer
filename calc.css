@@ -99,6 +99,9 @@ select {
     width: 92%;
     outline: none;
 }
+.header-text{
+    color:grey;
+}
 
 #config-heading{
     background-color: rgb(47, 2, 47);
@@ -134,7 +137,7 @@ td, th {
 
 .product{
     background-color: #f1f1f1;
-    height: 500px;
+    height: 600px;
     width: 30%;
     color: black;
     margin-top: 20px;
@@ -208,6 +211,7 @@ table p{
     display: flex;
     align-items: center;
   }
+
   
   .btn-decrease,
   .btn-increase {
@@ -264,9 +268,8 @@ table p{
         height: 40px;
     }
     
-    #change-btn:hover{
-        transform: scale(1.05);
-        transition: transform 0.5s ease;
+    #change-btn, #changeBat-btn:hover{
+
         cursor: pointer;
     }
 
@@ -297,24 +300,27 @@ table p{
 }
 
 .overview-item{
-    background-color: black;
     width:300px;
     height: 300px;
+    background-repeat: no-repeat;
 }
 
 .overview-image1{
-    margin-bottom: 100px;
+    margin-bottom: 200px;
     margin-right: 400px;
-    background-image: url(panel.jpg);
+    background-image: url(panel.png);
+    height: 300px;
+    width: 300px;
 }
 
 #overview-image2{
-    background-image: url(inverter.jpg);
+    background-image: url(inverter.png);
 }
 
-.overview-image3{
+#overview-image3{
+    margin-left: 100px;
     margin-right: 250px;
-    background-image: url(battery.jpg);
+    background-image: url(battery.png);
 }
 
 .inverter-container{
@@ -388,11 +394,43 @@ table p{
     transform: translateX(0);
 }
 
+#quoteContainer{
+    display: none;
+}
+
+.product-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#changeBat-btn{
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+#change-btn{
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+
+
 @media screen and (max-width:900px) {
     .calculator-container{
         display: flex;
         flex-direction: column;
         height: auto;
+    }
+
+    .product-button{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+
     }
 
     .output{
@@ -404,9 +442,11 @@ table p{
         flex-direction: column;
         height: auto;
     }
+
     .product{
         width: 90%;
         margin-left: 5%;
+        height: 650px;
     }
 
     .overview{

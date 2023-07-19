@@ -28,6 +28,8 @@
   height: 50px;
   width: 30%;
   color: white;
+  overflow-y: hidden;
+
 }
 
 .footer hr{
@@ -42,12 +44,16 @@
   align-items: center;
   justify-content: space-evenly;
   text-align: center;
+  overflow-y: hidden;
+
 }
 
 .footer-container2, .footer-container3, .footer-container4{
   width: 30%;
   height: 200px;
   color: white;
+  overflow-y: hidden;
+
 }
 
 .footer-container-email{

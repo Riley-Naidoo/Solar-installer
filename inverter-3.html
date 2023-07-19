@@ -8,22 +8,22 @@
     <link rel="stylesheet" href="footer.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-          <a href="#" class="logo"><img src="logo.png" alt="" style="height: 100px; width: 100px;"></a>
-          <div class="nav-links">
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="calc.html">Solar Calculator</a></li>
-              <li class="active"><a href="inverter.html">Inverters</a></li>
-              <li><a href="battery.html">Batteries</a></li>
-              <li><a href="panels.html">Panels</a></li>
-              <li class="nav-contact"><a href="contact.html">Contact</a></li>
-          </ul>  
-          </div>
-          <img src="menu-btn.png" alt="menu hamburger" class="menu-hamburger">
-      </nav>
-    </header>
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo"><img src="logo.png" alt="" style="height: 90px; width: 100px; overflow: hidden;"></a>
+      <div class="nav-links">
+        <ul>
+          <li ><a href="index.html">Home</a></li>
+          <li><a href="calc.html">Solar Calculator</a></li>
+          <li class="active"><a href="inverter.html">Inverters</a></li>
+          <li><a href="battery.html">Batteries</a></li>
+          <li><a href="panels.html">Panels</a></li>
+          <li class="nav-contact"><a href="contact.html" class="contact-link">Contact</a></li>
+      </ul>  
+      </div>
+      <img src="menu-btn.png" alt="menu hamburger" class="menu-hamburger">
+  </nav>
+</header>
     <ul class="breadcrumb">
         <li><a href="index.html">Home</a></li>
         <li><a href="inverter.html">Inverters</a></li>
@@ -33,7 +33,7 @@
         <div class="display-1-container">
             <div class="product-info"><!--displays the img-->
                 <div class="image">
-                    <img src="inverter3.jpg" alt="" class="product-image">
+                    <img src="inverter3.png" alt="" class="product-image">
                 </div>
                 <div class="info">
                     <p id="product-name">5.5 Kw Luxpower Hybrid Inverter</p>
@@ -52,151 +52,121 @@
 
             </div>
             <div class="product-price">
-                <div class="price">
-                    <p>R 13,999.00</p>
-                    <button class="price-button">Get Quote</button>
-                </div>
-                <div class="price-info">
-                    <ul>
-                        <li>Some warranty info</li>
-                        <li>Some warranty info</li>
-                        <li>Some warranty info</li>
 
-                    </ul>
-                </div>
+              <p class="battery-price">R 13,399.00</p>
+              <ul>
+                  <li>Some warranty info</li>
+                  <li>Some warranty info</li>
+                  <li>Some warranty info</li>
+              </ul>
+              <button class="price-button">Get Quote</button>
+              <button class="open-pdf" onclick="window.open('inverter-3.pdf')">View Data Sheet</button>
+
             </div>
         </div><br>
         <p style="font-size: 3em; font-weight: bold;">You might also like</p>
         <div class="display-2">
             
-            <div class="display-2-product product-1">
-              <img src="inverter1.jpg" alt="" class="display-2-img">
+            <div class="display-2-product product-1" onclick="window.location.href = 'inverter-1.html';">
+              <img src="inverter1.png" alt="" class="display-2-img">
               <p>3.5 Kw Growatt 48V Hybrid Inverter</p><br>
               <p class="display-2-price">R 8,694.00.00</p><br>
-              <button class="display-2-button" id="product-button1" onclick="inverter1()">View</button>
+              <button class="display-2-button" id="product-button1" onclick="window.location.href = 'inverter-1.html';">View</button>
             </div>
-            <div class="display-2-product product-2">
-              <img src="inverter2.jpg" alt="" class="display-2-img">
+            <div class="display-2-product product-2" onclick="window.location.href = 'inverter-2.html';">
+              <img src="inverter2.png" alt="" class="display-2-img">
               <p>5 Kw Growatt 48V Hybrid Inverter</p><br>
               <p class="display-2-price">R 12,399.00</p><br>
-              <button class="display-2-button" id="product-button2" onclick="inverter2()">View</button>
+              <button class="display-2-button" id="product-button2" onclick="window.location.href = 'inverter-2.html';">View</button>
             </div>
-            <div class="display-2-product product-3">
+            <div class="display-2-product product-3" onclick="window.location.href = 'inverter-4.html';">
               <img src="inverter4.png" alt="" class="display-2-img">
               <p>5 Kw Deye Hybrid Inverter</p><br>
               <p class="display-2-price">R 25,399.00</p><br>
-              <button class="display-2-button" id="product-button4" onclick="inverter4()">View</button>
+              <button class="display-2-button" id="product-button4" onclick="window.location.href = 'inverter-4.html';">View</button>
             </div>
-            <div class="display-2-product product-4">
-              <img src="inverter5.jpg" alt="" class="display-2-img">
+            <div class="display-2-product product-4" onclick="window.location.href = 'inverter-5.html';">
+              <img src="inverter5.png" alt="" class="display-2-img">
               <p>5 Kw Sunsynk Hybrid Inverter</p><br>
               <p class="display-2-price">R 27,899.00</p><br>
-              <button class="display-2-button" id="product-button5" onclick="inverter5()">View</button>
+              <button class="display-2-button" id="product-button5" onclick="window.location.href = 'inverter-5.html';">View</button>
             </div>
 
 
         </div>
-
-        <div class="display-4">
-            <p class="Description">Description</p>
-            <p>info</p>
-
-        </div>
-
-        <div class="display-5">
-            <p>Product Information</p>
-            <table>
-                <tr>
-                    <td>Categories</td>
-                    <td>Inverter</td>
-                </tr>
-                <tr>
-                    <td>Brand</td>
-                    <td>Info</td>
-                </tr>
-                <tr>
-                    <td>Warranty</td>
-                    <td>Info</td>
-                </tr>
-                <tr>
-                    <td>What do you get</td>
-                    <td>Info</td>
-                </tr>
-            </table>
-
-
-        </div>
-
-
     </div>
 
     <footer class="footer">
 
-        <div class="footer-container1">
-          <div class="footer-location">
-            <i class="fa-sharp fa-light fa-location-dot"></i>
-            <p>Find us</p>
-            <p>Location</p>
-          </div>
-          <div class="footer-phone">
-            <p>Call Us</p>
-            <p>1231231234</p>
-          </div>
-          <div class="footer-mail">
-            <p>Mail us</p>
-            <p>mail@gmail.com</p>
-          </div>
-      
+      <div class="footer-container1">
+        <div class="footer-location">
+          <i class="fa-sharp fa-light fa-location-dot"></i>
+          <p style="color: orange;">Location</p>
+          <p>Studio Office Park, Lonehill</p>
         </div>
-        <br>
-        <center><hr></center>
-        <br><br><br>
-      
-        <div class="footer-section1-container">
-          <div class="footer-container2">
-            <img src="#img" alt="Solar-Installer Logo">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Follow Us</p>
-          </div>
-      
-      
-      
-          <div class="footer-container3">
-            <p>Useful Links</p>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#calculator">Solar Calculator</a></li>
-            <li><a href="#inverters">Inverters</a></li>
-            <li><a href="#batteries">Batteries</a></li>
-            <li><a href="#panels">Panels</a></li>
-      
-          </div>
-      
-          <div class="footer-container4">
-            <p>Subscribe</p>
-            <p>Don't miss to subscribe to our new feeds, kindly fill the form below</p>
-            <div class="footer-container-email">
-              <input type="email" name="" id="email" placeholder="Email Address">
-            <button>Enter</button>
-      
-            </div>
-            
-          </div>
-      
+        <div class="footer-phone">
+          <p style="color: orange;">Contact</p>
+          <p>011 462 1270</p>
         </div>
-        <br><br><br><br>
+        <div class="footer-mail">
+          <p style="color: orange;">Email</p>
+          <p>sales@x-corp.co-za</p>
+        </div>
+    
+      </div>
+      <br>
+      <center><hr></center>
+      <br><br><br>
+    
+      <div class="footer-section1-container">
+        <div class="footer-container3">
+          <p style="color: orange;">Legal</p><br>
+          <li><a href="index.html">Terms and Conditions</a></li>
+          <li><a href="calc.html">Disclaimers</a></li>
+          <li><a href="#inverters">Confidentiality</a></li>
+        </div><br>
+    
+    
+    
+        <div class="footer-container3">
+          <p style="color: orange;">Useful Links</p><br>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="calc.html">Solar Calculator</a></li>
+          <li><a href="#inverters">Inverters</a></li>
+          <li><a href="#batteries">Batteries</a></li>
+          <li><a href="#panels">Panels</a></li>
+        </div><br>
+    
+        <div class="footer-container4">
+          <p style="color: orange;">Subscribe</p>
+          <p>Don't miss to subscribe to our new feeds, kindly fill the form below</p>
+          <div class="footer-container-email">
+            <input type="email" name="" id="email" placeholder="Email Address">
+          <button class="email-button">Enter</button>
+          </div> 
+        </div>
+    
+      </div>
+      <br><br><br><br>
+    
+      <div class="footer-footer">
+        <p>Copyright @2023, All Rights Reserved</p>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#calculator">Solar Calculator</a></li>
+          <li><a href="#inverters">Inverters</a></li>
+          <li><a href="#batteries">Batteries</a></li>
+          <li><a href="#panels">Panels</a></li>  
+        </ul>
+      </div>
+    
+    
+    
+    
+    
       
-        <div class="footer-footer">
-          <p>Copyright @2023, All Rights Reserved</p>
-      
-          <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#calculator">Solar Calculator</a></li>
-            <li><a href="#inverters">Inverters</a></li>
-            <li><a href="#batteries">Batteries</a></li>
-            <li><a href="#panels">Panels</a></li>  
-          </ul>
-        </div>      
-      </footer>
+    
+    </footer>
 
     
 </body>
