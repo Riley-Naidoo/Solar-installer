@@ -2,9 +2,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solar Installers | Inverters</title>
+    <title>Solar Installers | Solar Panels</title>
+    <link rel="stylesheet" href="inverter.css">
     <link rel="stylesheet" href="footer.css">
-    <link rel="stylesheet" href="panels.css">
     <link rel="stylesheet" href="nav.css">
 </head>
 <body>
@@ -13,11 +13,11 @@
       <a href="index.html" class="logo"><img src="logo.png" alt="" style="height: 90px; width: 100px; overflow: hidden;"></a>
       <div class="nav-links">
         <ul>
-          <li  class="active"><a href="index.html">Home</a></li>
+          <li><a href="index.html">Home</a></li>
           <li><a href="calc.html">Solar Calculator</a></li>
           <li><a href="inverter.html">Inverters</a></li>
           <li><a href="battery.html">Batteries</a></li>
-          <li><a href="panels.html">Panels</a></li>
+          <li class="active"><a href="panels.html">Panels</a></li>
           <li class="nav-contact"><a href="contact.html">Contact</a></li>
       </ul>  
       </div>
@@ -25,25 +25,92 @@
   </nav>
 </header>
 
+  <section>
+    <div class="hero"></div>
+  </section>
+
     <main>
         <br><br>
-        <h1>Coming Soon...</h1><br><br><br><br><br><br>
-    </main>
+        <h2>Filter Inverters</h2>
 
+        <div id="myBtnContainer">
+          <!-- Existing buttons -->
+          <button class="btn btn-all active" onclick="filterSelection('all')" data-filter-value="all">
+            <p class="btn-text">Show all</p>
+          </button>
+          <button class="btn btn-3kw" onclick="filterSelection('425W')" data-filter-value="425W">
+            <p class="btn-text">425W</p>
+          </button>
+          <button class="btn btn-5kw" onclick="filterSelection('550W')" data-filter-value="550W">
+            <p class="btn-text">550W</p>
+          </button>
+          <button class="btn btn-8kw" onclick="filterSelection('600W')" data-filter-value="600W">
+            <p class="btn-text">600W</p>
+          </button>
+          <!-- Add two sorting buttons -->
+          <button class="btn btn-highest" onclick="sortItems('highest')" data-sort-value="highest" style="width: auto;">
+            <p class="btn-text">Sort by Highest Price</p>
+          </button>
+          <button class="btn btn-lowest" onclick="sortItems('lowest')" data-sort-value="lowest" style="width: auto;">
+            <p class="btn-text">Sort by Lowest Price</p>
+          </button>
+        </div><br>
+        
+        
+        
+        <p id="resultText">Showing results for all</p>
+        <div class="container">
+    <div class="filterDiv 425W show" onclick="window.location.href = 'panel-1.html';">
+      <img src="panel.png" alt="" class="img-inverter">
+      <p>425W Solar Panel</p>
+      <a href="#">Canadian</a>
+      <p class="price">R 2,699.00</p>
+      <button id="product-button1" class="product-button" onclick="window.location.href = 'panel-1.html';">View</button>
+    </div>
+  
+    <div class="filterDiv 550W show" onclick="window.location.href = 'panel-2.html';">
+      <img src="panel.png" alt="" class="img-inverter">
+      <p>550W Panel</p>
+      <a href="#">Trina</a>
+      <p class="price">R 3,695.00</p>
+      <button id="product-button2" class="product-button" onclick="window.location.href = 'panel-2.html';">View</button>
+    </div>
+  
+    <div class="filterDiv 600W show" onclick="window.location.href = 'panel-3.html';">
+      <img src="panel.png" alt="" class="img-inverter">
+      <p>600W Panel</p>
+      <a href="#">Canadian</a>
+      <p class="price">R 3,699.00</p>
+      <button id="product-button3" class="product-button" onclick="window.location.href = 'panel-3.html';">View</button>
+    </div>
+  
+  </div>
+
+
+  
+
+
+</div>
+
+
+
+
+
+    </main>
     <footer class="footer">
 
       <div class="footer-container1">
         <div class="footer-location">
           <i class="fa-sharp fa-light fa-location-dot"></i>
-          <p style="color: orange;">Location</p>
+          <p class="orange">Location</p>
           <p>Studio Office Park, Lonehill</p>
         </div>
         <div class="footer-phone">
-          <p style="color: orange;">Contact</p>
+          <p class="orange">Contact</p>
           <p>011 462 1270</p>
         </div>
         <div class="footer-mail">
-          <p style="color: orange;">Email</p>
+          <p class="orange">Email</p>
           <p>sales@x-corp.co-za</p>
         </div>
     
@@ -54,7 +121,7 @@
     
       <div class="footer-section1-container">
         <div class="footer-container3">
-          <p style="color: orange;">Legal</p><br>
+          <p class="orange">Legal</p><br>
           <li><a href="index.html">Terms and Conditions</a></li>
           <li><a href="calc.html">Disclaimers</a></li>
           <li><a href="#inverters">Confidentiality</a></li>
@@ -63,23 +130,13 @@
     
     
         <div class="footer-container3">
-          <p style="color: orange;">Useful Links</p><br>
+          <p class="orange">Useful Links</p><br>
           <li><a href="index.html">Home</a></li>
           <li><a href="calc.html">Solar Calculator</a></li>
           <li><a href="#inverters">Inverters</a></li>
           <li><a href="#batteries">Batteries</a></li>
           <li><a href="#panels">Panels</a></li>
         </div><br>
-    
-        <div class="footer-container4">
-          <p style="color: orange;">Subscribe</p>
-          <p>Don't miss to subscribe to our new feeds, kindly fill the form below</p>
-          <div class="footer-container-email">
-            <input type="email" name="" id="email" placeholder="Email Address">
-          <button class="email-button">Enter</button>
-          </div> 
-        </div>
-    
       </div>
       <br><br><br><br>
     
@@ -87,10 +144,10 @@
         <p>Copyright @2023, All Rights Reserved</p>
         <ul class="footer-links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="#calculator">Solar Calculator</a></li>
-          <li><a href="#inverters">Inverters</a></li>
-          <li><a href="#batteries">Batteries</a></li>
-          <li><a href="#panels">Panels</a></li>  
+          <li><a href="calc.html">Solar Calculator</a></li>
+          <li><a href="inverter.html">Inverters</a></li>
+          <li><a href="battery.html">Batteries</a></li>
+          <li><a href="panels.html">Panels</a></li>  
         </ul>
       </div>
     
@@ -103,12 +160,112 @@
     </footer>
     
 </body>
-<script>
-    const menuHamburger = document.querySelector(".menu-hamburger")
-    const navLinks = document.querySelector(".nav-links")
 
-    menuHamburger.addEventListener('click',()=>{
-    navLinks.classList.toggle('mobile-menu')
-    })
+<script>
+const menuHamburger = document.querySelector(".menu-hamburger")
+const navLinks = document.querySelector(".nav-links")
+
+menuHamburger.addEventListener('click',()=>{
+navLinks.classList.toggle('mobile-menu')
+})
 </script>
+
+<script>
+// Function to update the displayed items when filter buttons are clicked
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+
+  var count = 0; // Counter to track the number of results
+
+  for (i = 0; i < x.length; i++) {
+    if (c === "" || x[i].classList.contains(c)) {
+      x[i].classList.add("show");
+      count++; // Increment the counter for each displayed result
+    } else {
+      x[i].classList.remove("show");
+    }
+  }
+
+  // Update the "Showing results for" text with the count
+  var resultText = document.getElementById("resultText");
+  resultText.textContent = "Showing results for " + c + " (" + count + " items)";
+}
+
+// Function to sort items based on the price in ascending (lowest to highest) order
+function sortAscending(a, b) {
+  const priceA = parseFloat(a.querySelector(".price").textContent.replace("R ", ""));
+  const priceB = parseFloat(b.querySelector(".price").textContent.replace("R ", ""));
+  return priceA - priceB;
+}
+
+// Function to sort items based on the price in descending (highest to lowest) order
+function sortDescending(a, b) {
+  const priceA = parseFloat(a.querySelector(".price").textContent.replace("R ", ""));
+  const priceB = parseFloat(b.querySelector(".price").textContent.replace("R ", ""));
+  return priceB - priceA;
+}
+
+// Function to sort items based on the selected option
+function sortItems(order) {
+  var container = document.querySelector(".container");
+  var items = container.getElementsByClassName("filterDiv");
+
+  // Convert NodeList to Array for sorting
+  var sortedItems = Array.from(items);
+
+  // Sort the items based on the selected order or use the default order (lowest to highest)
+  if (order === "lowest") {
+    sortedItems.sort(sortAscending);
+  } else if (order === "highest") {
+    sortedItems.sort(sortDescending);
+  }
+
+  // Clear the container
+  container.innerHTML = "";
+
+  // Append the sorted items back to the container
+  sortedItems.forEach(function (item) {
+    container.appendChild(item);
+  });
+}
+
+// Add event listeners to filter buttons and sort buttons
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function () {
+    var current = document.querySelector(".btn.active");
+    if (current) current.classList.remove("active");
+    this.classList.add("active");
+
+    // Check if it's a filter button or sort button
+    var filterValue = this.getAttribute("data-filter-value");
+    var sortValue = this.getAttribute("data-sort-value");
+
+    if (filterValue) {
+      filterSelection(filterValue);
+      sortItems(); // Sort the displayed items after filtering
+    } else if (sortValue) {
+      sortItems(sortValue);
+    }
+  });
+}
+
+// Initially filter and sort all items
+filterSelection("all");
+sortItems();
+</script>
+
+
+
+
+<script src="inverter.js"></script>
+
+
+
+
+
 </html>
