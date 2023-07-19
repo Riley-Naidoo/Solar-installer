@@ -101,7 +101,7 @@ body{
     border-radius: 30px;
     margin-top: 20px;
     color: white;
-    background-color: rgb(47, 2, 27);
+    background-color: #2A0338;
   }
 
   
@@ -114,11 +114,11 @@ body{
   }
   
   .btn:hover {
-    background-color: #ddd;
+    background-color: #A9A9A9;
   }
   
   .btn.active {
-    background-color: orange;
+    background-color: #F44C1D;
     color: white;
   }
 
@@ -130,7 +130,7 @@ body{
   }
 
   .product-button{
-    background-color: orange;
+    background-color: #F44C1D;
     color: white;
     width: 100px;
     height: 30px;

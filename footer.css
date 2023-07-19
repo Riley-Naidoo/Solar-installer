@@ -73,7 +73,7 @@
 .footer-container-email button{
   height: 30px;
   margin-top: 10px;
-  background-color: orange;
+  background-color: #F44C1D;
   color: white;
   border: none;
 }
@@ -109,6 +109,10 @@
 .footer-logo{
   height: 100px;
   width: 100px;
+}
+
+.orange{
+  color: #F44C1D;
 }
 
 @media screen and (max-width:900px) {

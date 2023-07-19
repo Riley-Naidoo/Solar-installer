@@ -17,6 +17,19 @@ body{
     justify-content: space-evenly;
 }
 
+.change-button{
+    background-color: #F44C1D;
+    color: white;
+    border-radius: 3px;
+    border: none;
+    height: 30px;
+    width: 60px;
+
+}
+.change-button:hover{
+    cursor: pointer;
+}
+
 
 .output{
     background-color: #f1f1f1 ;
@@ -58,7 +71,7 @@ input{
 }
 
 #button{
-    background-color: rgb(238, 115, 0);
+    background-color: #F44C1D;
     color: white;
     border: none;
     border-radius: 3px;
@@ -83,7 +96,7 @@ label, select {
 }
 
 label {
-    background-color: rgb(47, 2, 47);
+    background-color: #2A0338;
     color: white;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -104,7 +117,7 @@ select {
 }
 
 #config-heading{
-    background-color: rgb(47, 2, 47);
+    background-color: #2A0338;
     color: white;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -130,13 +143,13 @@ td, th {
 }
 
 .config-output{
-    background-color: rgb(238, 115, 0);
+    background-color: #F44C1D;
     color: white;
     text-align: center;
 }
 
 .product{
-    background-color: #f1f1f1;
+    background-color: #A9A9A9;
     height: 600px;
     width: 30%;
     color: black;
@@ -169,7 +182,7 @@ h1{
 }
 
 .product-label{
-    background-color: rgb(47, 2, 47);
+    background-color: #2A0338;
     color: white;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -236,7 +249,7 @@ table p{
     right: 0;
     bottom: 0;
     width: 600px;
-    background-color: rgb(47, 2, 47);
+    background-color: #2A0338;
     transform: translateX(100%);
     transition: transform 0.3s ease;
     z-index: 999; /* Increase the z-index value */
@@ -257,7 +270,7 @@ table p{
   }
 
   #change-btn, #changeBat-btn{
-        background-color: rgb(238, 115, 0);
+        background-color: #F44C1D;
         color: white;
         border: none;
         border-radius: 3px;
@@ -356,7 +369,7 @@ table p{
 }
 
 .panel-button{
-    background-color: rgb(238, 115, 0);
+    background-color: #F44C1D;
     color: white;
     border: none;
     border-radius: 3px;
@@ -383,7 +396,7 @@ table p{
     right: 0;
     bottom: 0;
     width: 600px;
-    background-color: rgb(47, 2, 47);
+    background-color: #2A0338;
     transform: translateX(100%);
     transition: transform 0.3s ease;
     z-index: 999; /* Increase the z-index value */
@@ -432,6 +445,16 @@ table p{
         justify-content: space-around;
 
     }
+    .change{
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .change-button{
+        width: 100px;
+    }
 
     .output{
         width: 90%;
@@ -459,8 +482,8 @@ table p{
         top: 0;
         right: 0;
         bottom: 0;
-        width: auto;
-        background-color: rgb(47, 2, 47);
+        width: 100%;
+        background-color: #2A0338;
         transform: translateX(100%);
         transition: transform 0.3s ease;
         z-index: 999; /* Increase the z-index value */
@@ -471,8 +494,8 @@ table p{
         top: 0;
         right: 0;
         bottom: 0;
-        width: auto;
-        background-color: rgb(47, 2, 47);
+        width: 100%;
+        background-color: #2A0338;
         transform: translateX(100%);
         transition: transform 0.3s ease;
         z-index: 999; /* Increase the z-index value */

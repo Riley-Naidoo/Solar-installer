@@ -89,7 +89,7 @@ body{
 
 #product-perk{
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 #product-name, #product-brand, #product-perk, li{
@@ -105,6 +105,11 @@ hr{
 ul{
     list-style-type: disc;
 }
+
+.custom-list {
+    list-style-type: disc !important;
+  }
+  
 
 .price{
     background-color: white;
@@ -127,7 +132,7 @@ ul{
     width: 60%;
     margin-left: 20%;
     border: none;
-    background-color: orange;
+    background-color: #F44C1D;
     color: white;
     transform: scale(1);
     transition: transform 0.5s ease;
@@ -144,7 +149,7 @@ ul{
     width: 60%;
     margin-left: 20%;
     border: none;
-    background-color: orange;
+    background-color: #F44C1D;
     color: white;
     transform: scale(1);
     transition: transform 0.5s ease;
@@ -273,7 +278,7 @@ ul.breadcrumb {
   }
 
   .display-2-button{
-    background-color: orange;
+    background-color: #F44C1D;
     border: none;
     border-radius: 3px;
     color: white;
@@ -294,8 +299,21 @@ ul.breadcrumb {
     font-size: 3em; 
     font-weight: bold;
   }
+
+  .related-text{
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+  }
   
 @media screen and (max-width:900px){
+
+    .related-text{
+        font-size: 2em;
+        font-weight: bold;
+        text-align: center;
+      }
+
     .display-1-container{
         display: flex;
         flex-wrap: wrap;
@@ -304,10 +322,14 @@ ul.breadcrumb {
     }
 
     .product-info{
-        width: 90%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         
+    }
+
+    .battery-price{
+        font-size: 2.5em;
     }
 
     .image{
@@ -328,6 +350,17 @@ ul.breadcrumb {
 
     .product-price{
         width: 112.5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .price-button{
+        margin-right: 50px;
+    }
+
+    .open-pdf{
+        margin-right: 50px;
     }
 
     .price{
@@ -368,7 +401,7 @@ ul.breadcrumb {
         padding: var(--size-3);
         background-color: white;
         border-radius: var(--radius-2);
-        height: auto;
+        height: 500px;
         display: grid;
         grid-template-rows: min-content;
         gap: var(--size-2);
