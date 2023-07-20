@@ -394,6 +394,8 @@ ul.breadcrumb {
         width: auto;
         padding: 0 var(--size-3) var(--size-3);
         color: black;
+        overflow-y: hidden;
+
     }
 
     .display-2-product{
