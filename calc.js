@@ -277,11 +277,10 @@ document.addEventListener('DOMContentLoaded', function() {
       let inv1img = document.getElementById('product-image');
       inv1img.src = "inverter1.png";
       inv1img.style.height = '300px';
-      handle1Total = handle1Total - handle1Inverter + inv1Price
-      document.getElementById('price-13').innerHTML = formatPrice(handle1Total);
+      Total = Total - inverterTotal + inv1Price;
+      document.getElementById('price-13').innerHTML = formatPrice(Total);
       document.getElementById('selected-inverter').innerHTML = inv1;
       document.getElementById('inverter-price').innerHTML = formatPrice(inv1Price);
-      document.getElementById('num-panels').innerHTML = inv1Max;
       document.getElementById('num-panels').innerHTML = inv1Max;
       var overviewImage2 = document.getElementById('overview-image2');
       overviewImage2.style.backgroundImage = "url('inverter1.png')";
@@ -308,8 +307,9 @@ document.addEventListener('DOMContentLoaded', function() {
       let bat1img = document.getElementById('product-image-battery');
       bat1img.src = "battery1.png";
       bat1img.style.height = '300px';
-      handleBattery1Total = handleBattery1Total - handle1Battery + bat1Price
-      document.getElementById('price-13').innerHTML = formatPrice(handleBattery1Total);
+      Total = Total - batteryTotal + bat1Price;
+      document.getElementById('price-13').innerHTML = formatPrice(Total);
+      document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-battery').innerHTML = bat1;
       document.getElementById('battery-price').innerHTML = formatPrice(bat1Price);
       var overviewImage3 = document.getElementById('overview-image3');
@@ -336,8 +336,9 @@ document.addEventListener('DOMContentLoaded', function() {
       let inv2img = document.getElementById('product-image');
       inv2img.src= "inverter2.png";
       inv2img.style.height = '300px';
-      handle2Total = handle2Total - handle2Inverter + inv2Price
-      document.getElementById('price-13').innerHTML = formatPrice(handle2Total);
+      Total = Total - inverterTotal + inv2Price;
+      document.getElementById('price-13').innerHTML = formatPrice(Total);
+      document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-inverter').innerHTML = inv2;
       document.getElementById('inverter-price').innerHTML = formatPrice(inv2Price);
       document.getElementById('num-panels').innerHTML = inv2Max;
@@ -365,8 +366,9 @@ document.addEventListener('DOMContentLoaded', function() {
       let bat2img = document.getElementById('product-image-battery');
       bat2img.src = "battery2.png";
       bat2img.style.height = '300px';
-      handleBattery2Total = handleBattery2Total - handle2Battery + bat2Price
-      document.getElementById('price-13').innerHTML = formatPrice(handleBattery2Total);
+      Total = Total - batteryTotal + bat2Price;
+      document.getElementById('price-13').innerHTML = formatPrice(Total);
+      document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-battery').innerHTML = bat2;
       document.getElementById('battery-price').innerHTML = formatPrice(bat2Price);
       var overviewImage3 = document.getElementById('overview-image2');
@@ -391,8 +393,9 @@ document.addEventListener('DOMContentLoaded', function() {
       let inv3img = document.getElementById('product-image');
       inv3img.src= "inverter3.png";
       inv3img.style.height = '300px';
-      handle3Total = handle3Total - handle3Inverter + inv3Price
-      document.getElementById('price-13').innerHTML = formatPrice(handle3Total);
+      Total = Total - inverterTotal + inv3Price;
+      document.getElementById('price-13').innerHTML = formatPrice(Total);
+            document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-inverter').innerHTML = inv3;
       document.getElementById('inverter-price').innerHTML = formatPrice(inv3Price);
       document.getElementById('num-panels').innerHTML = inv3Max;
@@ -420,8 +423,9 @@ document.addEventListener('DOMContentLoaded', function() {
       let bat3img = document.getElementById('product-image-battery');
       bat3img.src = "battery3.png";
       bat3img.style.height = '300px';
-      handleBattery3Total = handleBattery3Total - handle3Battery + bat3Price
-      document.getElementById('price-13').innerHTML = formatPrice(handleBattery3Total);
+      Total = Total - batteryTotal + bat3Price;
+      document.getElementById('price-13').innerHTML = formatPrice(Total);
+            document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-battery').innerHTML = bat3;
       document.getElementById('battery-price').innerHTML = formatPrice(bat3Price);
       var overviewImage3 = document.getElementById('overview-image3');
@@ -446,8 +450,9 @@ document.addEventListener('DOMContentLoaded', function() {
       let inv4img = document.getElementById('product-image');
       inv4img.src= "inverter4.png";
       inv4img.style.height = '300px';
-      handle4Total = handle4Total - handle4Inverter + inv4Price
-      document.getElementById('price-13').innerHTML = formatPrice(handle4Total);
+      Total = Total - inverterTotal + inv4Price;
+      document.getElementById('price-13').innerHTML = formatPrice(Total);
+            document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-inverter').innerHTML = inv4;
       document.getElementById('inverter-price').innerHTML = formatPrice(inv4Price);
       document.getElementById('num-panels').innerHTML = inv4Max;
@@ -476,8 +481,9 @@ document.addEventListener('DOMContentLoaded', function() {
       let bat4img = document.getElementById('product-image-battery');
       bat4img.src = "battery4.png";
       bat4img.style.height = '300px';
-      handleBattery4Total = handleBattery4Total - handle4Battery + bat4Price
-      document.getElementById('price-13').innerHTML = formatPrice(handleBattery4Total);
+      Total = Total - batteryTotal + bat4Price;
+      document.getElementById('price-13').innerHTML = formatPrice(Total);
+            document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-battery').innerHTML = bat4;
       document.getElementById('battery-price').innerHTML = formatPrice(bat4Price);
       var overviewImage3 = document.getElementById('overview-image3');
@@ -502,8 +508,9 @@ document.addEventListener('DOMContentLoaded', function() {
       let inv5img = document.getElementById('product-image');
       inv5img.src= "inverter5.png";
       inv5img.style.height = '300px';
-      handle5Total = handle5Total - handle5Inverter + inv5Price
-      document.getElementById('price-13').innerHTML = formatPrice(handle5Total);
+      Total = Total - inverterTotal + inv5Price;
+      document.getElementById('price-13').innerHTML = formatPrice(Total);
+            document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-inverter').innerHTML = inv5;
       document.getElementById('inverter-price').innerHTML = formatPrice(inv5Price);
       document.getElementById('num-panels').innerHTML = inv5Max;
@@ -532,8 +539,9 @@ document.addEventListener('DOMContentLoaded', function() {
       let bat5img = document.getElementById('product-image-battery');
       bat5img.src = "battery5.png";
       bat5img.style.height = '300px';
-      handleBattery5Total = handleBattery5Total - handle5Battery + bat5Price
-      document.getElementById('price-13').innerHTML = formatPrice(handleBattery5Total);
+      Total = Total - batteryTotal + bat5Price;
+      document.getElementById('price-13').innerHTML = formatPrice(Total);
+            document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-battery').innerHTML = bat5;
       document.getElementById('battery-price').innerHTML = formatPrice(bat5Price);
       var overviewImage3 = document.getElementById('overview-image3');
@@ -558,8 +566,9 @@ document.addEventListener('DOMContentLoaded', function() {
       let inv6img = document.getElementById('product-image');
       inv6img.src= "inverter6.png";
       inv6img.style.height = '300px';
-      handle6Total = handle6Total - handle6Inverter + inv6Price
-      document.getElementById('price-13').innerHTML = formatPrice(handle6Total);
+      Total = Total - inverterTotal + inv6Price;
+      document.getElementById('price-13').innerHTML = formatPrice(Total);
+            document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-inverter').innerHTML = inv6;
       document.getElementById('inverter-price').innerHTML = formatPrice(inv6Price);
       document.getElementById('num-panels').innerHTML = inv6Max;
@@ -588,8 +597,9 @@ document.addEventListener('DOMContentLoaded', function() {
       let bat6img = document.getElementById('product-image-battery');
       bat6img.src = "battery6.png";
       bat6img.style.height = '300px';
-      handleBattery6Total = handleBattery6Total - handle6Battery + bat6Price
-      document.getElementById('price-13').innerHTML = formatPrice(handleBattery6Total);
+      Total = Total - batteryTotal + bat6Price;
+      document.getElementById('price-13').innerHTML = formatPrice(Total);
+            document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-battery').innerHTML = bat6;
       document.getElementById('battery-price').innerHTML = formatPrice(bat6Price);
       var overviewImage3 = document.getElementById('overview-image3');
@@ -614,8 +624,9 @@ document.addEventListener('DOMContentLoaded', function() {
       let inv7img = document.getElementById('product-image');
       inv7img.src= "inverter7.png";
       inv7img.style.height = '300px';
-      handle7Total = handle7Total - handle7Inverter + inv7Price
-      document.getElementById('price-13').innerHTML = formatPrice(handle7Total);
+      Total = Total - inverterTotal + inv7Price;
+      document.getElementById('price-13').innerHTML = formatPrice(Total);
+            document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-inverter').innerHTML = inv7;
       document.getElementById('inverter-price').innerHTML = formatPrice(inv7Price);
       document.getElementById('num-panels').innerHTML = inv7Max;
@@ -645,8 +656,9 @@ document.addEventListener('DOMContentLoaded', function() {
       let bat7img = document.getElementById('product-image-battery');
       bat7img.src = "battery7.png";
       bat7img.style.height = '300px';
-      handleBattery7Total = handleBattery7Total - handle7Battery + bat7Price
-      document.getElementById('price-13').innerHTML = formatPrice(handleBattery7Total);
+      Total = Total - batteryTotal + bat7Price;
+      document.getElementById('price-13').innerHTML = formatPrice(Total);
+            document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-battery').innerHTML = bat7;
       document.getElementById('battery-price').innerHTML = formatPrice(bat7Price);
       var overviewImage3 = document.getElementById('overview-image3');
@@ -671,8 +683,9 @@ document.addEventListener('DOMContentLoaded', function() {
       let inv8img = document.getElementById('product-image');
       inv8img.src= "inverter8.png";
       inv8img.style.height = '300px';
-      handle8Total = handle8Total - handle8Inverter + inv8Price
-      document.getElementById('price-13').innerHTML = formatPrice(handle8Total);
+      Total = Total - inverterTotal + inv8Price;
+      document.getElementById('price-13').innerHTML = formatPrice(Total);
+            document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-inverter').innerHTML = inv8;
       document.getElementById('inverter-price').innerHTML = formatPrice(inv8Price);
       document.getElementById('num-panels').innerHTML = inv8Max;
@@ -702,8 +715,9 @@ document.addEventListener('DOMContentLoaded', function() {
       let bat8img = document.getElementById('product-image-battery');
       bat8img.src = "battery8.png";
       bat8img.style.height = '300px';
-      handleBattery8Total = handleBattery8Total - handle8Battery + bat8Price
-      document.getElementById('price-13').innerHTML = formatPrice(handleBattery8Total);
+      Total = Total - batteryTotal + bat8Price;
+      document.getElementById('price-13').innerHTML = formatPrice(Total);
+            document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-battery').innerHTML = bat8;
       document.getElementById('battery-price').innerHTML = formatPrice(bat8Price);
       var overviewImage3 = document.getElementById('overview-image3');
@@ -728,8 +742,9 @@ document.addEventListener('DOMContentLoaded', function() {
       let inv9img = document.getElementById('product-image');
       inv9img.src= "inverter9.png";
       inv9img.style.height = '300px';
-      handle9Total = handle9Total - handle9Inverter + inv9Price
-      document.getElementById('price-13').innerHTML = formatPrice(handle9Total);
+      Total = Total - inverterTotal + inv9Price;
+      document.getElementById('price-13').innerHTML = formatPrice(Total);
+            document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-inverter').innerHTML = inv9;
       document.getElementById('inverter-price').innerHTML = formatPrice(inv9Price);
       document.getElementById('num-panels').innerHTML = inv9Max;
@@ -759,8 +774,9 @@ document.addEventListener('DOMContentLoaded', function() {
       let bat9img = document.getElementById('product-image-battery');
       bat9img.src = "battery9.png";
       bat9img.style.height = '300px';
-      handleBattery9Total = handleBattery9Total - handle9Battery + bat9Price
-      document.getElementById('price-13').innerHTML = formatPrice(handleBattery9Total);
+      Total = Total - batteryTotal + bat9Price;
+      document.getElementById('price-13').innerHTML = formatPrice(Total);
+            document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-battery').innerHTML = bat9;
       document.getElementById('battery-price').innerHTML = formatPrice(bat9Price);
       var overviewImage3 = document.getElementById('overview-image3');
@@ -785,8 +801,9 @@ document.addEventListener('DOMContentLoaded', function() {
       let inv10img = document.getElementById('product-image');
       inv10img.src= "inverter10.png";
       inv10img.style.height = '300px';
-      handle10Total = handle10Total - handle10Inverter + inv10Price
-      document.getElementById('price-13').innerHTML = formatPrice(handle10Total);
+      Total = Total - inverterTotal + inv10Price;
+      document.getElementById('price-13').innerHTML = formatPrice(Total);
+            document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-inverter').innerHTML = inv10;
       document.getElementById('inverter-price').innerHTML = formatPrice(inv10Price);
       document.getElementById('num-panels').innerHTML = inv10Max;
@@ -816,8 +833,9 @@ document.addEventListener('DOMContentLoaded', function() {
       let bat10img = document.getElementById('product-image-battery');
       bat10img.src = "battery10.png";
       bat10img.style.height = '300px';
-      handleBattery10Total = handleBattery10Total - handle10Battery + bat10Price
-      document.getElementById('price-13').innerHTML = formatPrice(handleBattery10Total);
+      Total = Total - batteryTotal + bat10Price;
+      document.getElementById('price-13').innerHTML = formatPrice(Total);
+            document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-battery').innerHTML = bat10;
       document.getElementById('battery-price').innerHTML = formatPrice(bat10Price);
       var overviewImage3 = document.getElementById('overview-image3');
@@ -842,8 +860,9 @@ document.addEventListener('DOMContentLoaded', function() {
       let inv11img = document.getElementById('product-image');
       inv11img.src= "inverter11.png";
       inv11img.style.height = '300px';
-      handle11Total = handle11Total - handle11Inverter + inv11Price
-      document.getElementById('price-13').innerHTML = formatPrice(handle11Total);
+      Total = Total - inverterTotal + inv11Price;
+      document.getElementById('price-13').innerHTML = formatPrice(Total);
+            document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-inverter').innerHTML = inv11;
       document.getElementById('inverter-price').innerHTML = formatPrice(inv11Price);
       document.getElementById('num-panels').innerHTML = inv11Max;
@@ -873,8 +892,9 @@ document.addEventListener('DOMContentLoaded', function() {
       let bat11img = document.getElementById('product-image-battery');
       bat11img.src = "battery11.png";
       bat11img.style.height = '300px';
-      handleBattery11Total = handleBattery11Total - handle11Battery + bat11Price
-      document.getElementById('price-13').innerHTML = formatPrice(handleBattery11Total);
+      Total = Total - batteryTotal + bat11Price;
+      document.getElementById('price-13').innerHTML = formatPrice(Total);
+            document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-battery').innerHTML = bat11;
       document.getElementById('battery-price').innerHTML = formatPrice(bat11Price);
       var overviewImage3 = document.getElementById('overview-image3');
@@ -899,8 +919,9 @@ document.addEventListener('DOMContentLoaded', function() {
       let inv12img = document.getElementById('product-image');
       inv12img.src= "inverter12.png";
       inv12img.style.height = '300px';
-      handle12Total = handle12Total - handle12Inverter + inv12Price
-      document.getElementById('price-13').innerHTML = formatPrice(handle12Total);
+      Total = Total - inverterTotal + inv12Price;
+      document.getElementById('price-13').innerHTML = formatPrice(Total);
+            document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-inverter').innerHTML = inv12;
       document.getElementById('inverter-price').innerHTML = formatPrice(inv12Price);
       document.getElementById('num-panels').innerHTML = inv2Max;
@@ -928,8 +949,9 @@ document.addEventListener('DOMContentLoaded', function() {
       let bat12img = document.getElementById('product-image-battery');
       bat12img.src = "battery12.png";
       bat12img.style.height = '300px';
-      handleBattery2Total = handleBattery12Total - handle12Battery + bat12Price
-      document.getElementById('price-13').innerHTML = formatPrice(handleBattery12Total);
+      Total = Total - batteryTotal + bat12Price;
+      document.getElementById('price-13').innerHTML = formatPrice(Total);
+            document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-battery').innerHTML = bat12;
       document.getElementById('battery-price').innerHTML = formatPrice(bat12Price);
       var overviewImage3 = document.getElementById('overview-image3');
@@ -955,8 +977,9 @@ document.addEventListener('DOMContentLoaded', function() {
       let bat13img = document.getElementById('product-image-battery');
       bat13img.src = "battery13.png";
       bat13img.style.height = '300px';
-      handleBattery13Total = handleBattery13Total - handle13Battery + bat13Price
-      document.getElementById('price-13').innerHTML = formatPrice(handleBattery13Total);
+      Total = Total - batteryTotal + bat13Price;
+      document.getElementById('price-13').innerHTML = formatPrice(Total);
+            document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-battery').innerHTML = bat13;
       document.getElementById('battery-price').innerHTML = formatPrice(bat13Price);
       var overviewImage3 = document.getElementById('overview-image3');
@@ -1108,7 +1131,7 @@ function calculate() {
   
     var dbPrice = 1259;
     var dbQuantity = 1;
-    dbTotal = Math.ceil(dbPrice * dbQuantity * 1.25);
+    let dbTotal = Math.ceil(dbPrice * dbQuantity * 1.25);
   
     var invPrice = 2817.96;
     var invQuantity = inverterQuantity;
@@ -1116,7 +1139,7 @@ function calculate() {
   
     var batPrice = 797.60;
     var batQuantity = batteryQuantity;
-    batTotal = Math.ceil(batPrice * batQuantity);
+    let batTotal = Math.ceil(batPrice * batQuantity);
   
     var mountingPrice = 586.40;
     var mountingQuantity = panels;
@@ -1136,7 +1159,7 @@ function calculate() {
   
     var dbSeperate = 3000;
     var dbSeperateQuantity = dbQuantity;
-    dbSeperateTotal = Math.ceil(dbSeperate * dbSeperateQuantity * 1.25);
+    let dbSeperateTotal = Math.ceil(dbSeperate * dbSeperateQuantity * 1.25);
   
     var COC = 1700;
     var cocQuantity =1;
@@ -1267,6 +1290,8 @@ function calculate() {
     }
 
     document.getElementById('panel-cost').innerHTML = formatPrice(panelTotal);
+    document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
+
 
     // Add the rest of your quote updates
   }

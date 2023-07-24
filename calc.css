@@ -429,9 +429,121 @@ table p{
 
 }
 
+.bottombar{
+    position: fixed;
+    z-index: 101;
+    bottom: 0;
+    left: 0;
+    background: #2A0338;
+    width: 100%;
+    height: 80px;
+    background-color: #2A0338;
+    color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.bottombar-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.bottombar-container2{
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 45%;
+}
+
+.bottombar-cost{
+    display: flex;
+    flex-direction: row;
+    float: left;
+    font-size: 1.5em;
+}
+
+.bottombar-list{
+    margin-left: 45%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.bottombar-list li{
+    display: inline;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.bottombar-container2{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+}
+
+
+
 
 
 @media screen and (max-width:900px) {
+
+
+ /*   .bottombar-cost{
+        font-size: 12px;
+        align-items: center;
+
+    }
+    .bottombar-container2{
+        width: auto;
+        font-size: 12px;
+    }
+
+    .bottombar-container{
+        align-items: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .bottombar-list{
+        margin-left: 20%;
+    }
+    */
+    .bottombar{
+        font-size: 12px;
+        height: auto;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .bottombar-container{
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .bottombar-container2{
+        font-size: 12px;
+
+        width: auto;
+        margin-left: 0;
+    }
+
+    .bottombar-list{
+        font-size: 12px;
+        margin-right: 300px;
+        margin-left: 0;
+
+    }
+           
+
     .calculator-container{
         display: flex;
         flex-direction: column;
