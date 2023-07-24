@@ -514,6 +514,19 @@ table p{
         margin-left: 20%;
     }
     */
+    .config-output{
+        width: auto;
+    }
+
+    .config-output p{
+        text-align: center;
+    }
+    .data-output{
+        width: auto;
+
+    }
+
+
     .bottombar{
         font-size: 12px;
         height: auto;
