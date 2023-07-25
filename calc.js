@@ -80,95 +80,103 @@ let handleBattery13Total = 0; // Total Price
 let handle13Battery = 0; //Price of the battery
 
 let inv1 = "3.5 Kw Growatt 48V Hybrid Inverter"
-let inv1Price = 8694.00;
+let inv1Price = 10868.00;
 let inv1Max = 10;
 
 let inv2 = "5 Kw Growatt 48V Hybrid Inverter";
-let inv2Price = 12399.00;
+let inv2Price = 15498.00;
 let inv2Max = 10;
 
 let inv3 = "5.5 Kw Luxpower Hybrid Inverter";
-let inv3Price = 13999.00;
-let inv3Max = 18;
+let inv3Price = 17498.00;
+let inv3Max = 10;
 
 let inv4 = "5 Kw Deye Hybrid Inverter";
-let inv4Price = 25999;
+let inv4Price = 32498;
 let inv4Max = 14;
 
 
 let inv5 = "5 Kw Sunsynk Hybrid Inverter";
-let inv5Price = 27899;
+let inv5Price = 34874;
 let inv5Max = 14;
 
 let inv6 = "8 Kw Deye Hybrid Inverter";
-let inv6Price = 39999;
+let inv6Price = 49999;
 let inv6Max = 14;
 
 let inv7 = "8 Kw Sunsynk Hybrid Inverter";
-let inv7Price = 43499;
+let inv7Price = 54374;
 let inv7Max = 18;
 
 let inv8 = "12 Kw Luxpower Hybrid Inverter";
-let inv8Price = 46900;
+let inv8Price = 58625;
 let inv8Max = 21;
 
 let inv9 = "12 Kw 3 Phase Deye Hybrid Inverter";
-let inv9Price = 55999;
+let inv9Price = 69999;
 let inv9Max = 28;
 
 let inv10 = "12 Kw 3 Phase Sunsynk Hybrid Inverter";
-let inv10Price = 63999;
+let inv10Price = 79999;
 let inv10Max = 27;
 
 let inv11 = "16 Kw Deye Hybrid Inverter";
-let inv11Price = 69999;
+let inv11Price = 87499;
 let inv11Max = 37;
 
 let inv12 = "16 Kw Sunsynk Hybrid Inverter"
-let inv12Price = 76999;
+let inv12Price = 96249;
 let inv12Max = 32;
 
 let inverterPrice = 0;
 
 //Battery Pricing
 let bat1 = "3.6 Kwh Dyness Li-Ion";
-let bat1Price = 19999;
+let bat1Price = 24999;
 
 let bat2 = "5 Kwh Felicity Li-Ion";
-let bat2Price = 22999;
+let bat2Price = 28749;
 
 let bat3 = "5.12 Kwh Dyness Li-Ion";
-let bat3Price = 25799;
+let bat3Price = 32249;
 
 let bat4 = "4.96 Kwh Greenrich Li-Ion";
-let bat4Price = 29999;
+let bat4Price = 37499;
 
 let bat5 = "5.12 Kwh Hubble AM-5 Li-Ion";
-let bat5Price = 31299;
+let bat5Price = 39124;
 
 let bat6 = "5/4 Kwh Freedom One";
-let bat6Price = 34999;
+let bat6Price = 43749;
 
 let bat7 = "8.7 Kwh Felicity Li-Ion";
-let bat7Price = 40999;
+let bat7Price = 51249;
 
 let bat8 = "12.5 Kwh Felicity Li-Ion";
-let bat8Price = 48999;
+let bat8Price = 61249;
 
 let bat9 = "10.24 Kwh Dyness Li-Ion";
-let bat9Price = 55000;
+let bat9Price = 68750;
 
 let bat10 = "10 Kwh Hubble AM-5 Li-Ion";
-let bat10Price = 73999;
+let bat10Price = 92499;
 
 let bat11 = "10/8 Kwh Freedom One";
-let bat11Price = 79999;
+let bat11Price = 99999;
 
 let bat12 = "15/12 Kwh Freedom One";
-let bat12Price = 107000;
+let bat12Price = 133750;
 
 let bat13 = "20/16 Kwh Freedom One";
-let bat13Price = 142999;
+let bat13Price = 178749;
+
+let panelInstall = 500;
+let totalPanelInstall = 0;
+
+let mountingTotal = 0;
+let panelChangePrice = 0;
+let NewtotalPanelInstall = 0;
+let newMountingTotal = 0;
 
 
 
@@ -192,24 +200,25 @@ function increaseValue() {
 
   document.getElementById('config-7').innerHTML = currentValue + 1; // Update config-7 with the new value
 
-  let panelPrice = 3695;
+
+  let panelPrice = 4619;
   let panelNum = document.getElementById('config-7').innerHTML;
-  let panelChangePrice = panelPrice * panelNum;
-  Total = Total - panelTotal + panelChangePrice;
-  panelTotal = panelChangePrice;
+   panelChangePrice = panelPrice * panelNum;
+   NewtotalPanelInstall = Math.ceil(panelNum * panelInstall * 1.25);
+   newMountingTotal = panelNum * 733;
+  Total = Total +5977
+
   document.getElementById('price-1').innerHTML = formatPrice(panelChangePrice);
   document.getElementById('price-13').innerHTML = formatPrice(Total);
   document.getElementById('panel-cost').innerHTML = formatPrice(panelChangePrice)
   document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
-
-
-
+  document.getElementById('price-14').innerHTML = formatPrice(NewtotalPanelInstall);
+  document.getElementById('price-7').innerHTML = formatPrice(newMountingTotal);
 }
 
 
 function decreaseValue() {
-  let maxPanels = document.getElementById('num-panels').innerHTML
-
+  let maxPanels = document.getElementById('num-panels').innerHTML;
   var input = document.getElementById('btn-value');
   var currentValue = parseInt(input.value);
   if (currentValue > 0) {
@@ -219,22 +228,22 @@ function decreaseValue() {
       alert("You have exceeded the maximum number of panels for this inverter");
     } else{
       input.style.backgroundColor = 'white';
-
     }
   }
   document.getElementById('config-7').innerHTML = currentValue - 1; // Update config-7 with the new value
 
-  let panelPrice = 3695;
+  let panelPrice = 4619;
   let panelNum = document.getElementById('config-7').innerHTML;
-  let panelChangePrice = panelPrice * panelNum;
-  Total = Total - panelTotal + panelChangePrice
-  panelTotal = panelChangePrice;
+  panelChangePrice = panelPrice * panelNum;
+  NewtotalPanelInstall = Math.ceil(panelNum * panelInstall * 1.25);
+  newMountingTotal = panelNum * 733;
+  Total = Total - 5977;
   document.getElementById('price-1').innerHTML = formatPrice(panelChangePrice);
   document.getElementById('price-13').innerHTML = formatPrice(Total);
-  document.getElementById('panel-cost').innerHTML = formatPrice(panelChangePrice);
+  document.getElementById('panel-cost').innerHTML = formatPrice(panelChangePrice)
   document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
-
-
+  document.getElementById('price-14').innerHTML = formatPrice(NewtotalPanelInstall);
+  document.getElementById('price-7').innerHTML = formatPrice(newMountingTotal);
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -1122,9 +1131,10 @@ function calculate() {
   
     // Now, let's do the quotation
   
-    var panelPrice = 3695;
+    var panelPrice = 4619;
     var panelQuantity = panels;
-    panelTotal = Math.ceil( panelPrice * panelQuantity * 1.25); //Adds the 25% markup
+    panelTotal = Math.ceil( 4619 * panelQuantity ); //Adds the 25% markup
+    totalPanelInstall = Math.ceil(panelQuantity * panelInstall * 1.25);
   
 
     var inverterQuantity = 0;
@@ -1152,19 +1162,19 @@ function calculate() {
     var batteryPrice = 0;
     var batteryQuantity = 0;
     if (batteryModules == "5.1KW"){
-      batteryPrice = 25799;
+      batteryPrice = 32249;
       batteryQuantity = 1;
     } else if (batteryModules == "2X 5.1KW"){
-      batteryPrice = 25799;
+      batteryPrice = 32249;
       batteryQuantity = 2;
     } else if (batteryModules == "3X 5.1KW"){
-      batteryPrice = 25799;
+      batteryPrice = 32249;
       batteryQuantity = 3;
     } else if (batteryModules == "Consult us"){
       batteryPrice = 0
       batteryQuantity = 0
     }
-    batteryTotal = Math.ceil(batteryPrice * batteryQuantity * 1.25);
+    batteryTotal = Math.ceil(batteryPrice * batteryQuantity);
   
     var dbPrice = 1259;
     var dbQuantity = 1;
@@ -1176,11 +1186,11 @@ function calculate() {
   
     var batPrice = 797.60;
     var batQuantity = batteryQuantity;
-    let batTotal = Math.ceil(batPrice * batQuantity);
+    let batTotal = Math.ceil(batPrice * batQuantity * 1.25);
   
     var mountingPrice = 586.40;
-    var mountingQuantity = panels;
-    mountingTotal = Math.ceil(mountingPrice * mountingQuantity * 1.25);
+    var mountingQuantity = panelQuantity;
+    mountingTotal = Math.ceil(mountingPrice * panelQuantity * 1.25);
   
     var conduitPrice = 2929;
     var conduitQuantity = 1;
@@ -1202,7 +1212,7 @@ function calculate() {
     var cocQuantity =1;
     cocTotal = Math.ceil(COC * cocQuantity * 1.25);
     
-    Total = panelTotal + inverterTotal + batteryTotal + dbTotal + invTotal + batTotal + mountingTotal + conduitTotal + invInstallationTotal + batInstallTotal + dbSeperateTotal + cocTotal;
+    Total = totalPanelInstall + panelTotal + inverterTotal + batteryTotal + dbTotal + invTotal + batTotal + mountingTotal + conduitTotal + invInstallationTotal + batInstallTotal + dbSeperateTotal + cocTotal;
 
     handle1Inverter = inverterTotal;
     handle1Total = Total;
@@ -1287,6 +1297,7 @@ function calculate() {
     document.getElementById('price-11').innerHTML = formatPrice(dbSeperateTotal);
     document.getElementById('price-12').innerHTML = formatPrice(cocTotal);
     document.getElementById('price-13').innerHTML = formatPrice(Total);
+    document.getElementById('price-14').innerHTML = formatPrice(totalPanelInstall);
 
     document.getElementById('btn-value').value = panels;
 
