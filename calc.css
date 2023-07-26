@@ -10,6 +10,7 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
 .calculator-container{
     display: flex;
     flex-wrap: wrap;
@@ -477,7 +478,7 @@ table p{
 
 .bottombar-list li{
     display: inline;
-    margin-right: 10px;
+    margin-right: 40px;
     font-size: 20px;
 }
 
@@ -555,6 +556,7 @@ table p{
         font-size: 12px;
         margin-right: 300px;
         margin-left: 0;
+        margin-left: 28%;
 
     }
            
