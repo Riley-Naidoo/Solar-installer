@@ -30,13 +30,26 @@ header{
     overflow-y: hidden;
 }
 
-.navbar a{
-    color:white;
-}
-
-.navbar a:hover{
-    text-decoration: underline;
-}
+.navbar a {
+    color: white;
+    position: relative; /* Add this to make the ::before absolute position relative to the anchor */
+  }
+  
+  .navbar a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #F44C1D; /* Change the color as per your preference */
+    transition: width 0.5s ease;
+  }
+  
+  .navbar a:hover::before {
+    width: 100%;
+  }
+  
 
 
 .logo{
