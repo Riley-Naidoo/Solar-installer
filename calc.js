@@ -170,6 +170,9 @@ let bat12Price = 133750;
 let bat13 = "20/16 Kwh Freedom One";
 let bat13Price = 178749;
 
+let currentBatPrice = 0;
+let currentBatName = "No Battery Selected"
+
 let panelInstall = 500;
 let totalPanelInstall = 0;
 
@@ -177,6 +180,12 @@ let mountingTotal = 0;
 let panelChangePrice = 0;
 let NewtotalPanelInstall = 0;
 let newMountingTotal = 0;
+
+let NewcurrentBatPrice = 0;
+
+var batPrice = 797.60;
+var batInstallPrice = 1500;
+
 
 
 
@@ -218,32 +227,80 @@ function increaseValue() {
 
 
 function decreaseValue() {
-  let maxPanels = document.getElementById('num-panels').innerHTML;
-  var input = document.getElementById('btn-value');
-  var currentValue = parseInt(input.value);
-  if (currentValue > 0) {
-    input.value = currentValue - 1;
-    if (currentValue-1 > maxPanels){
-      input.style.backgroundColor = 'red';
-      alert("You have exceeded the maximum number of panels for this inverter");
-    } else{
-      input.style.backgroundColor = 'white';
+  if (document.getElementById('btn-value').value > 0){
+    let maxPanels = document.getElementById('num-panels').innerHTML;
+    var input = document.getElementById('btn-value');
+    var currentValue = parseInt(input.value);
+    if (currentValue > 0) {
+      input.value = currentValue - 1;
+      if (currentValue-1 > maxPanels){
+        input.style.backgroundColor = 'red';
+        alert("You have exceeded the maximum number of panels for this inverter");
+      } else{
+        input.style.backgroundColor = 'white';
+      }
     }
-  }
-  document.getElementById('config-7').innerHTML = currentValue - 1; // Update config-7 with the new value
+    document.getElementById('config-7').innerHTML = currentValue - 1; // Update config-7 with the new value
+  
+    let panelPrice = 4619;
+    let panelNum = document.getElementById('config-7').innerHTML;
+    panelChangePrice = panelPrice * panelNum;
+    NewtotalPanelInstall = Math.ceil(panelNum * panelInstall * 1.25);
+    newMountingTotal = panelNum * 733;
+    Total = Total - 5977;
+    document.getElementById('price-1').innerHTML = formatPrice(panelChangePrice);
+    document.getElementById('price-13').innerHTML = formatPrice(Total);
+    document.getElementById('panel-cost').innerHTML = formatPrice(panelChangePrice)
+    document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
+    document.getElementById('price-14').innerHTML = formatPrice(NewtotalPanelInstall);
+    document.getElementById('price-7').innerHTML = formatPrice(newMountingTotal);
 
-  let panelPrice = 4619;
-  let panelNum = document.getElementById('config-7').innerHTML;
-  panelChangePrice = panelPrice * panelNum;
-  NewtotalPanelInstall = Math.ceil(panelNum * panelInstall * 1.25);
-  newMountingTotal = panelNum * 733;
-  Total = Total - 5977;
-  document.getElementById('price-1').innerHTML = formatPrice(panelChangePrice);
+  }else if (document.getElementById('btn-value').value < 0){
+    alert("Please choose a value greater than 0");
+
+
+  }
+
+}
+
+function increaseBatteryValue() {
+
+  var input = document.getElementById('btn-value-battery');
+  var currentValue = parseInt(input.value);
+  input.value = currentValue + 1;
+  NewcurrentBatPrice = currentBatPrice * document.getElementById('btn-value-battery').value;
+  document.getElementById('battery-price').innerHTML = formatPrice(NewcurrentBatPrice);
+  document.getElementById('config-11').innerHTML = document.getElementById('btn-value-battery').value + "x" + " " + currentBatName; // Update config-7 with the new value
+  document.getElementById('price-3').innerHTML = formatPrice(NewcurrentBatPrice);
+
+  Total = Total + currentBatPrice;
+
   document.getElementById('price-13').innerHTML = formatPrice(Total);
-  document.getElementById('panel-cost').innerHTML = formatPrice(panelChangePrice)
   document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
-  document.getElementById('price-14').innerHTML = formatPrice(NewtotalPanelInstall);
-  document.getElementById('price-7').innerHTML = formatPrice(newMountingTotal);
+}
+
+
+function decreaseBatteryValue() {
+  
+  if (document.getElementById('btn-value-battery').value > 0){
+    var input = document.getElementById('btn-value-battery');
+    var currentValue = parseInt(input.value);
+    input.value = currentValue - 1;
+    NewcurrentBatPrice = currentBatPrice * document.getElementById('btn-value-battery').value;
+    document.getElementById('battery-price').innerHTML = formatPrice(NewcurrentBatPrice);
+    document.getElementById('config-11').innerHTML = document.getElementById('btn-value-battery').value + "x" + " " + currentBatName; // Update config-7 with the new value
+    document.getElementById('price-3').innerHTML = formatPrice(NewcurrentBatPrice);
+  
+    Total = Total - batteryTotal;
+  
+    document.getElementById('price-13').innerHTML = formatPrice(Total);
+    document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
+
+  } 
+  else if (document.getElementById('btn-value-battery').value < 0){
+    alert("Please choose a value greater than 0");
+
+  }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -346,6 +403,9 @@ document.addEventListener('DOMContentLoaded', function() {
           window.open(pdfUrl, '_blank');
         };
       }
+      currentBatName = bat1;
+      currentBatPrice = bat1Price;
+      document.getElementById('btn-value-battery').value = 1;
 
       
 
@@ -410,6 +470,10 @@ document.addEventListener('DOMContentLoaded', function() {
           window.open(pdfUrl, '_blank');
         };
       }
+      currentBatName = bat2;
+      currentBatPrice = bat2Price;
+      document.getElementById('btn-value-battery').value = 1;
+
     }
     
     function handleinv3(){
@@ -469,6 +533,10 @@ document.addEventListener('DOMContentLoaded', function() {
           window.open(pdfUrl, '_blank');
         };
       }
+      currentBatName = bat3;
+      currentBatPrice = bat3Price;
+      document.getElementById('btn-value-battery').value = 1;
+
     }
     
     function handleinv4(){
@@ -529,6 +597,10 @@ document.addEventListener('DOMContentLoaded', function() {
           window.open(pdfUrl, '_blank');
         };
       }
+      currentBatName = bat4;
+      currentBatPrice = bat4Price;
+      document.getElementById('btn-value-battery').value = 1;
+
     }
     
     function handleinv5(){
@@ -589,6 +661,10 @@ document.addEventListener('DOMContentLoaded', function() {
           window.open(pdfUrl, '_blank');
         };
       }
+      currentBatName = bat5;
+      currentBatPrice = bat5Price;
+      document.getElementById('btn-value-battery').value = 1;
+
     }
     
     function handleinv6(){
@@ -649,6 +725,10 @@ document.addEventListener('DOMContentLoaded', function() {
           window.open(pdfUrl, '_blank');
         };
       }
+      currentBatName = bat6;
+      currentBatPrice = bat6Price;
+      document.getElementById('btn-value-battery').value = 1;
+
     }
     
     function handleinv7(){
@@ -710,6 +790,10 @@ document.addEventListener('DOMContentLoaded', function() {
           window.open(pdfUrl, '_blank');
         };
       }
+      currentBatName = bat7;
+      currentBatPrice = bat7Price;
+      document.getElementById('btn-value-battery').value = 1;
+
     }
     
     function handleinv8(){
@@ -771,6 +855,10 @@ document.addEventListener('DOMContentLoaded', function() {
           window.open(pdfUrl, '_blank');
         };
       }
+      currentBatName = bat8;
+      currentBatPrice = bat8Price;
+      document.getElementById('btn-value-battery').value = 1;
+
     }
     
     function handleinv9(){
@@ -832,6 +920,10 @@ document.addEventListener('DOMContentLoaded', function() {
           window.open(pdfUrl, '_blank');
         };
       }
+      currentBatName = bat9;
+      currentBatPrice = bat9Price;
+      document.getElementById('btn-value-battery').value = 1;
+
     }
     
     function handleinv10(){
@@ -893,6 +985,10 @@ document.addEventListener('DOMContentLoaded', function() {
           window.open(pdfUrl, '_blank');
         };
       }
+      currentBatName = bat10;
+      currentBatPrice = bat10Price;
+      document.getElementById('btn-value-battery').value = 1;
+
     }
     
     function handleinv11(){
@@ -954,6 +1050,10 @@ document.addEventListener('DOMContentLoaded', function() {
           window.open(pdfUrl, '_blank');
         };
       }
+      currentBatName = bat11;
+      currentBatPrice = bat11Price;
+      document.getElementById('btn-value-battery').value = 1;
+
     }
     
     function handleinv12(){
@@ -1013,6 +1113,10 @@ document.addEventListener('DOMContentLoaded', function() {
           window.open(pdfUrl, '_blank');
         };
       }
+      currentBatName = bat12;
+      currentBatPrice = bat12Price;
+      document.getElementById('btn-value-battery').value = 1;
+
     }
 
     
@@ -1042,9 +1146,9 @@ document.addEventListener('DOMContentLoaded', function() {
           window.open(pdfUrl, '_blank');
         };
       }
-      
-
-
+      currentBatName = bat13;
+      currentBatPrice = bat13Price;
+      document.getElementById('btn-value-battery').value = 1;
     }
 
 
@@ -1164,17 +1268,21 @@ function calculate() {
     if (batteryModules == "5.1KW"){
       batteryPrice = 32249;
       batteryQuantity = 1;
+      document.getElementById('btn-value-battery').value = 1;
     } else if (batteryModules == "2X 5.1KW"){
       batteryPrice = 32249;
       batteryQuantity = 2;
+      document.getElementById('btn-value-battery').value = 2;
     } else if (batteryModules == "3X 5.1KW"){
       batteryPrice = 32249;
       batteryQuantity = 3;
+      document.getElementById('btn-value-battery').value = 3;
     } else if (batteryModules == "Consult us"){
       batteryPrice = 0
       batteryQuantity = 0
     }
     batteryTotal = Math.ceil(batteryPrice * batteryQuantity);
+    document.getElementById('battery-price').innerHTML = formatPrice(batteryTotal);
   
     var dbPrice = 1259;
     var dbQuantity = 1;
@@ -1184,7 +1292,7 @@ function calculate() {
     var invQuantity = inverterQuantity;
     invTotal = Math.ceil(invPrice * invQuantity * 1.25);
   
-    var batPrice = 797.60;
+    batPrice = 797.60;
     var batQuantity = batteryQuantity;
     let batTotal = Math.ceil(batPrice * batQuantity * 1.25);
   
@@ -1200,7 +1308,7 @@ function calculate() {
     var invInstallationQuantity = inverterQuantity;
     invInstallationTotal = Math.ceil(invInstallationPrice * invInstallationQuantity * 1.25);
   
-    var batInstallPrice = 1500;
+    batInstallPrice = 1500;
     var batInstallQuantity = batteryQuantity;
     batInstallTotal = Math.ceil(batInstallPrice * batInstallQuantity * 1.25);
   
@@ -1318,7 +1426,8 @@ function calculate() {
     overviewImage3.style.backgroundSize = 'contain';
     
     document.getElementById('selected-battery').innerHTML = bat3;
-    document.getElementById('battery-price').innerHTML = formatPrice(bat3Price);
+    currentBatName = bat3;
+    currentBatPrice = bat3Price;
     let battery3Pdf = document.getElementsByClassName('battery-pdf');
     for (let i = 0; i < battery3Pdf.length; i++) {
       battery3Pdf[i].onclick = function() {

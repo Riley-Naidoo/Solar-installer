@@ -4,6 +4,7 @@
     text-decoration: none;
     list-style: none;
     overflow-x: hidden;
+
 }
 
 body{
@@ -16,6 +17,7 @@ body{
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
+
 }
 
 .change-button{
@@ -176,6 +178,7 @@ td, th {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
+
 }
 
 h1{
@@ -243,6 +246,10 @@ table p{
     text-align: center;
   }
 
+  .item-2{
+    margin-left: 2%;
+  }
+
   .panel {
     padding-top: 100px;
     position: fixed;
@@ -292,6 +299,7 @@ table p{
     height: 1000px;
     background-color: white;
     overflow: hidden;
+    display: none;
 
 }
 
@@ -488,11 +496,263 @@ table p{
     width: auto;
 }
 
+/* Style the buttons that are used to open and close the accordion panel */
+
+.accordion-container{
+    width: 93%;
+    margin-right: 30px;
+}
+
+.accordion {
+    background-color: #2A0338;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .accordion:hover {
+    background-color: #F44C1D;
+  }
+  
+  /* Style the accordion panel. Note: hidden by default */
+  .accordion-panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+  }
+
+  .trust-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 6em;
+    height: 200px;
+    overflow-y: hidden;
+    width: 95%;
+    margin-top: 30px;
+
+}
+
+
+
+.section-trust{
+    font-size: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    background-color: #2A0338;
+    border-radius: 50px;
+    width: 20%;
+    padding: 10px;
+    height: 140px;
+    transform: scale(1);
+    transition: transform 1s ease;
+    box-shadow: #3c3c3c;
+    transition: background-color 1s ease;
+
+
+}
+
+.section-trust-text{
+    font-size: 20px;
+    background-color: #F44C1D;
+    width: 85%;
+    margin-top: 25px;
+    text-align: center;
+    font-weight: bold;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+
+
+
+.section-trust:hover{
+    transform: scale(1.05);
+    transition: transform 1s ease;
+    overflow-y: hidden;
+    cursor: pointer;
+    transition: background-color 1s ease;
+    background-color: #F44C1D;
+
+    .section-trust-text{
+        background-color: #2A0338;
+        transition: background-color 1s ease;
+
+    }
+}
+
+
+
+  
+  /* Timeline Container */
+  .timeline {
+
+    color:white;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    height: auto;  
+    overflow: hidden;
+  }
+
+  .outer{
+    overflow: hidden;
+  }
+  
+  /* Card container */
+  .card {
+    position: relative;
+    max-width: 400px;
+    color:white;
+    overflow: visible;
+    height: 200px;
+  
+  }
+  
+  /* setting padding based on even or odd */
+  .card:nth-child(odd) {
+    padding: 30px 0 30px 30px;
+  }
+  .card:nth-child(even) {
+    padding: 30px 30px 30px 0;
+  }
+  /* Global ::before */
+  .card::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    border: solid orangered;
+  }
+  
+  /* Setting the border of top, bottom, left */
+  .card:nth-child(odd)::before {
+    left: 0px;
+    top: -4.5px;
+    bottom: -4.5px;
+    border-width: 5px 0 5px 5px;
+    border-radius: 50px 0 0 50px;
+  }
+  
+  
+
+  
+  /* Setting the top and bottom to "-5px" because earlier it was out of a pixel in mobile devices */
+  @media only screen and (max-width: 400px) {
+    .card:nth-child(odd)::before {
+      top: -5px;
+      bottom: -5px;
+    }
+  }
+  
+  /* Setting the border of top, bottom, right */
+  .card:nth-child(even)::before {
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-width: 5px 5px 5px 0;
+    border-radius: 0 50px 50px 0;
+  }
+  
+  /* Removing the border if it is the first card */
+  .card:first-child::before {
+    border-top: 0;
+    border-top-left-radius: 0;
+  }
+  
+  /* Removing the border if it is the last card  and it's odd */
+  .card:last-child:nth-child(odd)::before {
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+  }
+  
+  /* Removing the border if it is the last card  and it's even */
+  .card:last-child:nth-child(even)::before {
+    border-bottom: 0;
+    border-bottom-right-radius: 0;
+  }
+  
+  /* Information about the timeline */
+  .info {
+    display: flex;
+    flex-direction: column;
+    background: #2A0338;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+
+  }
+  
+  /* Title of the card */
+  .title {
+    color: orangered;
+    position: relative;
+  }
+  
+  /* Timeline dot  */
+  .title::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 999px;
+    border: 3px solid orangered;
+  }
+  
+  /* text right if the card is even  */
+  .card:nth-child(even) > .info > .title {
+    text-align: right;
+  }
+  
+  /* setting dot to the left if the card is odd */
+  .card:nth-child(odd) > .info > .title::before {
+    left: -45px;
+  }
+  
+  /* setting dot to the right if the card is odd */
+  .card:nth-child(even) > .info > .title::before {
+    right: -45px;
+  }
+  
 
 
 
 
 @media screen and (max-width:900px) {
+
+    .accordion{
+        margin-left: 10%;
+    }
+    .accordion-panel{
+        margin-left: 10%;
+    }
+
+    #solution-name{
+        margin-left: 10px;
+
+    }
+
+    .trust-container{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+    }
+
+    .section-trust{
+        width: 70%;
+    }
 
 
  /*   .bottombar-cost{

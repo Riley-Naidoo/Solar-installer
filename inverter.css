@@ -31,13 +31,15 @@ body{
     background-color: #f1f1f1;
     color: black;
     width: 25%;
-    height: 400px;
+    height: auto;
     text-align: center;
     margin: 2px;
     display: none;
     margin-top: 10px;
     transition: transform 0.5s ease;
     transform: scale(1);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
   }
 
   .filterDiv:hover{
@@ -123,7 +125,7 @@ body{
   }
 
   .img-inverter{
-    margin-top: 10px;
+    margin-top: 30px;
     height: 200px;
     width: 200px;
     margin-bottom: 10px;
@@ -138,6 +140,7 @@ body{
     margin-top: 10px;
     transform: scale(1);
     transition: transform 0.5s ease;
+    margin-bottom: 10px;
   }
 
   .product-button:hover{
@@ -149,6 +152,17 @@ body{
   .price{
     font-weight: bold;
   }
+
+.bundle-heading{
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white;
+  background-color: #2A0338;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+
+}
   
   @media screen and (max-width:900px){
 

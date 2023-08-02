@@ -15,8 +15,9 @@
         <meta name="robots" content="index, follow">
         <link rel="icon" type="image/png" href="logo.png">
 
+
     </head>
-<body>
+<body oncontextmenu="return false;">
   <header>
     <nav class="navbar">
       <a href="index.html" class="logo"><img src="logo.png" alt="X-Corp Solar Logo" style="height: 90px; width: 100px; overflow: hidden;"></a>
@@ -44,8 +45,8 @@
       </div>
 
       <div class="bottombar-container2">
-        <p>Rental Price(Incl Vat):</p>
-        <p id="rental-price">0</p>
+        <p>Rental Price(Incl Vat): Coming Soon</p>
+        <p id="rental-price"></p>
       </div>
     </div>
   
@@ -204,67 +205,67 @@
       <table class="table-output">
 
         <tr>
-          <td class="data-output"><p>Solar Panels</p></td>
+          <td class="data-output"><p>Hardware - Solar Panels</p></td>
           <td class="config-output"><p id="price-1"></p></td>
         </tr>
   
         <tr>
-          <td><p>Inverter</p></td>
+          <td><p>Hardware - Inverter</p></td>
           <td class="config-output"><p id="price-2"></p></td>
         </tr>
   
         <tr>
-          <td><p>Battery</p></td>
+          <td><p>Hardware - Battery</p></td>
           <td class="config-output"><p id="price-3"></p></td>
         </tr>
   
         <tr>
-          <td><p>Distribution Board</p></td>
+          <td><p>Peripherals - Distribution Board</p></td>
           <td class="config-output"><p id="price-4"></p></td>
         </tr>
   
         <tr>
-          <td><P>Inverter Costs</P></td>
+          <td><P>Peripherals - Inverter Costs</P></td>
           <td class="config-output"><p id="price-5"></p></td>
         </tr>
   
         <tr>
-          <td><p>Battery Costs</p></td>
+          <td><p>Peripherals - Battery Costs</p></td>
           <td class="config-output"><p id="price-6"></p></td>
         </tr>
   
         <tr>
-          <td>Mounting Structure</td>
+          <td>Peripherals - Mounting Structure</td>
           <td class="config-output"><p id="price-7"></p></td>
         </tr>
   
         <tr>
-          <td><p>Cables and conduit</p></td>
+          <td><p>Peripherals - Cables and conduit</p></td>
           <td class="config-output"><p id="price-8"></p></td>
         </tr>
         
         <tr>
-          <td><p>Inverter installation</p></td>
+          <td><p>Installation - Inverter</p></td>
           <td class="config-output"><p id="price-9"></p></td>
         </tr>
   
         <tr>
-          <td><p>Battery Installation</p></td>
+          <td><p>Installation - Battery</p></td>
           <td class="config-output"><p id="price-10"></p></td>
         </tr>
 
         <tr>
-          <td><p>Panel Installation</p></td>
+          <td><p>Installation - Panel</p></td>
           <td class="config-output"><p id="price-14"></p></td>
         </tr>
   
         <tr>
-          <td>DB Seperation Installation</td>
+          <td>Installation - DB Seperation</td>
           <td class="config-output"><p id="price-11"></p></td>
         </tr>
   
         <tr>
-          <td>COC</td>
+          <td>Compliace - COC</td>
           <td class="config-output"><p id="price-12"></p></td>
         </tr>
 
@@ -448,7 +449,7 @@
       <input type="text" class="input-value" value="0" id="btn-value">
       <button class="btn-increase" onclick="increaseValue()">+</button>
     </div> <br>
-    <p>Price Per Panel: R3,695.00</p> <br>
+    <p>Price Per Panel: R4,619.00</p> <br>
     <p>Total Cost of Panels: <p id="panel-cost"></p></p>  
   </div>
 
@@ -458,13 +459,18 @@
     <img src="battery.png" alt="Picture of a battery" id="product-image-battery"><br>
     <p id="selected-battery">Battery Name</p><br>
     <p id="battery-price">Battery Price:</p><br>
-    <p>Battery Type: Lithium ion</p><br><br>
+    <div class="counter">
+      <button class="btn-decrease" onclick="decreaseBatteryValue()">-</button>
+      <input type="text" class="input-value" value="0" id="btn-value-battery">
+      <button class="btn-increase" onclick="increaseBatteryValue()">+</button>
+    </div> <br><br>
     <div class="product-button">
       <button type="submit" id="changeBat-btn">Change battery</button><br>
       <button type="submit" id="changeBat-btn" class="battery-pdf">View Data Sheet</button>
 
     </div>
   </div>
+
   <div id="battery-panel" class="panel-battery">
     <p style="color: white; text-align: center; font-size: 24px;">Our Batteries</p>
 
@@ -619,7 +625,7 @@
 
 <br>
 
-<section class="overview">
+<!--<section class="overview">
  <br><br><br><br> <p id="solution-name">Solar Solution</p>
   <div class="overview-background">
     <div class="overview-item overview-image1">
@@ -631,30 +637,79 @@
     <div class="overview-item" id="overview-image3"></div>
 
     
+  </div>  
+</section>-->
+
+<section class="trust-container">
+
+  <div class="section-trust trust-1">
+    <i class="fa fa-wrench" aria-hidden="true"></i>
+    <p class="section-trust-text">Expert Installation <br> Services</p>
   </div>
+  <div class="section-trust trust-2">
+    <i class="fa fa-check" aria-hidden="true"></i>
+    <p class="section-trust-text">Tailored Financing <br> Solutions Available</p>
+  </div>
+  <div class="section-trust trust-3">
+    <i class="fa fa-headset" aria-hidden="true"></i>
+    <p class="section-trust-text">Dedicated Customer <br> Support Team</p>
+  </div>
+  
 
-
-   
 </section>
 
-<div id="quoteContainer">
-  <!-- Your existing HTML content here -->
-  <h1>Quote for Solar Panel Installation</h1>
-  <p>
-    Thank you for considering our solar panel installation service. Based on our calculations,
-    your property requires solar panels covering an area of <span id="panelArea">[Panel Area]</span> square meters.
-    The total cost for the installation is $<span id="totalCost">[Total Cost]</span>.
-  </p>
-
-  <!-- Add your branding placeholders -->
-  <div id="branding">
-    <img src="logo.png" alt="Your Logo" id="logo">
-    <p id="companyName">X-Corp Solar Installers</p>
+<section class="accordion-container">
+  <br><p id="solution-name">FAQ's</p><br>
+  <button class="accordion">The Installation Process</button>
+<div class="accordion-panel">
+  <div class="timeline">
+    <div class="outer">
+      <div class="card">
+        <div class="info">
+          <h3 class="title">Title 1</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="info">
+          <h3 class="title">Title 2</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="info">
+          <h3 class="title">Title 3</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="info">
+          <h3 class="title">Title 4</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="info">
+          <h3 class="title">Title 5</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <!-- Add a button to trigger PDF generation -->
-  <button id="downloadPdfBtn">Download Quote PDF</button>
 </div>
+
+<button class="accordion">How Does Finance Work For Solar?</button>
+<div class="accordion-panel">
+  <p>Lorem ipsum...</p>
+</div>
+
+<button class="accordion">Section 3</button>
+<div class="accordion-panel">
+  <p>Lorem ipsum...</p>
+</div><br><br>
+</section>
+
+
 
 
 <footer class="footer">
@@ -710,15 +765,7 @@
       <li><a href="panels.html">Panels</a></li>  
     </ul>
   </div>
-
-
-
-
-
-  
-
 </footer>
-
 </body>
 <script>
   const menuHamburger = document.querySelector(".menu-hamburger")
@@ -727,6 +774,27 @@
   menuHamburger.addEventListener('click',()=>{
   navLinks.classList.toggle('mobile-menu')
   })
+</script>
+
+<script>
+  var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
+    this.classList.toggle("active");
+
+    /* Toggle between hiding and showing the active panel */
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
 </script>
 
 <script src="calc.js"></script>
