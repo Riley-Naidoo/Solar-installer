@@ -62,7 +62,7 @@
             </div>
             <div class="product-price">
 
-              <p class="battery-price">R 4,619.00</p>
+              <p class="battery-price" id="panel-2-dynamic">R 4,619.00</p>
               <ul>
                 <li>Incl VAT</li>
             </ul><br>
@@ -77,25 +77,25 @@
             <div class="display-2-product product-1" onclick="window.location.href = 'panel-1.html';">
               <img src="panel.png" alt="Picture of a 425W Solar Panel" class="display-2-img">
               <p>425W Solar Panel</p><br>
-              <p class="display-2-price">R 3,374.00</p><br>
+              <p class="display-2-price" id="panel-1-dynamic">R 3,374.00</p><br>
               <button class="display-2-button" id="product-button2" onclick="window.location.href = 'panel-1.html';">View</button>
             </div>
             <div class="display-2-product product-2" onclick="window.location.href = 'panel-3.html';">
               <img src="panel.png" alt="Picture of a 600W Solar Panel" class="display-2-img">
               <p>600W Solar Panel</p><br>
-              <p class="display-2-price">R 4,624.00</p><br>
+              <p class="display-2-price" id="panel-3-dynamic">R 4,624.00</p><br>
               <button class="display-2-button" id="product-button3" onclick="window.location.href = 'panel-3.html';">View</button>
             </div>
             <div class="display-2-product product-1" onclick="window.location.href = 'inverter-7.html';">
                 <img src="inverter7.png" alt="Picture of a 8 Kw Sunsynk Hybrid Inverter" class="display-2-img">
                 <p>8 Kw Sunsynk Hybrid Inverter</p><br>
-                <p class="display-2-price">R 54,374.00</p><br>
+                <p class="display-2-price" id="inverter-7-dynamic">R 54,374.00</p><br>
                 <button class="display-2-button" id="product-button7" onclick="window.location.href = 'inverter-7.html';">View</button>
               </div>
               <div class="display-2-product product-1" onclick="window.location.href = 'battery-6.html';">
                 <img src="battery6.png" alt="Picture of a 5/4 Kwh Freedom One" class="display-2-img">
                 <p>5/4 Kwh Freedom One</p><br>
-                <p class="display-2-price">R 43,749.00</p><br>
+                <p class="display-2-price" id="battery-6-dynamic">R 43,749.00</p><br>
                 <button id="product-button6" class="display-2-button" onclick="window.location.href = 'battery-6.html';">View</button>
               </div>
         </div>
@@ -163,7 +163,9 @@
     
     </footer>
 
-    
+    <script src="pricing-battery.js"></script>
+    <script src="pricing-inverter.js"></script>
+    <script src="pricing-panels.js"></script>     
 </body>
 <script>
   const menuHamburger = document.querySelector(".menu-hamburger")

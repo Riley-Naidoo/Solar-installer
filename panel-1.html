@@ -62,7 +62,7 @@
             </div>
             <div class="product-price">
 
-              <p class="battery-price">R 3,374.00</p>
+              <p class="battery-price" id="panel-1-dynamic">R 3,374.00</p>
               <ul>
                 <li>Incl VAT</li>
             </ul><br>
@@ -77,25 +77,25 @@
             <div class="display-2-product product-1" onclick="window.location.href = 'panel-2.html';">
               <img src="panel.png" alt="Picture of a 550W Solar Panel" class="display-2-img">
               <p>550W Solar Panel</p><br>
-              <p class="display-2-price">R 4,619.00</p><br>
+              <p class="display-2-price" id="panel-2-dynamic">R 4,619.00</p><br>
               <button class="display-2-button" id="product-button2" onclick="window.location.href = 'panel-2.html';">View</button>
             </div>
             <div class="display-2-product product-2" onclick="window.location.href = 'panel-3.html';">
               <img src="panel.png" alt="Picture of a 600W Solar Panel" class="display-2-img">
               <p>600W Solar Panel</p><br>
-              <p class="display-2-price">R 4,623.00</p><br>
+              <p class="display-2-price" id="panel-3-dynamic">R 4,623.00</p><br>
               <button class="display-2-button" id="product-button3" onclick="window.location.href = 'panel-3.html';">View</button>
             </div>
             <div class="display-2-product product-1" onclick="window.location.href = 'inverter-2.html';">
                 <img src="inverter2.png" alt="Picture of a 5 Kw Growatt 48V Hybrid Inverter" class="display-2-img">
                 <p>5 Kw Growatt 48V Hybrid Inverter</p><br>
-                <p class="display-2-price">R 15,499.00</p><br>
+                <p class="display-2-price" id="inverter-2-dynamic">R 15,499.00</p><br>
                 <button class="display-2-button" id="product-button2" onclick="window.location.href = 'inverter-2.html';">View</button>
             </div>
             <div class="display-2-product product-1" onclick="window.location.href = 'battery-2.html';">
                 <img src="battery2.png" alt="Picture of a 5 Kwh Felicity Li-Ion" class="display-2-img">
                 <p>5 Kwh Felicity Li-Ion</p><br>
-                <p class="display-2-price">R 28,749.00</p><br>
+                <p class="display-2-price" id="battery-2-dynamic">R 28,749.00</p><br>
                 <button id="product-button2" class="display-2-button" onclick="window.location.href = 'battery-2.html';">View</button>
             </div>
         </div>
@@ -163,7 +163,9 @@
     
     </footer>
 
-    
+<script src="pricing-battery.js"></script>
+<script src="pricing-inverter.js"></script>
+<script src="pricing-panels.js"></script>   
 </body>
 <script>
   const menuHamburger = document.querySelector(".menu-hamburger")

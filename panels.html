@@ -30,13 +30,15 @@
   </nav>
 </header>
 
-  <section>
-    <div class="hero"></div>
-  </section>
-
+<section>
+  <div class="hero" style="background-image: url('panel-header.jpg');">
+    <h1 class="header-text">Harvesting the Sun's Power: <br> High-Efficiency Solar Panels for Your Sustainable Future</h1>
+  </div>
+</section>
+<br>
     <main>
         <br><br>
-        <h2>Filter Inverters</h2>
+        <h2 class="filter-text">Filter Inverters</h2>
 
         <div id="myBtnContainer">
           <!-- Existing buttons -->
@@ -63,13 +65,13 @@
         
         
         
-        <p id="resultText">Showing results for all</p>
+        <p id="resultText" class="filter-text">Showing results for all</p>
         <div class="container">
     <div class="filterDiv 425W show" onclick="window.location.href = 'panel-1.html';">
       <p class="bundle-heading">Canadian</p>
       <img src="panel.png" alt="Picture of a 425W Solar Panel" class="img-inverter">
       <p>425W Solar Panel</p>
-      <p class="price">R 3,374.00</p>
+      <p class="price" id="panel-1-dynamic">R 3,374.00</p>
       <button id="product-button1" class="product-button" onclick="window.location.href = 'panel-1.html';">View</button>
     </div>
   
@@ -77,7 +79,7 @@
       <p class="bundle-heading">Trina</p>
       <img src="panel.png" alt="Picture of a 550W Solar Panel" class="img-inverter">
       <p>550W Solar Panel</p>
-      <p class="price">R 4,619.00</p>
+      <p class="price" id="panel-2-dynamic">R 4,619.00</p>
       <button id="product-button2" class="product-button" onclick="window.location.href = 'panel-2.html';">View</button>
     </div>
   
@@ -85,7 +87,7 @@
       <p class="bundle-heading">Canadian</p>
       <img src="panel.png" alt="Picture of a 600W Solar Panel" class="img-inverter">
       <p>600W Solar Panel</p>
-      <p class="price">R 4,623.00</p>
+      <p class="price" id="panel-3-dynamic">R 4,623.00</p>
       <button id="product-button3" class="product-button" onclick="window.location.href = 'panel-3.html';">View</button>
     </div>
   
@@ -163,6 +165,7 @@
       
     
     </footer>
+    <script src="pricing-panels.js"></script>
     
 </body>
 

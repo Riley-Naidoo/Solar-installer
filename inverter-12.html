@@ -62,7 +62,7 @@
             </div>
             <div class="product-price">
 
-              <p class="battery-price">R 96,249.00</p>
+              <p class="battery-price" id="inverter-12-dynamic">R 96,249.00</p>
               <ul>
                 <li>Incl VAT</li>
             </ul><br>
@@ -77,25 +77,25 @@
             <div class="display-2-product product-1" onclick="window.location.href = 'inverter-11.html';">
               <img src="inverter11.png" alt="Picture of a 16 Kw Deye Hybrid Inverter" class="display-2-img">
               <p>16 Kw Deye Hybrid Inverter</p><br>
-              <p class="display-2-price">R 87,499.00</p><br>
+              <p class="display-2-price" id ="inverter-11-dynamic">R 87,499.00</p><br>
               <button class="display-2-button" id="product-button11" onclick="window.location.href = 'inverter-11.html';">View</button>
             </div>
             <div class="display-2-product product-2" onclick="window.location.href = 'inverter-7.html';">
               <img src="inverter7.png" alt="Picture of a 8 Kw Sunsynk Hybrid Inverter" class="display-2-img">
               <p>8 Kw Sunsynk Hybrid Inverter</p><br>
-              <p class="display-2-price">R 54,374.00</p><br>
+              <p class="display-2-price" id ="inverter-7-dynamic">R 54,374.00</p><br>
               <button class="display-2-button" id="product-button7" onclick="window.location.href = 'inverter-7.html';">View</button>
             </div>
             <div class="display-2-product product-3" onclick="window.location.href = 'inverter-8.html';">
               <img src="inverter8.png" alt="Picture of a 12 Kw Luxpower Hybrid Inverter" class="display-2-img">
               <p>12 Kw Luxpower Hybrid Inverter</p><br>
-              <p class="display-2-price">R 58,625.00</p><br>
+              <p class="display-2-price" id ="inverter-8-dynamic">R 58,625.00</p><br>
               <button class="display-2-button" id="product-button8" onclick="window.location.href = 'inverter-8.html';">View</button>
             </div>
             <div class="display-2-product product-4" onclick="window.location.href = 'inverter-9.html';">
               <img src="inverter9.png" alt="Picture of a 12 Kw 3 Phase Deye Hybrid Inverter" class="display-2-img">
               <p>12 Kw 3 Phase Deye Hybrid Inverter</p><br>
-              <p class="display-2-price">R 69,999.00</p><br>
+              <p class="display-2-price" id ="inverter-9-dynamic">R 69,999.00</p><br>
               <button class="display-2-button" id="product-button9" onclick="window.location.href = 'inverter-9.html';">View</button>
             </div>
         </div>
@@ -163,7 +163,18 @@
     
     </footer>
 
+    <script src="pricing-inverter.js"></script>
+    <script>
+        // Update the specific inverter prices for this page
+        inverterPrices["inverter-1-dynamic"] = 13500;
+        inverterPrices["inverter-1-dynamic"] = 13500;
+        inverterPrices["inverter-1-dynamic"] = 13500;
+        inverterPrices["inverter-1-dynamic"] = 13500; // Example updated price
+        // Update other inverter prices as needed
     
+        // Re-run the updateInverterPrices function to update the displayed prices
+        updateInverterPrices();
+    </script>   
 </body>
 <script>
   const menuHamburger = document.querySelector(".menu-hamburger")
@@ -174,5 +185,4 @@
   })
 </script>
 
-<script src="inverter.js"></script>
 </html>
