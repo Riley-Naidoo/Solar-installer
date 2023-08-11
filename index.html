@@ -152,29 +152,122 @@
             <div class="featured featured1">
               <p class="bundle-heading">5KW Basic</p>
               <img src="bundle1.png" alt="Picture of a 5KW Basic solar bundle">
-              <button onclick="window.location.href = 'contact.html';">Get A Quote</button>
+              <button id="openBtn1">View</button>
+              <button onclick="window.location.href = 'contact.html';">Contact Us</button>
             </div>
-            <div class="featured featured2" onclick="window.location.href = 'contact.html';">
+            <div class="featured featured2">
               <p class="bundle-heading">5KW Premium</p>
               <img src="bundle2.png" alt="Picture of a 5KW Premium solar bundle">
-              <button onclick="window.location.href = 'contact.html';">Get A Quote</button>
+              <button id="openBtn2">View</button>
+              <button onclick="window.location.href = 'contact.html';">Contact Us</button>
             </div>
-            <div class="featured featured3" onclick="window.location.href = 'contact.html';">
+            <div class="featured featured3">
               <p class="bundle-heading">8KW Premium</p>
               <img src="bundle3.png" alt="Picture of a 8KW Premium solar bundle">
-              <button onclick="window.location.href = 'contact.html';">Get A Quote</button>
+              <button id="openBtn3">View</button>
+              <button onclick="window.location.href = 'contact.html';">Contact Us</button>
             </div>
-            <div class="featured featured4" onclick="window.location.href = 'contact.html';">
+            <div class="featured featured4">
               <p class="bundle-heading">11KW Premium</p>
               <img src="bundle4.png" alt="Picture of a 11KW Premium solar bundle">
-              <button onclick="window.location.href = 'contact.html';">Get A Quote</button>
+              <button id="openBtn4">View</button>
+              <button onclick="window.location.href = 'contact.html';">Contact Us</button>
             </div>
           </div>
-        </section><br><br><br>
+    <!-- Pop-up 1 -->
+    <div id="popup1" class="popup">
+        <div class="popup-content">
+            <h2 class="popup-heading">5KW Basic Solar Solution</h2>
+            <div class="popup-content2">
+                <p>This Package includes:</p><br>
+                <ol>
+                    <li>5.5KW Luxpower Hybrid Inverter</li><br>
+                    <li>5 Kwh Felicity Li-Ion Battery</li><br>
+                    <li>6X 550W Mono Solar Panels</li><br>
+                    <li>Installation</li><br>
+                    <li>Peripherals</li><br>
+                </ol>
+                <br>
+                <div class="popup-button-container">
+                    <button class="button" onclick="window.open('Bundle1.pdf')">View Quote</button>
+                    <button id="closeBtn1" class="button">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Pop-up 2 -->
+    <div id="popup2" class="popup">
+        <div class="popup-content">
+            <h2 class="popup-heading">5KW Premium Solar Solution</h2>
+            <div class="popup-content2">
+                <p>This Package includes:</p><br>
+                <ol>
+                    <li>5KW Deye Hybrid Inverter</li><br>
+                    <li>5.12Kwh Dyness Li-Ion Battery</li><br>
+                    <li>7X 550W Mono Solar Panels</li><br>
+                    <li>Installation</li><br>
+                    <li>Peripherals</li><br>
+                </ol>
+                <br>
+                <div class="popup-button-container">
+                    <button class="button" onclick="window.open('Bundle2.pdf')">View Quote</button>
+                    <button id="closeBtn2" class="button">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop-up 3 -->
+    <div id="popup3" class="popup">
+        <div class="popup-content">
+            <h2 class="popup-heading">8KW Premium Solar Solution</h2>
+            <div class="popup-content2">
+                <p>This Package includes:</p><br>
+                <ol>
+                    <li>8KW Deye Hybrid Inverter</li><br>
+                    <li>2X 5.12Kwh Dyness Li-Ion Battery</li><br>
+                    <li>12X 550W Mono Solar Panels</li><br>
+                    <li>Installation</li><br>
+                    <li>Peripherals</li><br>
+                </ol>
+                <br>
+                <div class="popup-button-container">
+                    <button class="button" onclick="window.open('Bundle3.pdf')">View Quote</button>
+                    <button id="closeBtn3" class="button">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop-up 4 -->
+    <div id="popup4" class="popup">
+        <div class="popup-content">
+            <h2 class="popup-heading">11KW Premium Solar Solution</h2>
+            <div class="popup-content2">
+                <p>This Package includes:</p><br>
+                <ol>
+                    <li>2X 5.5KW Luxpower Hybrid Inverter</li><br>
+                    <li>8.7Kwh Felicity Li-Ion Battery</li><br>
+                    <li>10X 550W Mono Solar Panels</li><br>
+                    <li>Installation</li><br>
+                    <li>Peripherals</li><br>
+                </ol>
+                <br>
+                <div class="popup-button-container">
+                    <button class="button" onclick="window.open('Bundle4.pdf')">View Quote</button>
+                    <button id="closeBtn4" class="button">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+        </section><br><br><br>
         <div class="cta-container">
            <div class="cta-text">
-            <p id="cta-heading">GET A BUSINESS SOLAR SOLUTION FROM A COMPANY THAT'S <br> BEEN OFFERING BUSINESS SOLUTIONS SINCE 2010.</p><br>
+            <p id="cta-heading">Get a business solar solution from a company that's <br> been offering business solutions since 2010</p><br>
             <br>
             <ul class="cta-list">
               <li>✔️ Since 2010</li>
@@ -264,6 +357,40 @@
   menuHamburger.addEventListener('click',()=>{
   navLinks.classList.toggle('mobile-menu')
   })
+</script>
+
+<script>
+document.getElementById("openBtn1").addEventListener("click", function() {
+    document.getElementById("popup1").style.display = "block";
+});
+
+document.getElementById("closeBtn1").addEventListener("click", function() {
+    document.getElementById("popup1").style.display = "none";
+});
+
+document.getElementById("openBtn2").addEventListener("click", function() {
+    document.getElementById("popup2").style.display = "block";
+});
+
+document.getElementById("closeBtn2").addEventListener("click", function() {
+    document.getElementById("popup2").style.display = "none";
+});
+
+document.getElementById("openBtn3").addEventListener("click", function() {
+    document.getElementById("popup3").style.display = "block";
+});
+
+document.getElementById("closeBtn3").addEventListener("click", function() {
+    document.getElementById("popup3").style.display = "none";
+});
+
+document.getElementById("openBtn4").addEventListener("click", function() {
+    document.getElementById("popup4").style.display = "block";
+});
+
+document.getElementById("closeBtn4").addEventListener("click", function() {
+    document.getElementById("popup4").style.display = "none";
+});
 </script>
 
 

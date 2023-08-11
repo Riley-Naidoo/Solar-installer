@@ -319,6 +319,55 @@ body{
     text-align: center;
 }
 
+
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.popup-content {
+    background-color: #fff;
+    height: auto;
+    width: 400px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+.popup-content2{
+    padding: 20px;
+    font-size: 1.5em;
+}
+
+.popup-heading{
+    background-color: #2A0338;
+    color: white;
+    text-align: center;
+}
+
+.popup-button-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    cursor: pointer;
+}
+
+
 .cta-container{
     background-image: url(cta-image.png);
     width: 100%;
@@ -670,6 +719,7 @@ body{
     #cta-heading{
         font-size: 1em;
         text-align: center;
+        margin-right: 30px;
     }
 
     .cta-image{

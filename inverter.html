@@ -31,12 +31,14 @@
 </header>
 
   <section>
-    <div class="hero"></div>
+    <div class="hero">
+      <h1 class="header-text">Empowering Your Solar System: <br> Cutting-Edge Inverters for Optimal Energy Conversion</h1>
+    </div>
   </section>
 
     <main>
         <br><br>
-        <h2>Filter Inverters</h2>
+        <h2 class="filter-text">Filter Inverters</h2>
 
         <div id="myBtnContainer">
           <!-- Existing buttons -->
@@ -69,13 +71,13 @@
         
         
         
-        <p id="resultText">Showing results for all</p>
+        <p id="resultText" class="filter-text">Showing results for all</p>
         <div class="container">
     <div class="filterDiv 3kw show" onclick="window.location.href = 'inverter-1.html';">
       <p class="bundle-heading">Growatt</p>
       <img src="inverter1.png" alt="Picture of a 3.5 Kw Growatt 48V Hybrid Inverter" class="img-inverter">
       <p>3.5 Kw Growatt 48V Hybrid Inverter</p>
-      <p class="price">R 8,694.00</p>
+      <p class="price" id="inverter-1-dynamic">R 15,499.00</p>
       <button id="product-button1" class="product-button" onclick="window.location.href = 'inverter-1.html';">View</button>
     </div>
   
@@ -83,7 +85,7 @@
       <p class="bundle-heading">Growatt</p>
       <img src="inverter2.png" alt="Picture of a 5 Kw Growatt 48V Hybrid Inverter" class="img-inverter">
       <p>5 Kw Growatt 48V Hybrid Inverter</p>
-      <p class="price">R 15,499.00</p>
+      <p class="price" id="inverter-2-dynamic">R 13,749.00</p>
       <button id="product-button2" class="product-button" onclick="window.location.href = 'inverter-2.html';">View</button>
     </div>
   
@@ -91,7 +93,7 @@
       <p class="bundle-heading">Luxpower</p>
       <img src="inverter3.png" alt="Picture of a 5.5 Kw Luxpower Hybrid Inverter" class="img-inverter">
       <p>5.5 Kw Luxpower Hybrid Inverter</p>
-      <p class="price">R 17,499.00</p>
+      <p class="price" id="inverter-3-dynamic">R 14,374.00</p>
       <button id="product-button3" class="product-button" onclick="window.location.href = 'inverter-3.html';">View</button>
     </div>
   
@@ -99,7 +101,7 @@
       <p class="bundle-heading">Deye</p>
       <img src="inverter4.png" alt="Picture of a 5 Kw Deye Hybrid Inverter" class="img-inverter">
       <p>5 Kw Deye Hybrid Inverter</p>
-      <p class="price">R 32,499.00</p>
+      <p class="price" id="inverter-4-dynamic">R 27,438.00</p>
       <button id="product-button4" class="product-button" onclick="window.location.href = 'inverter-4.html';">View</button>
     </div>
   
@@ -107,7 +109,7 @@
       <p class="bundle-heading">Sunsynk</p>
       <img src="inverter5.png" alt="Picture of a 5 Kw Sunsynk Hybrid Inverter" class="img-inverter">
       <p>5 Kw Sunsynk Hybrid Inverter</p>
-      <p class="price">R 34,874.00</p>
+      <p class="price" id="inverter-5-dynamic">R 30,749.00</p>
       <button id="product-button5" class="product-button" onclick="window.location.href = 'inverter-5.html';">View</button>
     </div>
   
@@ -115,7 +117,7 @@
       <p class="bundle-heading">Deye</p>
       <img src="inverter6.png" alt="Picture of a Kw Deye Hybrid Inverter" class="img-inverter">
       <p>8 Kw Deye Hybrid Inverter</p>
-      <p class="price">R 49,999.00</p>
+      <p class="price" id="inverter-6-dynamic">R 43,689.00</p>
       <button id="product-button6" class="product-button" onclick="window.location.href = 'inverter-6.html';">View</button>
     </div>
   
@@ -123,7 +125,7 @@
       <p class="bundle-heading">Sunsynk</p>
       <img src="inverter7.png" alt="picture of a 8 Kw Sunsynk Hybrid Inverter" class="img-inverter">
       <p>8 Kw Sunsynk Hybrid Inverter</p>
-      <p class="price">R 54,374.00</p>
+      <p class="price" id="inverter-7-dynamic">R 48,249.00</p>
       <button id="product-button7" class="product-button" onclick="window.location.href = 'inverter-7.html';">View</button>
     </div>
   
@@ -131,7 +133,7 @@
       <p class="bundle-heading">Luxpower</p>
       <img src="inverter8.png" alt="Picture of a 12 Kw Luxpower Hybrid Inverter" class="img-inverter">
       <p>12 Kw Luxpower Hybrid Inverter</p>
-      <p class="price">R 58,625.00</p>
+      <p class="price" id="inverter-8-dynamic">R 58,625.00</p>
       <button id="product-button8" class="product-button" onclick="window.location.href = 'inverter-8.html';">View</button>
     </div>
   
@@ -139,7 +141,7 @@
       <p class="bundle-heading">Deye</p>
       <img src="inverter9.png" alt="Picture of a 12 Kw 3 Phase Deye Hybrid Inverter" class="img-inverter">
       <p>12 Kw 3 Phase Deye Hybrid Inverter</p>
-      <p class="price">R 69,999.00</p>
+      <p class="price" id="inverter-9-dynamic">R 62,375.00</p>
       <button id="product-button9" class="product-button" onclick="window.location.href = 'inverter-9.html';">View</button>
     </div>
   
@@ -147,7 +149,7 @@
       <p class="bundle-heading">Sunsynk</p>
       <img src="inverter10.png" alt="Picture of a 12 Kw 3 Phase Sunsynk Hybrid Inverter" class="img-inverter">
       <p>12 Kw 3 Phase Sunsynk Hybrid Inverter</p>
-      <p class="price">R 79,999.00</p>
+      <p class="price" id="inverter-10-dynamic">R 73,625.00</p>
       <button id="product-button10" class="product-button" onclick="window.location.href = 'inverter-10.html';">View</button>
     </div>
   
@@ -155,7 +157,7 @@
       <p class="bundle-heading">Deye</p>
       <img src="inverter11.png" alt="Picture of a 16 Kw Deye Hybrid Inverter" class="img-inverter">
       <p>16 Kw Deye Hybrid Inverter</p>
-      <p class="price">R 87,499.00</p>
+      <p class="price" id="inverter-11-dynamic">R 82,499.00</p>
       <button id="product-button11" class="product-button" onclick="window.location.href = 'inverter-11.html';">View</button>
     </div>
   
@@ -163,7 +165,7 @@
       <p class="bundle-heading">Sunsynk</p>
       <img src="inverter12.png" alt="Picture of a 16 Kw Sunsynk Hybrid Inverter" class="img-inverter">
       <p>16 Kw Sunsynk Hybrid Inverter</p>
-      <p class="price">R 96,249.00</p>
+      <p class="price" id="inverter-12-dynamic">R00,000</p>
       <button id="product-button12" class="product-button" onclick="window.location.href = 'inverter-12.html';">View</button>
     </div>
   
@@ -241,6 +243,8 @@
       
     
     </footer>
+    <script src="pricing-inverter.js"></script>
+
     
 </body>
 

@@ -17,7 +17,7 @@
 
 
     </head>
-<body oncontextmenu="return false;">
+<body>
   <header>
     <nav class="navbar">
       <a href="index.html" class="logo"><img src="logo.png" alt="X-Corp Solar Logo" style="height: 90px; width: 100px; overflow: hidden;"></a>
@@ -62,7 +62,9 @@
  
 </div>
 
-<section class="calculator-section1"></section>
+<section class="calculator-section1">
+  <h1 class="header-text">Use our Solar Price Estimator to design <br> and price your solar solution</h1>
+</section>
 
 <div class="calculator-container">
   <div class="output calculator-input">
@@ -308,7 +310,7 @@
           <div class="change1"><img src="inverter1.png" alt="Picture of a 3.5Kw Growatt 48V Hybrid Inverter"></div>
           <div class="change1">
             <p>3.5 Kw Growatt 48V Hybrid Inverter</p>
-            <p>R 10,868.00</p>
+            <p id="inverter-1-dynamic">R 10,868.00</p>
           </div>
           <div class="change1">
             <button id="inv1-button" class="change-button" onclick="handleinv1()">Change</button>
@@ -319,7 +321,7 @@
           <div class="change1"><img src="inverter2.png" alt="Picture of a 5KW Growatt 48V Hybrid Inverter"></div>
           <div class="change1">
             <p>5 Kw Growatt 48V Hybrid Inverter</p>
-            <p>R 15,499.00</p>
+            <p id="inverter-2-dynamic">R 15,499.00</p>
           </div>
           <div class="change1">
             <button id="inv2-button" class="change-button" onclick="handleinv2()">Change</button>
@@ -331,7 +333,7 @@
           <div class="change1"><img src="inverter3.png" alt="Picture of a 5.5 Kw Luxpower hybrid Inverter"></div>
           <div class="change1">
             <p>5.5 Kw Luxpower Hybrid Inverter</p>
-            <p>R 17,498.00</p>
+            <p id="inverter-3-dynamic">R 17,498.00</p>
           </div>
           <div class="change1">
             <button id="inv3-button" class="change-button" onclick="handleinv3()">Change</button>
@@ -341,7 +343,7 @@
           <div class="change1"><img src="inverter4.png" alt="Picture of a 5KW Deye Hybrid Inverter"></div>
           <div class="change1">
             <p>5 Kw Deye Hybrid Inverter</p>
-            <p>R 32,499.00</p>
+            <p id="inverter-4-dynamic">R 32,499.00</p>
           </div>
           <div class="change1">
             <button id="inv4-button" class="change-button" onclick="handleinv4()">Change</button>
@@ -352,7 +354,7 @@
           <div class="change1"><img src="inverter5.png" alt="Picture of a 5KW Sunsynk Hybrid Inverter"></div>
           <div class="change1">
             <p>5 Kw Sunsynk Hybrid Inverter</p>
-            <p>R 34,874.00</p>
+            <p id="inverter-5-dynamic">R 34,874.00</p>
           </div>
           <div class="change1">
             <button id="inv5-button" class="change-button" onclick="handleinv5()">Change</button>
@@ -363,7 +365,7 @@
           <div class="change1"><img src="inverter6.png" alt="Picture of a 8KW Deye Hybrid Inverter"></div>
           <div class="change1">
             <p>8 Kw Deye Hybrid Inverter</p>
-            <p>R 49,999.00</p>
+            <p id="inverter-6-dynamic">R 49,999.00</p>
           </div>
           <div class="change1">
             <button id="inv6-button" class="change-button" onclick="handleinv6()">Change</button>
@@ -374,7 +376,7 @@
           <div class="change1"><img src="inverter7.png" alt="Picture of a 8KW Sunsynk Hybrid Inverter"></div>
           <div class="change1">
             <p>8 Kw Sunsynk Hybrid Inverter</p>
-            <p>R 54,374.00</p>
+            <p id="inverter-7-dynamic">R 54,374.00</p>
           </div>
           <div class="change1">
             <button id="inv7-button" class="change-button" onclick="handleinv7()">Change</button>
@@ -385,7 +387,7 @@
           <div class="change1"><img src="inverter8.png" alt=" Picture of a 12KW Luxpower hybrid inverter"></div>
           <div class="change1">
             <p>12 Kw Luxpower Hybrid Inverter</p>
-            <p>R 58,625.00</p>
+            <p id="inverter-8-dynamic">R 58,625.00</p>
           </div>
           <div class="change1">
             <button id="inv8-button" class="change-button" onclick="handleinv8()">Change</button>
@@ -396,7 +398,7 @@
           <div class="change1"><img src="inverter9.png" alt="Picture of a 12KW 3 Phase Deye Hybrid Inverter"></div>
           <div class="change1">
             <p>12 Kw 3 Phase Deye Hybrid Inverter</p>
-            <p>R 69,999.00</p>
+            <p id="inverter-9-dynamic">R 69,999.00</p>
           </div>
           <div class="change1">
             <button id="inv9-button" class="change-button" onclick="handleinv9()">Change</button>
@@ -407,7 +409,7 @@
           <div class="change1"><img src="inverter10.png" alt="Picture of a 12KW 3Phase Sunsynk hybrid inverter"></div>
           <div class="change1">
             <p>12 Kw 3 Phase Sunsynk Hybrid Inverter</p>
-            <p>R 79,999.00</p>
+            <p id="inverter-10-dynamic">R 79,999.00</p>
           </div>
           <div class="change1">
             <button id="inv10-button" class="change-button" onclick="handleinv10()">Change</button>
@@ -418,7 +420,7 @@
           <div class="change1"><img src="inverter11.png" alt="Picture of a 16Kw Deye Hybrid Inverter"></div>
           <div class="change1">
             <p>16 Kw Deye Hybrid Inverter</p>
-            <p>R 87,499.00</p>
+            <p id="inverter-11-dynamic">R 87,499.00</p>
           </div>
           <div class="change1">
             <button id="inv11-button" class="change-button" onclick="handleinv11()">Change</button>
@@ -429,7 +431,7 @@
           <div class="change1"><img src="inverter12.png" alt="Picture of a 16KW Sunsynk Hybrid Inverter"></div>
           <div class="change1">
             <p>16 Kw Sunsynk Hybrid Inverter</p>
-            <p>R 96,249.00</p>
+            <p id="inverter-12-dynamic">R 96,249.00</p>
           </div>
           <div class="change1">
             <button id="inv12-button" class="change-button" onclick="handleinv12()">Change</button>
@@ -449,7 +451,7 @@
       <input type="text" class="input-value" value="0" id="btn-value">
       <button class="btn-increase" onclick="increaseValue()">+</button>
     </div> <br>
-    <p>Price Per Panel: R4,619.00</p> <br>
+    <p>Price Per Panel: R3,348.00</p> <br>
     <p>Total Cost of Panels: <p id="panel-cost"></p></p>  
   </div>
 
@@ -480,7 +482,7 @@
           <div class="change1"><img src="battery1.png" alt="Picture fo a 3.6 Kwh Dyness Li-Ion"></div>
           <div class="change1">
             <p>3.6 Kwh Dyness Li-Ion</p>
-            <p>R 24,999.00</p>
+            <p id="battery-1-dynamic">R 24,999.00</p>
           </div>
           <div class="change1">
             <button id="bat1-button" class="change-button" onclick="handlebat1()">Change</button>
@@ -491,7 +493,7 @@
           <div class="change1"><img src="battery2.png" alt="Picture of a 5Kwh Felicity Li-Ion"></div>
           <div class="change1">
             <p>5 Kwh Felicity Li-Ion</p>
-            <p>R 28,749.00</p>
+            <p id="battery-2-dynamic">R 28,749.00</p>
           </div>
           <div class="change1">
             <button id="bat2-button" class="change-button" onclick="handlebat2()">Change</button>
@@ -503,7 +505,7 @@
           <div class="change1"><img src="battery3.png" alt="Picture of a 5.12kwh Dyness Li-Ion"></div>
           <div class="change1">
             <p>5.12 Kwh Dyness Li-Ion</p>
-            <p>R 32,249.00</p>
+            <p id="battery-3-dynamic">R 32,249.00</p>
           </div>
           <div class="change1">
             <button id="bat3-button" class="change-button" onclick="handlebat3()">Change</button>
@@ -513,7 +515,7 @@
           <div class="change1"><img src="battery4.png" alt="picture of a 4.96 kwh Greenrich Li-Ion"></div>
           <div class="change1">
             <p>4.96 Kwh Greenrich Li-Ion</p>
-            <p>R 37,499.00</p>
+            <p id="battery-4-dynamic">R 37,499.00</p>
           </div>
           <div class="change1">
             <button id="bat4-button" class="change-button" onclick="handlebat4()">Change</button>
@@ -524,7 +526,7 @@
           <div class="change1"><img src="battery5.png" alt="Picture of a 5.12kwh Hubble AM-5 Li-Ion"></div>
           <div class="change1">
             <p>5.12 Kwh Hubble AM-5 Li-Ion</p>
-            <p>R 39,124.00</p>
+            <p id="battery-5-dynamic">R 39,124.00</p>
           </div>
           <div class="change1">
             <button id="bat5-button" class="change-button" onclick="handlebat5()">Change</button>
@@ -535,7 +537,7 @@
           <div class="change1"><img src="battery6.png" alt="Picture of a 5/4 Kwh Freedom One"></div>
           <div class="change1">
             <p>5/4 Kwh Freedom One</p>
-            <p>R 43,749.00</p>
+            <p id="battery-6-dynamic">R 43,749.00</p>
           </div>
           <div class="change1">
             <button id="bat6-button" class="change-button" onclick="handlebat6()">Change</button>
@@ -546,7 +548,7 @@
           <div class="change1"><img src="battery7.png" alt="Picture of a 8.7Kwh Felicity Li-Ion"></div>
           <div class="change1">
             <p>8.7 Kwh Felicity Li-Ion</p>
-            <p>R 51,249.00</p>
+            <p id="battery-7-dynamic">R 51,249.00</p>
           </div>
           <div class="change1">
             <button id="bat7-button" class="change-button" onclick="handlebat7()">Change</button>
@@ -557,7 +559,7 @@
           <div class="change1"><img src="battery8.png" alt="Picture of a 12.5Kwh Felicity Li-Ion"></div>
           <div class="change1">
             <p>12.5 Kwh Felicity Li-Ion</p>
-            <p>R 61,249.00</p>
+            <p id="battery-8-dynamic">R 61,249.00</p>
           </div>
           <div class="change1">
             <button id="bat8-button" class="change-button" onclick="handlebat8()">Change</button>
@@ -568,7 +570,7 @@
           <div class="change1"><img src="battery9.png" alt="Picture of a 10.24 Kwh Dyness Li-Ion"></div>
           <div class="change1">
             <p>10.24 Kwh Dyness Li-Ion</p>
-            <p>R 68,750.00</p>
+            <p id="battery-9-dynamic">R 68,750.00</p>
           </div>
           <div class="change1">
             <button id="bat9-button" class="change-button" onclick="handlebat9()">Change</button>
@@ -579,7 +581,7 @@
           <div class="change1"><img src="battery10.png" alt="Picture of a 10 kwh Hubble AM-5 Li-Ion"></div>
           <div class="change1">
             <p>10 Kwh Hubble AM-5 Li-Ion</p>
-            <p>R 92,499.00</p>
+            <p id="battery-10-dynamic">R 92,499.00</p>
           </div>
           <div class="change1">
             <button id="bat10-button" class="change-button" onclick="handlebat10()">Change</button>
@@ -590,7 +592,7 @@
           <div class="change1"><img src="battery11.png" alt="Picture of a 10/8 Kwh Freedom One"></div>
           <div class="change1">
             <p>10/8 Kwh Freedom One</p>
-            <p>R 99,999.00</p>
+            <p id="battery-11-dynamic">R 99,999.00</p>
           </div>
           <div class="change1">
             <button id="bat11-button" class="change-button" onclick="handlebat11()">Change</button>
@@ -601,7 +603,7 @@
           <div class="change1"><img src="battery12.png" alt="Picture of a 15/12 kwh Freedom One"></div>
           <div class="change1">
             <p>15/12 Kwh Freedom One</p>
-            <p>R 133,750.00</p>
+            <p id="battery-12-dynamic">R 133,750.00</p>
           </div>
           <div class="change1">
             <button id="bat12-button" class="change-button" onclick="handlebat12()">Change</button>
@@ -612,7 +614,7 @@
           <div class="change1"><img src="battery13.png" alt="Picture of a 20/16 kwh Freedom One"></div>
           <div class="change1">
             <p>20/16 Kwh Freedom One</p>
-            <p>R 178,749.00</p>
+            <p id="battery-13-dynamic">R 178,749.00</p>
           </div>
           <div class="change1">
             <button id="bat13-button" class="change-button" onclick="handlebat12()">Change</button>
@@ -656,9 +658,9 @@
   </div>
   
 
-</section>
+</section><br>
 
-<section class="accordion-container">
+<!--<section class="accordion-container">
   <br><p id="solution-name">FAQ's</p><br>
   <button class="accordion">The Installation Process</button>
 <div class="accordion-panel">
@@ -708,7 +710,7 @@
   <p>Lorem ipsum...</p>
 </div><br><br>
 </section>
-
+-->
 
 
 
@@ -766,6 +768,9 @@
     </ul>
   </div>
 </footer>
+<script src="pricing-battery.js"></script>
+<script src="pricing-inverter.js"></script>
+<script src="pricing-panels.js"></script> 
 </body>
 <script>
   const menuHamburger = document.querySelector(".menu-hamburger")

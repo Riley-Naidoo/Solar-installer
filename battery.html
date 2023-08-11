@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="nav.css">
     <link rel="icon" type="image/png" href="logo.png">
 
+
 </head>
 <body>
   <header>
@@ -31,8 +32,12 @@
 </header>
 
     <main>
-        <br><br>
-        <h2>Filter Inverters</h2>
+      <section>
+        <div class="hero"  style="background-image: url('battery-header.jpg');">
+          <h1 class="header-text">Energize Your Solar Investment: <br> Innovative Battery Solutions for Reliable Energy Storage</h1>
+        </div>
+      </section><br>
+        <h2 class="filter-text">Filter Inverters</h2>
 
         <div id="myBtnContainer">
           <button class="btn active btn-allBat" onclick="filterSelection('all')" data-filter-value="all"><p class="btn-text">Show all</p></button>
@@ -53,14 +58,14 @@
         </div><br>
         
         
-        <p id="resultText">Showing results for all</p>
+        <p id="resultText" class="filter-text">Showing results for all</p>
 
 <div class="container">
   <div class="filterDiv 3kw show" onclick="window.location.href = 'battery-1.html';">
     <p class="bundle-heading">Dyness</p>
     <img src="battery1.png" alt="Picture of a 3.6 Kwh Dyness Li-Ion" class="img-inverter">
     <p>3.6 Kwh Dyness Li-Ion</p>
-    <p class="price">R 24,999.00</p>
+    <p class="price" id="battery-1-dynamic">R 24,999.00</p>
     <button id="product-button1" class="product-button" onclick="window.location.href = 'battery-1.html';">View</button>
   </div>
 
@@ -68,7 +73,7 @@
     <p class="bundle-heading">Felicity</p>
     <img src="battery2.png" alt="Picture of a 5 Kwh Felicity Li-Ion" class="img-inverter">
     <p>5 Kwh Felicity Li-Ion</p>
-    <p class="price">R 28,749.00</p>
+    <p class="price" id="battery-2-dynamic">R 27,499.00</p>
     <button id="product-button2" class="product-button" onclick="window.location.href = 'battery-2.html';">View</button>
   </div>
 
@@ -76,7 +81,7 @@
     <p class="bundle-heading">Dyness</p>
     <img src="battery3.png" alt="Picture of a 5.12 Kwh Dyness Li-Ion" class="img-inverter">
     <p>5.12 Kwh Dyness Li-Ion</p>
-    <p class="price">R 32,249.00</p>
+    <p class="price" id="battery-3-dynamic">R 29,374.00</p>
     <button id="product-button3" class="product-button" onclick="window.location.href = 'battery-3.html';">View</button>
   </div>
 
@@ -84,7 +89,7 @@
     <p class="bundle-heading">Greenrich</p>
     <img src="battery4.png" alt="Picture of a 4.96 Kwh Greenrich Li-Ion" class="img-inverter">
     <p>4.96 Kwh Greenrich Li-Ion</p>
-    <p class="price">R 37,499.00</p>
+    <p class="price" id="battery-4-dynamic">R 33,750.00</p>
     <button id="product-button4" class="product-button" onclick="window.location.href = 'battery-4.html';">View</button>
   </div>
 
@@ -92,7 +97,7 @@
     <p class="bundle-heading">Hubble</p>
     <img src="battery5.png" alt="Picture of a 5.12 Kwh Hubble AM-5 Li-Ion" class="img-inverter" onclick="window.location.href = 'battery-5.html';">
     <p>5.12 Kwh Hubble AM-5 Li-Ion</p>
-    <p class="price">R 39,124.00</p>
+    <p class="price" id="battery-5-dynamic">R 37,375.00</p>
     <button id="product-button5" class="product-button" onclick="window.location.href = 'battery-5.html';">View</button>
   </div>
 
@@ -100,7 +105,7 @@
     <p class="bundle-heading">Freedom</p>
     <img src="battery6.png" alt="Picture of a 5/4 Kwh Freedom One" class="img-inverter">
     <p>5/4 Kwh Freedom One</p>
-    <p class="price">R 43,749.00</p>
+    <p class="price" id="battery-6-dynamic">R 43,749.00</p>
     <button id="product-button6" class="product-button" onclick="window.location.href = 'battery-6.html';">View</button>
   </div>
 
@@ -108,7 +113,7 @@
     <p class="bundle-heading">Felicity</p>
     <img src="battery7.png" alt="Picture of a 8.7 Kwh Felicity Li-Ion" class="img-inverter">
     <p>8.7 Kwh Felicity Li-Ion</p>
-    <p class="price">R 51,249.00</p>
+    <p class="price" id="battery-7-dynamic">R 48,749.00</p>
     <button id="product-button7" class="product-button" onclick="window.location.href = 'battery-7.html';">View</button>
   </div>
 
@@ -116,7 +121,7 @@
     <p class="bundle-heading">Felicity</p>
     <img src="battery8.png" alt="Picture of a 12.5 Kwh Felicity Li-Ion" class="img-inverter">
     <p>12.5 Kwh Felicity Li-Ion</p>
-    <p class="price">R 61,249.00</p>
+    <p class="price" id="battery-8-dynamic">R 57,499.00</p>
     <button id="product-button8" class="product-button" onclick="window.location.href = 'battery-8.html';">View</button>
   </div>
 
@@ -124,7 +129,7 @@
     <p class="bundle-heading">Dyness</p>
     <img src="battery9.png" alt="Picture of a 10.24 Kwh Dyness Li-Ion" class="img-inverter">
     <p>10.24 Kwh Dyness Li-Ion</p>
-    <p class="price">R 68,750.00</p>
+    <p class="price" id="battery-9-dynamic">R 63,749.00</p>
     <button id="product-button9" class="product-button" onclick="window.location.href = 'battery-9.html';">View</button>
   </div>
 
@@ -132,7 +137,7 @@
     <p class="bundle-heading">Hubble</p>
     <img src="battery10.png" alt="Picture of a 10 Kwh Hubble AM-5 Li-Ion" class="img-inverter">
     <p>10 Kwh Hubble AM-5 Li-Ion</p>
-    <p class="price">R 92,499.00</p>
+    <p class="price" id="battery-10-dynamic">R 92,499.00</p>
     <button id="product-button10" class="product-button" onclick="window.location.href = 'battery-10.html';">View</button>
   </div>
 
@@ -140,7 +145,7 @@
     <p class="bundle-heading">Freedom</p>
     <img src="battery11.png" alt="Picture of a 10/8 Kwh Freedom One" class="img-inverter">
     <p>10/8 Kwh Freedom One</p>
-    <p class="price">R 99,999.00</p>
+    <p class="price" id="battery-11-dynamic">R 74,875.00</p>
     <button id="product-button11" class="product-button" onclick="window.location.href = 'battery-11.html';">View</button>
   </div>
 
@@ -148,7 +153,7 @@
     <p class="bundle-heading">Freedom</p>
     <img src="battery12.png" alt="Picture of a 15/12 Kwh Freedom One" class="img-inverter">
     <p>15/12 Kwh Freedom One</p>
-    <p class="price">R 133,750.00</p>
+    <p class="price" id="battery-12-dynamic">R 111,250.00</p>
     <button id="product-button12" class="product-button" onclick="window.location.href = 'battery-12.html';">View</button>
   </div>
 
@@ -156,7 +161,7 @@
     <p class="bundle-heading">Freedom</p>
     <img src="battery13.png" alt="Picture of a 20/16 Kwh Freedom One" class="img-inverter" onclick="window.location.href = 'battery-13.html';">
     <p>20/16 Kwh Freedom One</p>
-    <p class="price">R 178,749.00</p>
+    <p class="price" id="battery-13-dynamic">R 146,250.00</p>
     <button id="product-button13" class="product-button" onclick="window.location.href = 'battery-13.html';">View</button>
   </div>
 
@@ -226,6 +231,8 @@
       
     
     </footer>
+    <script src="pricing-battery.js"></script>
+
     
 </body>
 <script>
@@ -324,6 +331,5 @@
   filterSelection("all");
   sortItems();
   </script>
-<script src="battery.js"></script>
 
 </html>

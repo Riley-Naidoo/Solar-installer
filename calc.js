@@ -80,52 +80,52 @@ let handleBattery13Total = 0; // Total Price
 let handle13Battery = 0; //Price of the battery
 
 let inv1 = "3.5 Kw Growatt 48V Hybrid Inverter"
-let inv1Price = 10868.00;
+let inv1Price = 12499.00;
 let inv1Max = 10;
 
 let inv2 = "5 Kw Growatt 48V Hybrid Inverter";
-let inv2Price = 15498.00;
+let inv2Price = 13749.00;
 let inv2Max = 10;
 
 let inv3 = "5.5 Kw Luxpower Hybrid Inverter";
-let inv3Price = 17498.00;
+let inv3Price = 14374.00;
 let inv3Max = 10;
 
 let inv4 = "5 Kw Deye Hybrid Inverter";
-let inv4Price = 32498;
+let inv4Price = 24438.00;
 let inv4Max = 14;
 
 
 let inv5 = "5 Kw Sunsynk Hybrid Inverter";
-let inv5Price = 34874;
+let inv5Price = 30749.00;
 let inv5Max = 14;
 
 let inv6 = "8 Kw Deye Hybrid Inverter";
-let inv6Price = 49999;
+let inv6Price = 43689.00;
 let inv6Max = 14;
 
 let inv7 = "8 Kw Sunsynk Hybrid Inverter";
-let inv7Price = 54374;
+let inv7Price = 48249.00;
 let inv7Max = 18;
 
 let inv8 = "12 Kw Luxpower Hybrid Inverter";
-let inv8Price = 58625;
+let inv8Price = 58625.00;
 let inv8Max = 21;
 
 let inv9 = "12 Kw 3 Phase Deye Hybrid Inverter";
-let inv9Price = 69999;
+let inv9Price = 62375.00;
 let inv9Max = 28;
 
 let inv10 = "12 Kw 3 Phase Sunsynk Hybrid Inverter";
-let inv10Price = 79999;
+let inv10Price = 82499.00;
 let inv10Max = 27;
 
 let inv11 = "16 Kw Deye Hybrid Inverter";
-let inv11Price = 87499;
+let inv11Price = 87499.00;
 let inv11Max = 37;
 
 let inv12 = "16 Kw Sunsynk Hybrid Inverter"
-let inv12Price = 96249;
+let inv12Price = 87499.00;
 let inv12Max = 32;
 
 let inverterPrice = 0;
@@ -135,40 +135,40 @@ let bat1 = "3.6 Kwh Dyness Li-Ion";
 let bat1Price = 24999;
 
 let bat2 = "5 Kwh Felicity Li-Ion";
-let bat2Price = 28749;
+let bat2Price = 27499.00;
 
 let bat3 = "5.12 Kwh Dyness Li-Ion";
-let bat3Price = 32249;
+let bat3Price = 29374.00;
 
 let bat4 = "4.96 Kwh Greenrich Li-Ion";
-let bat4Price = 37499;
+let bat4Price = 33750.00;
 
 let bat5 = "5.12 Kwh Hubble AM-5 Li-Ion";
-let bat5Price = 39124;
+let bat5Price = 37375.00;
 
 let bat6 = "5/4 Kwh Freedom One";
-let bat6Price = 43749;
+let bat6Price = 43749.00;
 
 let bat7 = "8.7 Kwh Felicity Li-Ion";
-let bat7Price = 51249;
+let bat7Price = 48749.00;
 
 let bat8 = "12.5 Kwh Felicity Li-Ion";
-let bat8Price = 61249;
+let bat8Price = 57499.00;
 
 let bat9 = "10.24 Kwh Dyness Li-Ion";
-let bat9Price = 68750;
+let bat9Price = 63749.00;
 
 let bat10 = "10 Kwh Hubble AM-5 Li-Ion";
-let bat10Price = 92499;
+let bat10Price = 92499.00;
 
 let bat11 = "10/8 Kwh Freedom One";
-let bat11Price = 99999;
+let bat11Price = 74875.00;
 
 let bat12 = "15/12 Kwh Freedom One";
-let bat12Price = 133750;
+let bat12Price = 111250.00;
 
 let bat13 = "20/16 Kwh Freedom One";
-let bat13Price = 178749;
+let bat13Price = 146250.00;
 
 let currentBatPrice = 0;
 let currentBatName = "No Battery Selected"
@@ -215,7 +215,7 @@ function increaseValue() {
    panelChangePrice = panelPrice * panelNum;
    NewtotalPanelInstall = Math.ceil(panelNum * panelInstall * 1.25);
    newMountingTotal = panelNum * 733;
-  Total = Total +5977
+  Total = Total +5977;
 
   document.getElementById('price-1').innerHTML = formatPrice(panelChangePrice);
   document.getElementById('price-13').innerHTML = formatPrice(Total);
@@ -268,7 +268,7 @@ function increaseBatteryValue() {
   var input = document.getElementById('btn-value-battery');
   var currentValue = parseInt(input.value);
   input.value = currentValue + 1;
-  NewcurrentBatPrice = currentBatPrice * document.getElementById('btn-value-battery').value;
+  NewcurrentBatPrice = currentBatPrice * document.getElementById('btn-value-battery').value
   document.getElementById('battery-price').innerHTML = formatPrice(NewcurrentBatPrice);
   document.getElementById('config-11').innerHTML = document.getElementById('btn-value-battery').value + "x" + " " + currentBatName; // Update config-7 with the new value
   document.getElementById('price-3').innerHTML = formatPrice(NewcurrentBatPrice);
@@ -383,6 +383,11 @@ document.addEventListener('DOMContentLoaded', function() {
       let bat1img = document.getElementById('product-image-battery');
       bat1img.src = "battery1.png";
       bat1img.style.height = '300px';
+
+      currentBatName = bat1;
+      currentBatPrice = bat1Price;
+      document.getElementById('btn-value-battery').value = 1;
+
       Total = Total + bat1Price - batteryTotal;
       batteryTotal = bat1Price;
       document.getElementById('price-13').innerHTML = formatPrice(Total);
@@ -403,9 +408,8 @@ document.addEventListener('DOMContentLoaded', function() {
           window.open(pdfUrl, '_blank');
         };
       }
-      currentBatName = bat1;
-      currentBatPrice = bat1Price;
-      document.getElementById('btn-value-battery').value = 1;
+
+
 
       
 
@@ -450,6 +454,11 @@ document.addEventListener('DOMContentLoaded', function() {
       let bat2img = document.getElementById('product-image-battery');
       bat2img.src = "battery2.png";
       bat2img.style.height = '300px';
+
+      currentBatName = bat2;
+      currentBatPrice = bat2Price;
+      document.getElementById('btn-value-battery').value = 1;
+
       Total = Total + bat2Price - batteryTotal;
       batteryTotal = bat2Price;
       document.getElementById('price-13').innerHTML = formatPrice(Total);
@@ -470,9 +479,7 @@ document.addEventListener('DOMContentLoaded', function() {
           window.open(pdfUrl, '_blank');
         };
       }
-      currentBatName = bat2;
-      currentBatPrice = bat2Price;
-      document.getElementById('btn-value-battery').value = 1;
+
 
     }
     
@@ -513,6 +520,11 @@ document.addEventListener('DOMContentLoaded', function() {
       let bat3img = document.getElementById('product-image-battery');
       bat3img.src = "battery3.png";
       bat3img.style.height = '300px';
+
+      currentBatName = bat3;
+      currentBatPrice = bat3Price;
+      document.getElementById('btn-value-battery').value = 1;
+
       Total = Total + bat3Price - batteryTotal;
       batteryTotal = bat3Price;
       document.getElementById('price-13').innerHTML = formatPrice(Total);
@@ -533,9 +545,7 @@ document.addEventListener('DOMContentLoaded', function() {
           window.open(pdfUrl, '_blank');
         };
       }
-      currentBatName = bat3;
-      currentBatPrice = bat3Price;
-      document.getElementById('btn-value-battery').value = 1;
+
 
     }
     
@@ -577,6 +587,11 @@ document.addEventListener('DOMContentLoaded', function() {
       let bat4img = document.getElementById('product-image-battery');
       bat4img.src = "battery4.png";
       bat4img.style.height = '300px';
+
+      currentBatName = bat4;
+      currentBatPrice = bat4Price;
+      document.getElementById('btn-value-battery').value = 1;
+
       Total = Total - batteryTotal + bat4Price;
       batteryTotal = bat4Price;
       document.getElementById('price-13').innerHTML = formatPrice(Total);
@@ -597,9 +612,7 @@ document.addEventListener('DOMContentLoaded', function() {
           window.open(pdfUrl, '_blank');
         };
       }
-      currentBatName = bat4;
-      currentBatPrice = bat4Price;
-      document.getElementById('btn-value-battery').value = 1;
+
 
     }
     
@@ -641,6 +654,11 @@ document.addEventListener('DOMContentLoaded', function() {
       let bat5img = document.getElementById('product-image-battery');
       bat5img.src = "battery5.png";
       bat5img.style.height = '300px';
+
+      currentBatName = bat5;
+      currentBatPrice = bat5Price;
+      document.getElementById('btn-value-battery').value = 1;
+
       Total = Total - batteryTotal + bat5Price;
       batteryTotal = bat5Price;
       document.getElementById('price-13').innerHTML = formatPrice(Total);
@@ -661,9 +679,7 @@ document.addEventListener('DOMContentLoaded', function() {
           window.open(pdfUrl, '_blank');
         };
       }
-      currentBatName = bat5;
-      currentBatPrice = bat5Price;
-      document.getElementById('btn-value-battery').value = 1;
+
 
     }
     
@@ -705,6 +721,11 @@ document.addEventListener('DOMContentLoaded', function() {
       let bat6img = document.getElementById('product-image-battery');
       bat6img.src = "battery6.png";
       bat6img.style.height = '300px';
+
+      currentBatName = bat6;
+      currentBatPrice = bat6Price;
+      document.getElementById('btn-value-battery').value = 1;
+
       Total = Total - batteryTotal + bat6Price;
       batteryTotal = bat6Price;
       document.getElementById('price-13').innerHTML = formatPrice(Total);
@@ -725,9 +746,7 @@ document.addEventListener('DOMContentLoaded', function() {
           window.open(pdfUrl, '_blank');
         };
       }
-      currentBatName = bat6;
-      currentBatPrice = bat6Price;
-      document.getElementById('btn-value-battery').value = 1;
+
 
     }
     
@@ -770,6 +789,11 @@ document.addEventListener('DOMContentLoaded', function() {
       let bat7img = document.getElementById('product-image-battery');
       bat7img.src = "battery7.png";
       bat7img.style.height = '300px';
+
+      currentBatName = bat7;
+      currentBatPrice = bat7Price;
+      document.getElementById('btn-value-battery').value = 1;
+
       Total = Total - batteryTotal + bat7Price;
       batteryTotal = bat7Price;
       document.getElementById('price-13').innerHTML = formatPrice(Total);
@@ -790,9 +814,7 @@ document.addEventListener('DOMContentLoaded', function() {
           window.open(pdfUrl, '_blank');
         };
       }
-      currentBatName = bat7;
-      currentBatPrice = bat7Price;
-      document.getElementById('btn-value-battery').value = 1;
+
 
     }
     
@@ -835,6 +857,11 @@ document.addEventListener('DOMContentLoaded', function() {
       let bat8img = document.getElementById('product-image-battery');
       bat8img.src = "battery8.png";
       bat8img.style.height = '300px';
+
+      currentBatName = bat8;
+      currentBatPrice = bat8Price;
+      document.getElementById('btn-value-battery').value = 1;
+
       Total = Total - batteryTotal + bat8Price;
       batteryTotal = bat8Price;
       document.getElementById('price-13').innerHTML = formatPrice(Total);
@@ -855,9 +882,7 @@ document.addEventListener('DOMContentLoaded', function() {
           window.open(pdfUrl, '_blank');
         };
       }
-      currentBatName = bat8;
-      currentBatPrice = bat8Price;
-      document.getElementById('btn-value-battery').value = 1;
+
 
     }
     
@@ -900,6 +925,11 @@ document.addEventListener('DOMContentLoaded', function() {
       let bat9img = document.getElementById('product-image-battery');
       bat9img.src = "battery9.png";
       bat9img.style.height = '300px';
+
+      currentBatName = bat9;
+      currentBatPrice = bat9Price;
+      document.getElementById('btn-value-battery').value = 1;
+
       Total = Total - batteryTotal + bat9Price;
       batteryTotal = bat9Price;
       document.getElementById('price-13').innerHTML = formatPrice(Total);
@@ -920,9 +950,7 @@ document.addEventListener('DOMContentLoaded', function() {
           window.open(pdfUrl, '_blank');
         };
       }
-      currentBatName = bat9;
-      currentBatPrice = bat9Price;
-      document.getElementById('btn-value-battery').value = 1;
+
 
     }
     
@@ -965,6 +993,11 @@ document.addEventListener('DOMContentLoaded', function() {
       let bat10img = document.getElementById('product-image-battery');
       bat10img.src = "battery10.png";
       bat10img.style.height = '300px';
+
+      currentBatName = bat10;
+      currentBatPrice = bat10Price;
+      document.getElementById('btn-value-battery').value = 1;
+
       Total = Total - batteryTotal + bat10Price;
       batteryTotal = bat10Price;
       document.getElementById('price-13').innerHTML = formatPrice(Total);
@@ -985,9 +1018,6 @@ document.addEventListener('DOMContentLoaded', function() {
           window.open(pdfUrl, '_blank');
         };
       }
-      currentBatName = bat10;
-      currentBatPrice = bat10Price;
-      document.getElementById('btn-value-battery').value = 1;
 
     }
     
@@ -1030,6 +1060,11 @@ document.addEventListener('DOMContentLoaded', function() {
       let bat11img = document.getElementById('product-image-battery');
       bat11img.src = "battery11.png";
       bat11img.style.height = '300px';
+
+      currentBatName = bat11;
+      currentBatPrice = bat11Price;
+      document.getElementById('btn-value-battery').value = 1;
+
       Total = Total - batteryTotal + bat11Price;
       batteryTotal = bat11Price;
       document.getElementById('price-13').innerHTML = formatPrice(Total);
@@ -1050,9 +1085,6 @@ document.addEventListener('DOMContentLoaded', function() {
           window.open(pdfUrl, '_blank');
         };
       }
-      currentBatName = bat11;
-      currentBatPrice = bat11Price;
-      document.getElementById('btn-value-battery').value = 1;
 
     }
     
@@ -1093,6 +1125,11 @@ document.addEventListener('DOMContentLoaded', function() {
       let bat12img = document.getElementById('product-image-battery');
       bat12img.src = "battery12.png";
       bat12img.style.height = '300px';
+
+      currentBatName = bat12;
+      currentBatPrice = bat12Price;
+      document.getElementById('btn-value-battery').value = 1;
+
       Total = Total - batteryTotal + bat12Price;
       batteryTotal = bat12Price;
       document.getElementById('price-13').innerHTML = formatPrice(Total);
@@ -1113,9 +1150,6 @@ document.addEventListener('DOMContentLoaded', function() {
           window.open(pdfUrl, '_blank');
         };
       }
-      currentBatName = bat12;
-      currentBatPrice = bat12Price;
-      document.getElementById('btn-value-battery').value = 1;
 
     }
 
@@ -1126,6 +1160,11 @@ document.addEventListener('DOMContentLoaded', function() {
       let bat13img = document.getElementById('product-image-battery');
       bat13img.src = "battery13.png";
       bat13img.style.height = '300px';
+
+      currentBatName = bat13;
+      currentBatPrice = bat13Price;
+      document.getElementById('btn-value-battery').value = 1;
+
       Total = Total - batteryTotal + bat13Price;
       batteryTotal = bat13Price;
       document.getElementById('price-13').innerHTML = formatPrice(Total);
@@ -1146,9 +1185,7 @@ document.addEventListener('DOMContentLoaded', function() {
           window.open(pdfUrl, '_blank');
         };
       }
-      currentBatName = bat13;
-      currentBatPrice = bat13Price;
-      document.getElementById('btn-value-battery').value = 1;
+
     }
 
 
