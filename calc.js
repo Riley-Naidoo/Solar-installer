@@ -186,6 +186,8 @@ let NewcurrentBatPrice = 0;
 var batPrice = 797.60;
 var batInstallPrice = 1500;
 
+let rentalTotal = 0;
+
 
 
 
@@ -216,6 +218,8 @@ function increaseValue() {
    NewtotalPanelInstall = Math.ceil(panelNum * panelInstall * 1.25);
    newMountingTotal = panelNum * 733;
   Total = Total +5977;
+  rentalTotal = Total * 0.0275;
+  document.getElementById('rental-price').innerHTML = formatPrice(rentalTotal);
 
   document.getElementById('price-1').innerHTML = formatPrice(panelChangePrice);
   document.getElementById('price-13').innerHTML = formatPrice(Total);
@@ -248,6 +252,8 @@ function decreaseValue() {
     NewtotalPanelInstall = Math.ceil(panelNum * panelInstall * 1.25);
     newMountingTotal = panelNum * 733;
     Total = Total - 5977;
+    rentalTotal = Total * 0.0275;
+    document.getElementById('rental-price').innerHTML = formatPrice(rentalTotal);
     document.getElementById('price-1').innerHTML = formatPrice(panelChangePrice);
     document.getElementById('price-13').innerHTML = formatPrice(Total);
     document.getElementById('panel-cost').innerHTML = formatPrice(panelChangePrice)
@@ -274,6 +280,8 @@ function increaseBatteryValue() {
   document.getElementById('price-3').innerHTML = formatPrice(NewcurrentBatPrice);
 
   Total = Total + currentBatPrice;
+  rentalTotal = Total * 0.0275;
+  document.getElementById('rental-price').innerHTML = formatPrice(rentalTotal);
 
   document.getElementById('price-13').innerHTML = formatPrice(Total);
   document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
@@ -292,6 +300,8 @@ function decreaseBatteryValue() {
     document.getElementById('price-3').innerHTML = formatPrice(NewcurrentBatPrice);
   
     Total = Total - batteryTotal;
+    rentalTotal = Total * 0.0275;
+    document.getElementById('rental-price').innerHTML = formatPrice(rentalTotal);
   
     document.getElementById('price-13').innerHTML = formatPrice(Total);
     document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
@@ -352,6 +362,8 @@ document.addEventListener('DOMContentLoaded', function() {
       inv1img.style.height = '300px';
       Total = Total - inverterTotal + inv1Price;
       inverterTotal = inv1Price;
+      rentalTotal = Total * 0.0275;
+      document.getElementById('rental-price').innerHTML = formatPrice(rentalTotal);
       document.getElementById('price-13').innerHTML = formatPrice(Total);
       document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-inverter').innerHTML = inv1;
@@ -390,6 +402,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
       Total = Total + bat1Price - batteryTotal;
       batteryTotal = bat1Price;
+      rentalTotal = Total * 0.0275;
+      document.getElementById('rental-price').innerHTML = formatPrice(rentalTotal);
       document.getElementById('price-13').innerHTML = formatPrice(Total);
       document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-battery').innerHTML = bat1;
@@ -425,6 +439,8 @@ document.addEventListener('DOMContentLoaded', function() {
       Total = Total - inverterTotal + inv2Price;
       inverterTotal = inv2Price;
       batteryTotal = bat2Price;
+      rentalTotal = Total * 0.0275;
+      document.getElementById('rental-price').innerHTML = formatPrice(rentalTotal);
       document.getElementById('price-13').innerHTML = formatPrice(Total);
       document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-inverter').innerHTML = inv2;
@@ -461,6 +477,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
       Total = Total + bat2Price - batteryTotal;
       batteryTotal = bat2Price;
+      rentalTotal = Total * 0.0275;
+      document.getElementById('rental-price').innerHTML = formatPrice(rentalTotal);
       document.getElementById('price-13').innerHTML = formatPrice(Total);
       document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-battery').innerHTML = bat2;
@@ -491,6 +509,8 @@ document.addEventListener('DOMContentLoaded', function() {
       inv3img.style.height = '300px';
       Total = Total - inverterTotal + inv3Price;
       inverterTotal = inv3Price;
+      rentalTotal = Total * 0.0275;
+      document.getElementById('rental-price').innerHTML = formatPrice(rentalTotal);
       document.getElementById('price-13').innerHTML = formatPrice(Total);
       document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-inverter').innerHTML = inv3;
@@ -527,6 +547,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
       Total = Total + bat3Price - batteryTotal;
       batteryTotal = bat3Price;
+      rentalTotal = Total * 0.0275;
+      document.getElementById('rental-price').innerHTML = formatPrice(rentalTotal);
       document.getElementById('price-13').innerHTML = formatPrice(Total);
       document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-battery').innerHTML = bat3;
@@ -557,6 +579,8 @@ document.addEventListener('DOMContentLoaded', function() {
       inv4img.style.height = '300px';
       Total = Total - inverterTotal + inv4Price;
       inverterTotal = inv4Price;
+      rentalTotal = Total * 0.0275;
+      document.getElementById('rental-price').innerHTML = formatPrice(rentalTotal);
       document.getElementById('price-13').innerHTML = formatPrice(Total);
       document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-inverter').innerHTML = inv4;
@@ -594,6 +618,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
       Total = Total - batteryTotal + bat4Price;
       batteryTotal = bat4Price;
+      rentalTotal = Total * 0.0275;
+      document.getElementById('rental-price').innerHTML = formatPrice(rentalTotal);
       document.getElementById('price-13').innerHTML = formatPrice(Total);
       document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-battery').innerHTML = bat4;
@@ -624,6 +650,8 @@ document.addEventListener('DOMContentLoaded', function() {
       inv5img.style.height = '300px';
       Total = Total - inverterTotal + inv5Price;
       inverterTotal = inv5Price;
+      rentalTotal = Total * 0.0275;
+      document.getElementById('rental-price').innerHTML = formatPrice(rentalTotal);
       document.getElementById('price-13').innerHTML = formatPrice(Total);
       document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-inverter').innerHTML = inv5;
@@ -661,6 +689,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
       Total = Total - batteryTotal + bat5Price;
       batteryTotal = bat5Price;
+      rentalTotal = Total * 0.0275;
+      document.getElementById('rental-price').innerHTML = formatPrice(rentalTotal);
       document.getElementById('price-13').innerHTML = formatPrice(Total);
       document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-battery').innerHTML = bat5;
@@ -691,6 +721,8 @@ document.addEventListener('DOMContentLoaded', function() {
       inv6img.style.height = '300px';
       Total = Total - inverterTotal + inv6Price;
       inverterTotal = inv6Price;
+      rentalTotal = Total * 0.0275;
+      document.getElementById('rental-price').innerHTML = formatPrice(rentalTotal);
       document.getElementById('price-13').innerHTML = formatPrice(Total);
       document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-inverter').innerHTML = inv6;
@@ -728,6 +760,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
       Total = Total - batteryTotal + bat6Price;
       batteryTotal = bat6Price;
+      rentalTotal = Total * 0.0275;
+      document.getElementById('rental-price').innerHTML = formatPrice(rentalTotal);
       document.getElementById('price-13').innerHTML = formatPrice(Total);
       document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-battery').innerHTML = bat6;
@@ -758,6 +792,8 @@ document.addEventListener('DOMContentLoaded', function() {
       inv7img.style.height = '300px';
       Total = Total - inverterTotal + inv7Price;
       batteryTotal = bat7Price;
+      rentalTotal = Total * 0.0275;
+      document.getElementById('rental-price').innerHTML = formatPrice(rentalTotal);
       document.getElementById('price-13').innerHTML = formatPrice(Total);
       document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-inverter').innerHTML = inv7;
@@ -796,6 +832,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
       Total = Total - batteryTotal + bat7Price;
       batteryTotal = bat7Price;
+      rentalTotal = Total * 0.0275;
+      document.getElementById('rental-price').innerHTML = formatPrice(rentalTotal);
       document.getElementById('price-13').innerHTML = formatPrice(Total);
       document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-battery').innerHTML = bat7;
@@ -826,6 +864,8 @@ document.addEventListener('DOMContentLoaded', function() {
       inv8img.style.height = '300px';
       Total = Total - inverterTotal + inv8Price;
       inverterTotal = inv8Price;
+      rentalTotal = Total * 0.0275;
+      document.getElementById('rental-price').innerHTML = formatPrice(rentalTotal);
       document.getElementById('price-13').innerHTML = formatPrice(Total);
       document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-inverter').innerHTML = inv8;
@@ -864,6 +904,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
       Total = Total - batteryTotal + bat8Price;
       batteryTotal = bat8Price;
+      rentalTotal = Total * 0.0275;
+      document.getElementById('rental-price').innerHTML = formatPrice(rentalTotal);
       document.getElementById('price-13').innerHTML = formatPrice(Total);
       document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-battery').innerHTML = bat8;
@@ -894,6 +936,8 @@ document.addEventListener('DOMContentLoaded', function() {
       inv9img.style.height = '300px';
       Total = Total - inverterTotal + inv9Price;
       inverterTotal = inv9Price;
+      rentalTotal = Total * 0.0275;
+      document.getElementById('rental-price').innerHTML = formatPrice(rentalTotal);
       document.getElementById('price-13').innerHTML = formatPrice(Total);
       document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-inverter').innerHTML = inv9;
@@ -932,6 +976,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
       Total = Total - batteryTotal + bat9Price;
       batteryTotal = bat9Price;
+      rentalTotal = Total * 0.0275;
+      document.getElementById('rental-price').innerHTML = formatPrice(rentalTotal);
       document.getElementById('price-13').innerHTML = formatPrice(Total);
       document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-battery').innerHTML = bat9;
@@ -962,6 +1008,8 @@ document.addEventListener('DOMContentLoaded', function() {
       inv10img.style.height = '300px';
       Total = Total - inverterTotal + inv10Price;
       inverterTotal = inv10Price;
+      rentalTotal = Total * 0.0275;
+      document.getElementById('rental-price').innerHTML = formatPrice(rentalTotal);
       document.getElementById('price-13').innerHTML = formatPrice(Total);
       document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-inverter').innerHTML = inv10;
@@ -1000,6 +1048,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
       Total = Total - batteryTotal + bat10Price;
       batteryTotal = bat10Price;
+      rentalTotal = Total * 0.0275;
+      document.getElementById('rental-price').innerHTML = formatPrice(rentalTotal);
       document.getElementById('price-13').innerHTML = formatPrice(Total);
       document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-battery').innerHTML = bat10;
@@ -1029,6 +1079,8 @@ document.addEventListener('DOMContentLoaded', function() {
       inv11img.style.height = '300px';
       Total = Total - inverterTotal + inv11Price;
       inverterTotal = inv11Price;
+      rentalTotal = Total * 0.0275;
+      document.getElementById('rental-price').innerHTML = formatPrice(rentalTotal);
       document.getElementById('price-13').innerHTML = formatPrice(Total);
       document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-inverter').innerHTML = inv11;
@@ -1067,6 +1119,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
       Total = Total - batteryTotal + bat11Price;
       batteryTotal = bat11Price;
+      rentalTotal = Total * 0.0275;
+      document.getElementById('rental-price').innerHTML = formatPrice(rentalTotal);
       document.getElementById('price-13').innerHTML = formatPrice(Total);
       document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-battery').innerHTML = bat11;
@@ -1096,6 +1150,8 @@ document.addEventListener('DOMContentLoaded', function() {
       inv12img.style.height = '300px';
       Total = Total - inverterTotal + inv12Price;
       inverterTotal = inv12Price;
+      rentalTotal = Total * 0.0275;
+      document.getElementById('rental-price').innerHTML = formatPrice(rentalTotal);
       document.getElementById('price-13').innerHTML = formatPrice(Total);
       document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-inverter').innerHTML = inv12;
@@ -1132,6 +1188,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
       Total = Total - batteryTotal + bat12Price;
       batteryTotal = bat12Price;
+      rentalTotal = Total * 0.0275;
+      document.getElementById('rental-price').innerHTML = formatPrice(rentalTotal);
       document.getElementById('price-13').innerHTML = formatPrice(Total);
       document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-battery').innerHTML = bat12;
@@ -1167,6 +1225,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
       Total = Total - batteryTotal + bat13Price;
       batteryTotal = bat13Price;
+      rentalTotal = Total * 0.0275;
+      document.getElementById('rental-price').innerHTML = formatPrice(rentalTotal);
       document.getElementById('price-13').innerHTML = formatPrice(Total);
       document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
       document.getElementById('selected-battery').innerHTML = bat13;
@@ -1280,19 +1340,73 @@ function calculate() {
 
     var inverterQuantity = 0;
     if (inverter == inv2){
+      document.getElementById('selected-inverter').innerHTML = inv2;
+      document.getElementById('inverter-price').innerHTML = formatPrice(inv2Price);
+      document.getElementById('num-panels').innerHTML = inv2Max;
+
+      var inverterImage = document.getElementById('product-image');
+      inverterImage.src = "inverter2.png";
+      inverterImage.style.width = '300px';
+      inverterImage.style.height = '300px';
+      inverterImage.style.backgroundSize = 'contain';
+
+
       inverterPrice = inv2Price;
       inverterQuantity = 1;
     } else if(inverter == "5KW Deye"){
-      inverterPrice = 25999;
+      document.getElementById('selected-inverter').innerHTML = inv4;
+      document.getElementById('inverter-price').innerHTML = formatPrice(inv4Price);
+      document.getElementById('num-panels').innerHTML = inv4Max;
+
+      var inverterImage = document.getElementById('product-image');
+      inverterImage.src = "inverter4.png";
+      inverterImage.style.width = '300px';
+      inverterImage.style.height = '300px';
+      inverterImage.style.backgroundSize = 'contain';
+
+
+      inverterPrice = inv4Price;
       inverterQuantity = 1;
     } else if (inverter == "8KW Deye"){
-      inverterPrice = 39999;
+      document.getElementById('selected-inverter').innerHTML = inv6;
+      document.getElementById('inverter-price').innerHTML = formatPrice(inv6Price);
+      document.getElementById('num-panels').innerHTML = inv6Max;
+
+      var inverterImage = document.getElementById('product-image');
+      inverterImage.src = "inverter6.png";
+      inverterImage.style.width = '300px';
+      inverterImage.style.height = '300px';
+      inverterImage.style.backgroundSize = 'contain';
+
+
+      inverterPrice = inv6Price;
       inverterQuantity = 1;
     } else if(inverter == "2x 5KW Deye"){
-      inverterPrice = 25999;
+      document.getElementById('selected-inverter').innerHTML = inv4;
+      document.getElementById('inverter-price').innerHTML = formatPrice(inv4Price);
+      document.getElementById('num-panels').innerHTML = inv4Max;
+
+      var inverterImage = document.getElementById('product-image');
+      inverterImage.src = "inverter4.png";
+      inverterImage.style.width = '300px';
+      inverterImage.style.height = '300px';
+      inverterImage.style.backgroundSize = 'contain';
+
+      inverterPrice = inv4Price;
       inverterQuantity = 2;
     } else if (inverter =="16KW Deye"){
-      inverterPrice = 69666;
+      document.getElementById('selected-inverter').innerHTML = inv11;
+      document.getElementById('inverter-price').innerHTML = formatPrice(inv11Price);
+      document.getElementById('num-panels').innerHTML = inv11Max;
+
+      var inverterImage = document.getElementById('product-image');
+      inverterImage.src = "inverter11.png";
+      inverterImage.style.width = '300px';
+      inverterImage.style.height = '300px';
+      inverterImage.style.backgroundSize = 'contain';
+
+
+      inverterPrice = inv11Price;
       inverterQuantity = 1;
     } else{
       inverterPrice = 0;
@@ -1303,18 +1417,49 @@ function calculate() {
     var batteryPrice = 0;
     var batteryQuantity = 0;
     if (batteryModules == "5.1KW"){
-      batteryPrice = 32249;
+      document.getElementById('selected-battery').innerHTML = bat3; 
+      var batteryImage = document.getElementById('product-image-battery');
+      batteryImage.src = "battery3.png";
+      batteryImage.style.width = '300px';
+      batteryImage.style.height = '300px';
+      batteryImage.style.backgroundSize = 'contain';
+
+      currentBatPrice = bat3Price;
+
+      batteryPrice = bat3Price;
       batteryQuantity = 1;
       document.getElementById('btn-value-battery').value = 1;
     } else if (batteryModules == "2X 5.1KW"){
-      batteryPrice = 32249;
+      document.getElementById('selected-battery').innerHTML = bat3; 
+
+      var batteryImage = document.getElementById('product-image-battery');
+      batteryImage.src = "battery3.png";
+      batteryImage.style.width = '300px';
+      batteryImage.style.height = '300px';
+      batteryImage.style.backgroundSize = 'contain';
+      currentBatPrice = bat3Price;
+
+
+      batteryPrice = bat3Price;
       batteryQuantity = 2;
       document.getElementById('btn-value-battery').value = 2;
     } else if (batteryModules == "3X 5.1KW"){
-      batteryPrice = 32249;
+      document.getElementById('selected-battery').innerHTML = bat3; 
+
+      var batteryImage = document.getElementById('product-image-battery');
+      batteryImage.src = "battery3.png";
+      batteryImage.style.width = '300px';
+      batteryImage.style.height = '300px';
+      batteryImage.style.backgroundSize = 'contain';
+      currentBatPrice = bat3Price;
+
+
+      batteryPrice = bat3Price;
       batteryQuantity = 3;
       document.getElementById('btn-value-battery').value = 3;
     } else if (batteryModules == "Consult us"){
+      document.getElementById('selected-battery').innerHTML = "Consult Us"; 
+
       batteryPrice = 0
       batteryQuantity = 0
     }
@@ -1444,6 +1589,12 @@ function calculate() {
     document.getElementById('price-13').innerHTML = formatPrice(Total);
     document.getElementById('price-14').innerHTML = formatPrice(totalPanelInstall);
 
+    rentalTotal = Total * 0.0275;
+
+    document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
+    document.getElementById('rental-price').innerHTML = formatPrice(rentalTotal);
+
+
     document.getElementById('btn-value').value = panels;
 
     document.getElementById('solution-name').innerHTML ="Your " +inverter + " Solar Solution";
@@ -1461,6 +1612,7 @@ function calculate() {
     overviewImage3.style.width = '300px';
     overviewImage3.style.height = '300px';
     overviewImage3.style.backgroundSize = 'contain';
+
     
     document.getElementById('selected-battery').innerHTML = bat3;
     currentBatName = bat3;
