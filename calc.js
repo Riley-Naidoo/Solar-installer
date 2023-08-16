@@ -1592,7 +1592,7 @@ function calculate() {
     rentalTotal = Total * 0.0275;
 
     document.getElementById('bottombar-price').innerHTML = formatPrice(Total);
-    document.getElementById('rental-price').innerHTML = formatPrice(rentalTotal);
+    document.getElementById('rental-price').innerHTML ="R " +  rentalTotal;
 
 
     document.getElementById('btn-value').value = panels;
