@@ -153,7 +153,7 @@ td, th {
 
 .product{
     background-color: #f1f1f1;
-    height: 600px;
+    height: 650px;
     width: 30%;
     color: black;
     margin-top: 20px;
@@ -888,7 +888,8 @@ table p{
     .product{
         width: 90%;
         margin-left: 5%;
-        height: 650px;
+        height: auto;
+        padding-bottom: 10px
     }
 
     .overview{

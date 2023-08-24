@@ -292,8 +292,12 @@
     <label class="product-label">Inverter</label><br>
     <img src="inverter.png" alt="Picture of an inverter" id="product-image"><br>
     <p id="selected-inverter">Inverter Name</p><br>
-    <p id="inverter-price">Inverter Price</p><br>
-    <p>Max Panels: <p id="num-panels">0</p></p><br>
+    <p id="inverter-price">Inverter Price</p><br><br>
+    <div class="counter">
+      <button class="btn-decrease" onclick="decreaseInverterValue()">-</button>
+      <input type="text" class="input-value" value="0" id="btn-value-inverter">
+      <button class="btn-increase" onclick="increaseInverterValue()">+</button>
+    </div> <br><br>
     <div class="product-button">
       <button id="change-btn" type="button">Change inverter</button><br>
       <button id="change-btn" class="inverter-pdf" type="button">View Data Sheet</button>
@@ -445,14 +449,16 @@
   <div class="product item-1">
     <label class="product-label">Panels</label><br>
     <img src="panel.png" alt="picture of a solar panel"><br>
-    <p>Number of 550W Mono Panels: </p><br>
+    <p>550W Mono Panels: </p><br>
+    <p>Price Per Panel: R3,348.00</p> <br>
     <div class="counter">
       <button class="btn-decrease" onclick="decreaseValue()">-</button>
       <input type="text" class="input-value" value="0" id="btn-value">
       <button class="btn-increase" onclick="increaseValue()">+</button>
     </div> <br>
-    <p>Price Per Panel: R3,348.00</p> <br>
-    <p>Total Cost of Panels: <p id="panel-cost"></p></p>  
+    <p>Total Cost of Panels: <p id="panel-cost"></p><br>
+    <p>Max Panels for this inverter:<p id="num-panels">0</p><br>
+    
   </div>
 
 
@@ -460,7 +466,7 @@
     <label class="product-label">Battery</label><br>
     <img src="battery.png" alt="Picture of a battery" id="product-image-battery"><br>
     <p id="selected-battery">Battery Name</p><br>
-    <p id="battery-price">Battery Price:</p><br>
+    <p id="battery-price">Battery Price:</p><br><br>
     <div class="counter">
       <button class="btn-decrease" onclick="decreaseBatteryValue()">-</button>
       <input type="text" class="input-value" value="0" id="btn-value-battery">
